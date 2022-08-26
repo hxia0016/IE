@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>E-Waste</h1>
+<div>
+    <div>
+        <form action="{% url 'e_waste' %}" >
+            <label for="site">E-Waste Collection Site</label>
+            <select name="ESite" id="site">
+                <option value="Colac Otway" selected>Colac Otway</option>
+                <option value="php">PHP</option>
+                <option value="java">Java</option>
+                <option value="golang">Golang</option>
+                <option value="python">Python</option>
+                <option value="c#">C#</option>
+                <option value="C++">C++</option>
+                <option value="erlang">Erlang</option>
+            </select>
+            <input name="Site" type="submit" value="Submit"/>
+        </form>
+
+    </div>
+    <div>
+        {% for ewaste in ewastes %}
+        <div>
+            <h5>{{ewaste.site_id}}--{{ewaste.name}}--{{ewaste.ownership}}--{{ewaste.site}}</h5>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
