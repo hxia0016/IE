@@ -7,6 +7,9 @@ from .models import EWasteSite, Clothing
 def home(request):
     return render(request, 'base/home.html')
 
+def index(request):
+    return render(request, 'base/index.html')
+
 def e_waste(request):
     site = str(request.GET.get('ESite'))
     print(site)
