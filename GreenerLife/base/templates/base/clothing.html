@@ -2,14 +2,30 @@
 
 {% block content %}
 
-<h1>clothing</h1>
+<head>
+    <h1>clothing</h1>
+    <style>
+html,
+body,
+#map_canvas {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px
+}
+
+
+    </style>
+</head>
+<body>
+
 <div>
     <div>
-        <form action="{% url 'clothing' %}" >
+        <form action="{% url 'clothing' %}" method="GET">
             <label for="site">Clothing Disposal Site</label>
             <select name="CSite" id="site">
-                <option value="Melbourne" >Melbourne</option>
-                <option value="php">PHP</option>
+                <option value="Melbourne" selected>Melbourne</option>
+                <option value="North Melbourne">North Melbourne</option>
                 <option value="java">Java</option>
                 <option value="golang">Golang</option>
                 <option value="python">Python</option>
@@ -27,5 +43,87 @@
         {% endfor %}
     </div>
 </div>
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgX16AyleX9Cjjnno5uYQKyliz-_NGKO4"></script>
+    <div id="map_canvas" style="border: 2px solid #3872ac;"></div>
+
+
+<body>
+    <script>
+    var locations = [];
+    var i =0;
+    {% for clothing in clothings %}
+        locations[i] = "{{clothing.address}}"+","+"{{clothing.district}}";
+        i+=1;
+    {% endfor %}
+
+    console.log(locations);
+
+var geocoder;
+var map;
+var bounds = new google.maps.LatLngBounds();
+
+function initialize() {
+  map = new google.maps.Map(
+    document.getElementById("map_canvas"), {
+      center: new google.maps.LatLng( -37, 144),
+      zoom: 5,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+  geocoder = new google.maps.Geocoder();
+
+  for (i = 0; i < locations.length; i++) {
+
+
+    geocodeAddress(locations, i);
+  }
+}
+google.maps.event.addDomListener(window, "load", initialize);
+
+function geocodeAddress(locations, i) {
+
+  var address = locations[i];
+  geocoder.geocode({
+      'address': locations[i]
+    },
+
+    function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var marker = new google.maps.Marker({
+          icon: 'http://maps.google.com/mapfiles/ms/icons/red.png',
+          map: map,
+          position: results[0].geometry.location,
+
+          animation: google.maps.Animation.DROP,
+          address: address
+
+        })
+        //infoWindow(marker, map, title, address);
+        bounds.extend(marker.getPosition());
+        map.fitBounds(bounds);
+      }
+    });
+}
+
+
+
+function createMarker(results) {
+  var marker = new google.maps.Marker({
+    icon: 'http://maps.google.com/mapfiles/ms/icons/blue.png',
+    map: map,
+    position: results[0].geometry.location,
+
+    animation: google.maps.Animation.DROP,
+    address: address
+  })
+  bounds.extend(marker.getPosition());
+  map.fitBounds(bounds);
+  return marker;
+}
+
+
+    </script>
+</body>
+
 
 {% endblock content %}
