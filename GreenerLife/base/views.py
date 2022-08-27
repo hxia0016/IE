@@ -12,6 +12,9 @@ def home(request):
 def index(request):
     return render(request, 'base/index.html')
 
+def about_us(request):
+    return render(request, 'base/team.html')
+
 def e_waste(request):
     site = str(request.GET.get('ESite'))
     print(site)
