@@ -1,35 +1,213 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<div>
-    <div>
-        <form action="{% url 'e_waste' %}" method="GET">
-            <label for="site">E-Waste Collection Site</label>
-            <select name="ESite" id="site">
-                <option value="Colac Otway" selected>Colac Otway</option>
-                <option value="php">PHP</option>
-                <option value="java">Java</option>
-                <option value="golang">Golang</option>
-                <option value="python">Python</option>
-                <option value="c#">C#</option>
-                <option value="C++">C++</option>
-                <option value="erlang">Erlang</option>
-            </select>
-            <input name="Site" type="submit" value="Submit"/>
-        </form>
 
-    </div>
-    <div>
-        {% for ewaste in ewastes %}
-        <div>
-            <h5>{{ewaste.name}}--{{ewaste.ownership}}--{{ewaste.site}}</h5>
-        </div>
+<title>E-Waste Collection Site </title>
 
-        {% endfor %}
-    </div>
+ <section class="mtop">
+        <section class="container-fluid container">
+            <section class="row-fluid">
+                <section id="donation_box">
+                    <section class="container container-fluid">
+                    <section class="row-fluid">
+                        <div class="span8 first"> <h2> E-Waste Collection Site </h2> </div>
+                    </section>
+                </section>
+                </section>
+        </section>
+            <section class="row-fluid">
+                <!-- BreadCrumbs -->
+                    <figure id="breadcrumbs" class="span12">
+                        <ul class="breadcrumb">
+                        <li><a href="{% url 'index' %}">Home</a> <span class="divider">/</span></li>
+                        <li class="active">E-Waste Collection Site </li>
+                        </ul>
+                    </figure>
+                <!-- End of breadcrumbs -->
+            </section>
+        </section>
+</section>
+
+<section id="content" class="mbtm blog">
+	<section class="container-fluid container">
+		<section class="row-fluid">
+				<section class="span9" id="blog_listing">
+
+					<figure class="blog_item">
+                        <div class="outer_lyr span12 first">
+                            <div class="inner_lyr">
+                                <div class="accordion faq_accordion" id="accordion1">
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                        <a class="accordion-toggle active" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                             <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>  <h3>	<strong> Accepted e-waste items </strong> </h3> <br>
+                                        </a>
+                                        </div>
+
+                                        <div id="collapseOne" class="accordion-body collapse in">
+                                            <div class="accordion-inner">
+                                            <p>The items below are examples of e-waste that we can accept</p>
+                                                <ul>
+                                                    <li>Televisions</li>
+                                                    <li>Desktop computers and laptop computers</li>
+                                                    <li>Computer equipment&nbsp; and accessories<br></li>
+                                                    <li>Printers and photocopiers</li>
+                                                    <li>Internet/network equipment such as servers</li>
+                                                    <li>Printers, photocopiers and scanners</li>
+                                                    <li>Household batteries</li>
+                                                    <li>Landline phones and mobile phones</li>
+                                                    <li>Electronic games and accessories<br></li>
+                                                    <li>Cameras (all types)</li>
+                                                    <li>DVD and video players</li>
+                                                    <li>Sound equipment such as&nbsp;speakers</li>
+                                                    <li>Household electrical appliances&nbsp;such as vacuum cleaners, hairdryers, toasters, kettles and microwaves<br></li>
+                                                    <li>Tools</li>
+                                                    <li>Battery packs and rechargers.<br></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                        <a class="accordion-toggle inactive" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                             <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>  <h3>	<strong> Items not accepted as e-waste</strong> </h3>
+                                        </a>
+                                        </div>
+                                        <div id="collapseTwo" class="accordion-body collapse">
+                                            <div class="accordion-inner">
+                                                <p>Please see chemical collections below for disposal options:</p>
+                                                <ul>
+                                                    <li>Smoke alarms</li>
+                                                    <li>Air conditioners</li>
+                                                    <li>Halogen lights</li>
+                                                    <li>X-ray equipment</li>
+                                                    <li>Chemicals</li>
+                                                    <li>Hazardous material and&nbsp;medical equipment</li>
+                                                    <li>Car and truck batteries</li>
+                                                    <li>White goods</li>
+                                                    <li>Compact fluorescent tubes</li>
+                                                    <li>Fluorescent tubes</li>
+                                                    <li>Paint.&nbsp;<br></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+				            </div>
+				        </div>
+					</figure>
+                    <figure class="blog_item">
+                        <div class="outer_lyr span12 first">
+                            <div class="inner_lyr">
+                                 <form action="{% url 'e_waste' %}" method="GET">
+                                     <div style="display:inline-block;">
+                                         <label><input type="radio" id="trade_in" name="drone" value="trade_in" checked> trade in</label>
+                                    </div>
+                                     <div style="display:inline-block;">
+                                         <label><input type="radio" id="dispose" name="drone" value="dispose" checked> dispose</label>
+                                    </div>
+                                     <br>
+                                    <input type="text" name="search" value="Perhaps you can find it using the search option" />
+                                    <button> <i class="icon-search"></i> </button>
+                                    <label for="site">E-Waste Collection Site</label>
+                                    <select name="ESite" id="site">
+
+                                        <option value="Colac Otway" selected>Colac Otway</option>
+                                    </select>
+                                    <input name="Site" type="submit" value="Submit"/>
+                                </form>
+
+                                <figure id="map_holder" class="span12 first mbtm2">
+                                    <iframe width="100%"  height="auto" class="map-border" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgX16AyleX9Cjjnno5uYQKyliz-_NGKO4">
+                                        <div id="map_canvas1" style="border: 2px solid #3872ac;"></div>
+                                    </iframe>
+                                </figure>
+                            </div>
+                        </div>
+                    </figure>
+                 </section>
+
+                <section id="sidebar" class="span3">
+                    <figure class="widget events">
+                        <h3> <i class="icon-bullhorn"></i> Tips </h3>
+                        <ul id="posts1">
+                            <li>
+                                <div class="post_content span12">
+                                    <h4> <a href="#" alt="post Title"> Consider if you really need a new item </a> </h4>
+                                    <p>If you purchase a new product you don’t really need, or only require for a one-off job, there’s a good chance it’s going to sit at the back of a drawer or packed away in the shed once you’re finished. Instead, see if you can borrow or rent one first. For instance, try searching online for ‘tool library near me’ for your next odd job around the house.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </figure>
+
+                    <figure class="widget events">
+                        <h3> <i class="icon-bullhorn"></i> Tips </h3>
+                        <ul id="posts2">
+                            <li>
+                                <div class="post_content span12">
+                                    <h4> <a href="#" alt="post Title"> Consider buying secondhand </a> </h4>
+                                    <p>The idea of regularly upgrading devices has become all too common in our society. With new models being released regularly, we can feel compelled to purchase the latest version. But it’s worth checking the second-hand market or purchasing an item that’s pre-loved or refurbished before buying new.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </figure>
+                     <figure class="widget events">
+                        <h3> <i class="icon-bullhorn"></i> Tips </h3>
+                        <ul id="posts3">
+                            <li>
+                                <div class="post_content span12">
+                                    <h4> <a href="#" alt="post Title"> Extend the life of your electronics </a> </h4>
+                                    <p>Try to get the most of your products by:</p>
+                                    <ul><li>keeping them clean</li><li>avoiding overcharging batteries</li><li>using protective covers on tablets and phones.</li></ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </figure>
+                     <figure class="widget events">
+                        <h3> <i class="icon-bullhorn"></i> Tips </h3>
+                        <ul id="posts4">
+                            <li>
+                                <div class="post_content span12">
+                                    <h4> <a href="#" alt="post Title"> Donate or sell working electronics </a> </h4>
+                                    <p>If your electronics are still in good condition, consider donating or selling them to others who will find a use for them. This is one of the best ways to stop unwanted electrical items from entering the waste stream.Not only does this extend the product's life, it could earn you a bit of extra money in the process.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </figure>
+                </section>
+            </section>
+        </section>
+</section>
+
+<!--    <div>-->
+<!--        <div>-->
+<!--            <form action="{% url 'e_waste' %}" method="GET">-->
+<!--                <label for="site">E-Waste Collection Site</label>-->
+<!--                <select name="ESite" id="site">-->
+<!--                    <option value="Colac Otway" selected>Colac Otway</option>-->
+<!--                    <option value="php">PHP</option>-->
+<!--                    <option value="java">Java</option>-->
+<!--                    <option value="golang">Golang</option>-->
+<!--                    <option value="python">Python</option>-->
+<!--                    <option value="c#">C#</option>-->
+<!--                    <option value="C++">C++</option>-->
+<!--                    <option value="erlang">Erlang</option>-->
+<!--                </select>-->
+<!--                <input name="Site" type="submit" value="Submit"/>-->
+<!--            </form>-->
+
+<!--        </div>-->
+<!--        <div>-->
+<!--            {% for ewaste in ewastes %}-->
+<!--            <div>-->
+<!--                <h5>{{ewaste.name}}&#45;&#45;{{ewaste.ownership}}&#45;&#45;{{ewaste.site}}</h5>-->
+<!--            </div>-->
+
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 
-<head>
 
 <style>
 html,
