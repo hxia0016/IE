@@ -661,7 +661,7 @@ span.countdown_section:first-child { display:inline-block; color:#fff; font-size
 /** Title Dropdown style **/
 
 .dropdown.open .hidden_layer, .outer_lyr{	left:auto; right:0 !important; width:400px; display:inline-block; border:1px solid #e2e2e2; background:#fff;  margin:0; -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;  box-shadow:none;}
-.dropdown .inner, .inner_lyr{ border: 3px solid #F7F7F7;  display: block;    padding:20px; -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box; background:#fff;    overflow: hidden;text-align:left;}
+.dropdown .inner, .inner_lyr{ border: 3px solid #F7F7F7;  display: block;    padding:20px; -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box; background:#fff;    overflow: hidden;text-align:left;}.map_canvas{height: 95%;width: 95%;margin: 5px;padding: 0}
 #cart_dropdown h3{ line-height:24px;} 
 .icon_alert{   background: none repeat scroll 0 0 #E14939;    border: 1px solid #AF2517;    color: #FFFFFF;    display: inline-block;    font-size: 20px;    font-weight: bold;    margin: 10px auto 0 25%;    padding: 5px 10px;}
 
