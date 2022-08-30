@@ -15,15 +15,15 @@ def index(request):
 def e_waste(request):
     site = str(request.GET.get('ESite'))
     print(site)
-    ewastes = EWasteSite.objects.all()#filter(Q(site = site))
+    ewastes = EWasteSite.objects.filter(Q(site__gov_area = site))
     context = {'ewastes': ewastes}
 
     return render(request, 'base/e_waste.html', context)
 
 def clothing(request):
-    site = str(request.GET.get('CSite'))
+    site = str(request.GET.get('CSite')) if request.GET.get('CSite') != None else ''
     print(site)
-    clothings = Clothing.objects.all()#filter(Q(district = site))
+    clothings = Clothing.objects.filter(district__district = site)
     context = {'clothings': clothings}
 
     return render(request, 'base/clothing.html', context)

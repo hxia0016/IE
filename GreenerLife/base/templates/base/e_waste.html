@@ -7,13 +7,78 @@
             <label for="site">E-Waste Collection Site</label>
             <select name="ESite" id="site">
                 <option value="Colac Otway" selected>Colac Otway</option>
-                <option value="php">PHP</option>
-                <option value="java">Java</option>
-                <option value="golang">Golang</option>
-                <option value="python">Python</option>
-                <option value="c#">C#</option>
-                <option value="C++">C++</option>
-                <option value="erlang">Erlang</option>
+                <option value="Alpine">Alpine</option>
+                <option value="Ararat">Ararat</option>
+                <option value="Ballarat">Ballarat</option>
+                <option value="Banyule">Banyule</option>
+                <option value="Bass Coast">Bass Coast</option>
+                <option value="Baw Baw">Baw Baw</option>
+                <option value="Bayside">Bayside</option>
+                <option value="Benalla">Benalla</option>
+                <option value="Boroondara">Boroondara</option>
+                <option value="Brimbank">Brimbank</option>
+                <option value="Buloke">Buloke</option>
+                <option value="Campaspe">Campaspe</option>
+                <option value="Cardinia">Cardinia</option>
+                <option value="Casey">Casey</option>
+                <option value="Central Goldfields">Central Goldfields</option>
+                <option value="Corangamite">Corangamite</option>
+                <option value="Darebin">Darebin</option>
+                <option value="East Gippsland">East Gippsland</option>
+                <option value="Falls Creek">Falls Creek</option>
+                <option value="Frankston">Frankston</option>
+                <option value="Gannawarra">Gannawarra</option>
+                <option value="Glenelg">Glenelg</option>
+                <option value="Golden Plains">Golden Plains</option>
+                <option value="Greater Bendigo">Greater Bendigo</option>
+                <option value="Greater Geelong">Greater Geelong</option>
+                <option value="Greater Shepparton">Greater Shepparton</option>
+                <option value="Hepburn">Hepburn</option>
+                <option value="Hindmarsh">Hindmarsh</option>
+                <option value="Horsham">Horsham</option>
+                <option value="Hume">Hume</option>
+                <option value="Indigo">Indigo</option>
+                <option value="Kingston">Kingston</option>
+                <option value="Latrobe">Latrobe</option>
+                <option value="Loddon">Loddon</option>
+                <option value="Macedon Ranges">Macedon Ranges</option>
+                <option value="Mansfield">Mansfield</option>
+                <option value="Melbourne">Melbourne</option>
+                <option value="Melton">Melton</option>
+                <option value="Mildura">Mildura</option>
+                <option value="Mitchell">Mitchell</option>
+                <option value="Moira">Moira</option>
+                <option value="Monash">Monash</option>
+                <option value="Moonee Valley">Moonee Valley</option>
+                <option value="Moorabool">Moorabool</option>
+                <option value="Mornington Peninsula">Mornington Peninsula</option>
+                <option value="Mount Alexander">Mount Alexander</option>
+                <option value="Moyne">Moyne</option>
+                <option value="Mt Buller">Mt Buller</option>
+                <option value="Mt Hotham">Mt Hotham</option>
+                <option value="Murrindindi">Murrindindi</option>
+                <option value="Nillumbik">Nillumbik</option>
+                <option value="Northern Grampians">Northern Grampians</option>
+                <option value="Port Phillip">Port Phillip</option>
+                <option value="Pyrenees">Pyrenees</option>
+                <option value="South Gippsland">South Gippsland</option>
+                <option value="Southern Grampians">Southern Grampians</option>
+                <option value="Stonnington">Stonnington</option>
+                <option value="Strathbogie">Strathbogie</option>
+                <option value="Surf Coast">Surf Coast</option>
+                <option value="Swan Hill">Swan Hill</option>
+                <option value="Towong">Towong</option>
+                <option value="Wangaratta">Wangaratta</option>
+                <option value="Warrnambool">Warrnambool</option>
+                <option value="Wellington">Wellington</option>
+                <option value="West Wimmera">West Wimmera</option>
+                <option value="Whitehorse">Whitehorse</option>
+                <option value="Whittlesea">Whittlesea</option>
+                <option value="Wodonga">Wodonga</option>
+                <option value="Wyndham">Wyndham</option>
+                <option value="Yarra">Yarra</option>
+                <option value="Yarra Ranges">Yarra Ranges</option>
+                <option value="Yarriambiack">Yarriambiack</option>
             </select>
             <input name="Site" type="submit" value="Submit"/>
         </form>
@@ -31,7 +96,7 @@
 
 <head>
 
-<style>
+    <style>
 html,
 body,
 #map_canvas {
@@ -41,21 +106,22 @@ body,
   padding: 0px
 }
 
+
     </style>
 </head>
 <body>
 
 </body>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgX16AyleX9Cjjnno5uYQKyliz-_NGKO4"></script>
-    <div id="map_canvas" style="border: 2px solid #3872ac;"></div>
+<div id="map_canvas" style="border: 2px solid #3872ac;"></div>
 
 
 <body>
-    <script>
+<script>
     var locations = [];
     var i =0;
     {% for ewaste in ewastes %}
-        locations[i] = "{{ewaste.name}}"+","+"{{ewaste.site}}";
+        locations[i] = "{{ewaste.name}}"+","+"{{ewaste.site}}" + ",Australia";
         i+=1;
     {% endfor %}
 
@@ -124,7 +190,8 @@ function createMarker(results) {
 }
 
 
-    </script>
+
+</script>
 
 </body>
 
