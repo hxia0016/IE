@@ -97,120 +97,137 @@
 				        </div>
 					</figure>
                     <figure class="blog_item">
-                        <div class="outer_lyr span12 first">
-                            <div class="inner_lyr">
-                                 <form action="{% url 'e_waste' %}" method="GET">
-                                     <div style="display:inline-block;">
-                                         <label><input type="radio" id="trade_in" name="drone" value="trade_in" checked> trade in</label>
-                                    </div>
-                                     <div style="display:inline-block;">
-                                         <label><input type="radio" id="dispose" name="drone" value="dispose" checked> dispose</label>
-                                    </div>
-                                     <br>
-<!--                                    <input type="text" name="search" value="Perhaps you can find it using the search option" />-->
-<!--                                    <button> <i class="icon-search"></i> </button>-->
-                                    <label for="site">E-Waste Collection Site</label>
-                                    <select name="ESite" id="site" >
-                                        <option value="Alpine" >Alpine</option>
-                                        <option value="Ararat">Ararat</option>
-                                        <option value="Ballarat">Ballarat</option>
-                                        <option value="Banyule">Banyule</option>
-                                        <option value="Bass Coast">Bass Coast</option>
-                                        <option value="Baw Baw">Baw Baw</option>
-                                        <option value="Bayside">Bayside</option>
-                                        <option value="Benalla">Benalla</option>
-                                        <option value="Boroondara">Boroondara</option>
-                                        <option value="Brimbank">Brimbank</option>
-                                        <option value="Buloke">Buloke</option>
-                                        <option value="Campaspe">Campaspe</option>
-                                        <option value="Cardinia">Cardinia</option>
-                                        <option value="Casey">Casey</option>
-                                        <option value="Central Goldfields">Central Goldfields</option>
-                                        <option value="Corangamite">Corangamite</option>
-                                        <option value="Darebin">Darebin</option>
-                                        <option value="East Gippsland">East Gippsland</option>
-                                        <option value="Falls Creek">Falls Creek</option>
-                                        <option value="Frankston">Frankston</option>
-                                        <option value="Gannawarra">Gannawarra</option>
-                                        <option value="Glenelg">Glenelg</option>
-                                        <option value="Golden Plains">Golden Plains</option>
-                                        <option value="Greater Bendigo">Greater Bendigo</option>
-                                        <option value="Greater Geelong">Greater Geelong</option>
-                                        <option value="Greater Shepparton">Greater Shepparton</option>
-                                        <option value="Hepburn">Hepburn</option>
-                                        <option value="Hindmarsh">Hindmarsh</option>
-                                        <option value="Horsham">Horsham</option>
-                                        <option value="Hume">Hume</option>
-                                        <option value="Indigo">Indigo</option>
-                                        <option value="Kingston">Kingston</option>
-                                        <option value="Latrobe">Latrobe</option>
-                                        <option value="Loddon">Loddon</option>
-                                        <option value="Macedon Ranges">Macedon Ranges</option>
-                                        <option value="Mansfield">Mansfield</option>
-                                        <option value="Melbourne">Melbourne</option>
-                                        <option value="Melton">Melton</option>
-                                        <option value="Mildura">Mildura</option>
-                                        <option value="Mitchell">Mitchell</option>
-                                        <option value="Moira">Moira</option>
-                                        <option value="Monash">Monash</option>
-                                        <option value="Moonee Valley">Moonee Valley</option>
-                                        <option value="Moorabool">Moorabool</option>
-                                        <option value="Mornington Peninsula">Mornington Peninsula</option>
-                                        <option value="Mount Alexander">Mount Alexander</option>
-                                        <option value="Moyne">Moyne</option>
-                                        <option value="Mt Buller">Mt Buller</option>
-                                        <option value="Mt Hotham">Mt Hotham</option>
-                                        <option value="Murrindindi">Murrindindi</option>
-                                        <option value="Nillumbik">Nillumbik</option>
-                                        <option value="Northern Grampians">Northern Grampians</option>
-                                        <option value="Port Phillip">Port Phillip</option>
-                                        <option value="Pyrenees">Pyrenees</option>
-                                        <option value="South Gippsland">South Gippsland</option>
-                                        <option value="Southern Grampians">Southern Grampians</option>
-                                        <option value="Stonnington">Stonnington</option>
-                                        <option value="Strathbogie">Strathbogie</option>
-                                        <option value="Surf Coast">Surf Coast</option>
-                                        <option value="Swan Hill">Swan Hill</option>
-                                        <option value="Towong">Towong</option>
-                                        <option value="Wangaratta">Wangaratta</option>
-                                        <option value="Warrnambool">Warrnambool</option>
-                                        <option value="Wellington">Wellington</option>
-                                        <option value="West Wimmera">West Wimmera</option>
-                                        <option value="Whitehorse">Whitehorse</option>
-                                        <option value="Whittlesea">Whittlesea</option>
-                                        <option value="Wodonga">Wodonga</option>
-                                        <option value="Wyndham">Wyndham</option>
-                                        <option value="Yarra">Yarra</option>
-                                        <option value="Yarra Ranges">Yarra Ranges</option>
-                                        <option value="Yarriambiack">Yarriambiack</option>
-                                    </select>
-                                    <input name="Site" type="submit" value="Submit"/>
-                                </form>
-                                <div>
-                                    <div class="accordion faq_accordion" id="accordion3">
+                    <div class="outer_lyr span12 first">
+                        <div class="inner_lyr">
+                            <form action="{% url 'e_waste' %}" method="GET">
+                                <div style="display:inline-block;">
+                                    <label><input type="radio" id="trade_in" name="drone" value="trade_in" checked>
+                                        trade in</label>
+                                </div>
+                                <div style="display:inline-block;">
+                                    <label><input type="radio" id="dispose" name="drone" value="dispose" checked>
+                                        dispose</label>
+                                </div>
+                                <br>
+                                <!--                                    <input type="text" name="search" value="Perhaps you can find it using the search option" />-->
+                                <!--                                    <button> <i class="icon-search"></i> </button>-->
+                                <label for="site">E-Waste Collection Site</label>
+                                <select name="ESite" id="site">
+                                    <option value="Alpine">Alpine</option>
+                                    <option value="Ararat">Ararat</option>
+                                    <option value="Ballarat">Ballarat</option>
+                                    <option value="Banyule">Banyule</option>
+                                    <option value="Bass Coast">Bass Coast</option>
+                                    <option value="Baw Baw">Baw Baw</option>
+                                    <option value="Bayside">Bayside</option>
+                                    <option value="Benalla">Benalla</option>
+                                    <option value="Boroondara">Boroondara</option>
+                                    <option value="Brimbank">Brimbank</option>
+                                    <option value="Buloke">Buloke</option>
+                                    <option value="Campaspe">Campaspe</option>
+                                    <option value="Cardinia">Cardinia</option>
+                                    <option value="Casey">Casey</option>
+                                    <option value="Central Goldfields">Central Goldfields</option>
+                                    <option value="Corangamite">Corangamite</option>
+                                    <option value="Darebin">Darebin</option>
+                                    <option value="East Gippsland">East Gippsland</option>
+                                    <option value="Falls Creek">Falls Creek</option>
+                                    <option value="Frankston">Frankston</option>
+                                    <option value="Gannawarra">Gannawarra</option>
+                                    <option value="Glenelg">Glenelg</option>
+                                    <option value="Golden Plains">Golden Plains</option>
+                                    <option value="Greater Bendigo">Greater Bendigo</option>
+                                    <option value="Greater Geelong">Greater Geelong</option>
+                                    <option value="Greater Shepparton">Greater Shepparton</option>
+                                    <option value="Hepburn">Hepburn</option>
+                                    <option value="Hindmarsh">Hindmarsh</option>
+                                    <option value="Horsham">Horsham</option>
+                                    <option value="Hume">Hume</option>
+                                    <option value="Indigo">Indigo</option>
+                                    <option value="Kingston">Kingston</option>
+                                    <option value="Latrobe">Latrobe</option>
+                                    <option value="Loddon">Loddon</option>
+                                    <option value="Macedon Ranges">Macedon Ranges</option>
+                                    <option value="Mansfield">Mansfield</option>
+                                    <option value="Melbourne">Melbourne</option>
+                                    <option value="Melton">Melton</option>
+                                    <option value="Mildura">Mildura</option>
+                                    <option value="Mitchell">Mitchell</option>
+                                    <option value="Moira">Moira</option>
+                                    <option value="Monash">Monash</option>
+                                    <option value="Moonee Valley">Moonee Valley</option>
+                                    <option value="Moorabool">Moorabool</option>
+                                    <option value="Mornington Peninsula">Mornington Peninsula</option>
+                                    <option value="Mount Alexander">Mount Alexander</option>
+                                    <option value="Moyne">Moyne</option>
+                                    <option value="Mt Buller">Mt Buller</option>
+                                    <option value="Mt Hotham">Mt Hotham</option>
+                                    <option value="Murrindindi">Murrindindi</option>
+                                    <option value="Nillumbik">Nillumbik</option>
+                                    <option value="Northern Grampians">Northern Grampians</option>
+                                    <option value="Port Phillip">Port Phillip</option>
+                                    <option value="Pyrenees">Pyrenees</option>
+                                    <option value="South Gippsland">South Gippsland</option>
+                                    <option value="Southern Grampians">Southern Grampians</option>
+                                    <option value="Stonnington">Stonnington</option>
+                                    <option value="Strathbogie">Strathbogie</option>
+                                    <option value="Surf Coast">Surf Coast</option>
+                                    <option value="Swan Hill">Swan Hill</option>
+                                    <option value="Towong">Towong</option>
+                                    <option value="Wangaratta">Wangaratta</option>
+                                    <option value="Warrnambool">Warrnambool</option>
+                                    <option value="Wellington">Wellington</option>
+                                    <option value="West Wimmera">West Wimmera</option>
+                                    <option value="Whitehorse">Whitehorse</option>
+                                    <option value="Whittlesea">Whittlesea</option>
+                                    <option value="Wodonga">Wodonga</option>
+                                    <option value="Wyndham">Wyndham</option>
+                                    <option value="Yarra">Yarra</option>
+                                    <option value="Yarra Ranges">Yarra Ranges</option>
+                                    <option value="Yarriambiack">Yarriambiack</option>
+                                </select>
+                                <input name="Site" type="submit" value="Submit"/>
+                            </form>
+                            <div>
+                                <div class="accordion faq_accordion" id="accordion3">
                                     <div class="accordion-group">
                                         <div class="accordion-heading">
-                                        <a class="accordion-toggle inactive" data-toggle="collapse" data-parent="#accordion3" href="#collapse1">
-                                             <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>  <h3>	<strong> E-waste Collection Point </strong> </h3> <br>
-                                        </a>
+                                            <a class="accordion-toggle active" data-toggle="collapse"
+                                               data-parent="#accordion3" href="#collapse1">
+                                                <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
+                                                <h3><strong> E-waste Collection Point </strong></h3> <br>
+                                            </a>
                                         </div>
 
-                                        <div id="collapse1" class="accordion-body collapse">
+                                        <div id="collapse1" class="accordion-body collapse in">
                                             <div class="accordion-inner">
-                                                {% for ewaste in ewastes %}
-                                                <ul>
-                                                    <li>{{ewaste.name}}--{{ewaste.ownership}}--{{ewaste.site}}</li>
-                                                </ul>
-                                                {% endfor %}
+                                                <table border="1">
+                                                    {% for ewaste in ewastes %}
+                                                    <tr>
+                                                        <th>
+                                                            {{ewaste.name}}
+                                                        </th>
+                                                        <th>
+                                                            {{ewaste.ownership}}
+                                                        </th>
+                                                        <th>
+                                                            {{ewaste.site}}
+                                                        </th>
+                                                    </tr>
+
+                                                    {% endfor %}
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgX16AyleX9Cjjnno5uYQKyliz-_NGKO4"></script>
-                                <div id="map_canvas" style="border: 2px solid #3872ac; min-height: 500px; width: 100%; margin: 5px; padding: 0px;"></div>
                             </div>
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgX16AyleX9Cjjnno5uYQKyliz-_NGKO4"></script>
+                            <div id="map_canvas"
+                                 style="border: 2px solid #3872ac; min-height: 500px; width: 100%; margin: 5px; padding: 0px;"></div>
                         </div>
-                    </figure>
+                    </div>
+                </figure>
                  </section>
 
                 <section id="sidebar" class="span3">
@@ -282,6 +299,8 @@
 
 var geocoder;
 var map;
+var lat;
+var lon;
 var bounds = new google.maps.LatLngBounds();
 
 function initialize() {
@@ -319,12 +338,62 @@ function geocodeAddress(locations, i) {
           address: address
 
         })
-        //infoWindow(marker, map, title, address);
+        infoWindow(marker, map, address,results[0].geometry.location);
         bounds.extend(marker.getPosition());
         map.fitBounds(bounds);
       }
     });
 }
+
+function infoWindow(marker, map, address, position) {
+  getLocation();
+  google.maps.event.addListener(marker, 'click', function() {
+    var lat1 = position.lat();
+    var lon1 = position.lng();
+    var distance = calcCrow(lat, lon, lat1, lon1).toFixed(2);
+    console.log(lat, lon, lat1, lon1);
+    var html =  "<div><h3>" + address  + "</h3><p>"+distance.toString()+"Km from your location." + "<br></div></p></div>";
+    iw = new google.maps.InfoWindow({
+      content: html,
+      maxWidth: 350
+    });
+    iw.open(map, marker);
+  });
+}
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  lat= Number(position.coords.latitude);
+  lon = Number(position.coords.longitude);
+}
+
+function calcCrow(lat1, lon1, lat2, lon2)
+    {
+      var R = 6371; // km
+      var dLat = toRad(lat2-lat1);
+      var dLon = toRad(lon2-lon1);
+      var lat1 = toRad(lat1);
+      var lat2 = toRad(lat2);
+
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      var d = R * c;
+      return d;
+    }
+
+    // Converts numeric degrees to radians
+    function toRad(Value)
+    {
+        return Value * Math.PI / 180;
+    }
 
 
 
@@ -341,9 +410,6 @@ function createMarker(results) {
   map.fitBounds(bounds);
   return marker;
 }
-
-
-
 </script>
 
 </body>
