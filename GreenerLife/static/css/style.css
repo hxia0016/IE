@@ -100,7 +100,7 @@ a img:hover { opacity:0.6; transition: width 1s; -moz-transition: 1s; /* Firefox
 .mtop{ margin-top:50px;}
 .h-line{ border-top:2px solid #31c8ce; width:75px; position:absolute; bottom:0; left:0;}
 .mtp{ margin-top:150px; }
-#content h3{ font-size:18px; line-height:24px; margin:0 0 12px;}
+#content h3{ font-size:20px; line-height:24px; margin:0 0 12px;}
 .mbtm2 { margin-bottom:30px !important;}
 .copyrights{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
 
@@ -147,7 +147,7 @@ body{ background:url('../images/bg_main.png') top center repeat;}
 /** Navigation **/
 #nav{ background:	#363636; border-bottom:2px solid #1b1b1b;}
 #nav .navbar{ margin-bottom:0; display:inline-block; float:left;}
-#nav .navbar-inner{ background:none !important; background-image:none !important; border:0px !important; box-shadow:none; padding-left:0; padding-right:0;}
+#nav .navbar-inner{ background:none !important; background-image:None !important; border:0px !important; box-shadow:none; padding-left:0; padding-right:0;}
 #nav .navbar li:hover{ background:#252525;}
 
 

@@ -3,94 +3,103 @@
 {% block content %}
 <title>E-Waste Collection Site </title>
 
-<section class="mtop">
-    <section class="container-fluid container">
-        <section class="row-fluid">
-            <section id="donation_box">
-                <section class="container container-fluid">
+ <section class="mtop">
+        <section class="container-fluid container">
+            <section class="row-fluid">
+                <section id="donation_box">
+                    <section class="container container-fluid">
                     <section class="row-fluid">
-                        <div class="span8 first"><h2> E-Waste Collection Site </h2></div>
+                        <div class="span8 first"> <h2> Clothing Collection Site </h2> </div>
                     </section>
                 </section>
+                </section>
+        </section>
+            <section class="row-fluid">
+                <!-- BreadCrumbs -->
+                    <figure id="breadcrumbs" class="span12">
+                        <ul class="breadcrumb">
+                        <li><a href="{% url 'index' %}">Home</a> <span class="divider">/</span></li>
+                        <li class="active">Clothing Collection Site </li>
+                        </ul>
+                    </figure>
+                <!-- End of breadcrumbs -->
             </section>
         </section>
-        <section class="row-fluid">
-            <!-- BreadCrumbs -->
-            <figure id="breadcrumbs" class="span12">
-                <ul class="breadcrumb">
-                    <li><a href="{% url 'index' %}">Home</a> <span class="divider">/</span></li>
-                    <li class="active">E-Waste Collection Site</li>
-                </ul>
-            </figure>
-            <!-- End of breadcrumbs -->
-        </section>
     </section>
-</section>
 
 <section id="content" class="mbtm blog">
-    <section class="container-fluid container">
-        <section class="row-fluid">
-            <section class="span12" id="blog_listing">
-
-                <figure class="blog_item">
-                    <div class="outer_lyr span12 first">
-                        <div class="inner_lyr">
-                            <div class="accordion faq_accordion" id="accordion1">
-                                <div class="accordion-group">
-                                    <div class="accordion-heading">
-                                        <a class="accordion-toggle active" data-toggle="collapse"
-                                           data-parent="#accordion2" href="#collapseOne">
-                                            <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
-                                            <h3><strong> Used Clothing </strong></h3>
-                                        </a>
-                                    </div>
-                                    <div id="collapseOne" class="accordion-body collapse in">
-                                        <div class="accordion-inner">
-                                            <p>Retailers like H&M, Uniqlo, Zara accepts clothing and textiles for
-                                                recycle and resue. MacPac have trade-in programs for worn clothing in
-                                                exchange for in-store credit. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-group">
-                                    <div class="accordion-heading">
-                                        <a class="accordion-toggle inactive" data-toggle="collapse"
-                                           data-parent="#accordion2" href="#collapseTwo">
-                                            <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
-                                            <h3><strong> Quilt Covers and Towel</strong></h3>
-                                        </a>
-                                    </div>
-                                    <div id="collapseTwo" class="accordion-body collapse">
-                                        <div class="accordion-inner">
-                                            <p>Sheridan accepts used quilt and towel for recycling into new product in
-                                                exchange for 5% off your next purchase.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-group">
-                                    <div class="accordion-heading">
-                                        <a class="accordion-toggle inactive" data-toggle="collapse"
-                                           data-parent="#accordion2" href="#collapse3">
-                                            <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
-                                            <h3><strong> Uniforms</strong></h3>
-                                        </a>
-                                    </div>
-                                    <div id="collapse3" class="accordion-body collapse">
-                                        <div class="accordion-inner">
-                                            <h4>School Uniforms</h4>
-                                            <p>Visit The Uniform Exchange to sell, buy or donate unused school uniforms
-                                                in Australia </p>
-                                            <h4>Work Uniforms </h4>
-                                            <p>Loop Upcycling provides recycling services for corporate workwear and
-                                                assiting companies to adopt sustainable waste management practices </p>
-                                        </div>
-                                    </div>
-                                </div>
+	<section class="container-fluid container">
+		<section class="row-fluid">
+				<section class="span12" id="blog_listing">
+                    <figure class="blog_item">
+                        <div class="outer_lyr span12 first">
+                            <div class="inner_lyr">
+                                <h3>Clothing Recycling</h3>
+                                <p style="font-size: 17px">Did you know the average American throws away 70lbs of textiles per year? The fact that only 15% of unwanted clothing is actually recycled is a huge part of the problem. There are a few different options when it comes to unwanted or worn-out clothing depending on the condition. We will break them each down and help you decide how to responsibly get rid of your unwanted clothing and accessories.</p>
                             </div>
                         </div>
-                    </div>
-                </figure>
-                <figure class="blog_item">
+                    </figure>
+					<figure class="blog_item">
+                        <div class="outer_lyr span12 first">
+                            <div class="inner_lyr">
+                                <div class="accordion faq_accordion" id="accordion1">
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                        <a class="accordion-toggle active" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+                                             <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>  <h3>	<strong> Used Clothing </strong> </h3>
+                                        </a>
+                                        </div>
+                                        <div id="collapseOne" class="accordion-body collapse in">
+                                            <div class="accordion-inner">
+                                            <p>Retailers like H&M, Uniqlo, Zara accepts clothing and textiles for recycle and resue. MacPac have trade-in programs for worn clothing in exchange for in-store credit.  </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                        <a class="accordion-toggle inactive" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+                                             <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>  <h3>	<strong> Quilt Covers and Towel</strong> </h3>
+                                        </a>
+                                        </div>
+                                        <div id="collapseTwo" class="accordion-body collapse">
+                                            <div class="accordion-inner">
+                                                <p>Sheridan accepts used quilt and towel for recycling into new product in exchange for 5% off your next purchase.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                        <a class="accordion-toggle inactive" data-toggle="collapse" data-parent="#accordion1" href="#collapse3">
+                                             <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>  <h3>	<strong> Uniforms</strong> </h3>
+                                        </a>
+                                        </div>
+                                        <div id="collapse3" class="accordion-body collapse">
+                                            <div class="accordion-inner">
+                                                <h4>School Uniforms</h4>
+                                                <p>Visit The Uniform Exchange to sell, buy or donate unused school uniforms in Australia </p>
+                                                <h4>Work Uniforms </h4>
+                                                <p>Loop Upcycling provides recycling services for corporate workwear and assiting companies to adopt sustainable waste management practices </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                        <a class="accordion-toggle inactive" data-toggle="collapse" data-parent="#accordion1" href="#collapse4">
+                                             <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>  <h3>	<strong>Donation Programs </strong> </h3>
+                                        </a>
+                                        </div>
+                                        <div id="collapse4" class="accordion-body collapse">
+                                            <div class="accordion-inner">
+                                                <p>Visit Australian Red Cross, Red Nose and Fitted for Work to check on how you can donate pre-owned clothes. </p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+				            </div>
+				        </div>
+					</figure>
+                    <figure class="blog_item">
                     <div class="outer_lyr span12 first">
                         <div class="inner_lyr">
                             <input type="text" name="search" value="Perhaps you can find it using the search option"/>
@@ -280,12 +289,13 @@
                         </div>
                     </div>
                 </figure>
-            </section>
+	</section>
 
-        </section>
+</section>
 
 
-    </section>
+
+</section>
 </section>
 <head>
 
