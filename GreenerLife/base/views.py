@@ -12,6 +12,12 @@ def home(request):
 def index(request):
     return render(request, 'base/index.html')
 
+def about_us(request):
+    return render(request, 'base/team.html')
+
+def e_waste_classification(request):
+    return render(request, 'base/e-waste-classification.html')
+
 def e_waste(request):
     site = str(request.GET.get('ESite'))
     print(site)
@@ -27,4 +33,3 @@ def clothing(request):
     context = {'clothings': clothings}
 
     return render(request, 'base/clothing.html', context)
-

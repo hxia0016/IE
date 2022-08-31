@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Start of Header -->
+	<header>
+  <!-- Start Main Header -->
+	 <section class="top_bar">
+	<section class="container-fluid container">
+		<section class="row-fluid">
+			<article class="span6">
+				<ul class="details">
+					<li><i class="icon-envelope-alt"> </i> TA34-GreenerLife</li>
+				</ul>
+			</article>
+			<article class="span4 offset2">
+				<ul class="social">
+					<li> <a href="https://www.youtube.com/c/SustainabilityVictoria" class="s"> Youtube</a> </li>
+					<li> <a href="https://twitter.com/SustainVic" class="s5"> Twitter</a> </li>
+					<li> <a href="https://www.instagram.com/sustainabilityvictoria/" class="s2"> Dribble</a> </li>
+					<li> <a href="https://www.facebook.com/pages/category/Environmental-Service/VicRecycle-105765307963504/" class="s1"> Facebook</a> </li>
+				</ul>
+			</article>
+		</section>
+	</section>
+  </section>
+  <section class="logo_container">
+		  <section class="container-fluid container">
+				<section class="row-fluid">
+					  <section class="span4">
+							<h1 id="logo">
+								<a href="{% url 'index' %}"> GreenerLife</a>
+							</h1>
+						</section>
+
+				</section>
+			</section>
+  </section>
+	<!-- Main Nav Bar -->
+			<nav id="nav">
+				<section class="container-fluid container">
+					<section class="row-fluid">
+			  <div class="navbar navbar-inverse">
+				<div class="navbar-inner">
+				  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				  <div class="nav-collapse collapse">
+					<ul class="nav">
+
+					<li class="active"> <a href="{% url 'index' %}"> Home </a> </li>
+
+
+					  <li class="dropdown"> <a class="dropdown-toggle"> E-waste	<b class="caret"></b> </a>
+						<ul class="dropdown-menu">
+							<li><a href="{% url 'e_waste_classification' %}">E-waste classification</a></li>
+							<li><a href="{% url 'e_waste' %}">E-Waste Site</a></li>
+							<li><a href="event_venue.html">placeholder</a></li>
+						</ul>
+					  </li>
+						clothing
+
+					  <li > <a class="dropdown-toggle" href="{% url 'clothing' %}"> Clothing </a></li>
+						<ul class="dropdown-menu">
+							<li><a href="crowdfunding_listing.html">placeholder</a></li>
+							<li><a href="crowdfunding_detail.html">placeholder</a></li>
+							<li><a href="crowdfunding_payment.html">placeholder</a></li>
+						</ul>
+					  </li>
+
+ 					  <li class="dropdown"> <a class="dropdown-toggle" href="#" >  placeholder <b class="caret"></b> </a>
+						<ul class="dropdown-menu">
+							<li><a href="#">placeholder</a></li>
+							<li><a href="#">placeholder</a></li>
+							<li><a href="#">placeholder</a></li>
+							<li><a href="#">placeholder</a></li>
+							<li><a href="#">placeholder</a></li>
+						</ul>
+					  </li>
+
+  					  <li class="dropdown"> <a class="dropdown-toggle" href="#" >  placeholder<b class="caret"></b> </a>
+						<ul class="dropdown-menu">
+						<li><a href="#">placeholder</a></li>
+							<li><a href="#">placeholder</a></li>
+ 						</ul>
+					  </li>
+
+   					  <li class="dropdown"> <a class="dropdown-toggle" href="{% url 'about_us' %}" >  About Us <b class=""></b> </a></li>
+					</ul>
+				  </div>
+				  <!--/.nav-collapse -->
+				</div>
+				<!-- /.navbar-inner -->
+			  </div>
+			  <!-- /.navbar -->
+					</section>
+				</section>
+			</nav>
+	<!-- End Main Nav Bar -->
+	 </header>
+</html>

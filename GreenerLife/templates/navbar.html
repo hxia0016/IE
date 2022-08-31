@@ -30,7 +30,6 @@
 </head>
 <body>
 <!-- Start Main Wrapper -->
-<div class="wrapper">
 <!-- Start of Header -->
 	<header>
   <!-- Start Main Header -->
@@ -63,13 +62,19 @@
 					  <li class="dropdown"> <a class="dropdown-toggle"> E-waste	<b class="caret"></b> </a>
 						<ul class="dropdown-menu">
 							<li><a href="{% url 'e_waste' %}">E-Waste Site</a></li>
-							<li><a href="event_calander.html">placeholder</a></li>
+							<li><a href="{% url 'e_waste_classification' %}">E-waste classification</a></li>
 							<li><a href="event_venue.html">placeholder</a></li>
 						</ul>
 					  </li>
 						clothing
 
 					  <li > <a class="dropdown-toggle" href="{% url 'clothing' %}"> Clothing </a></li>
+						<ul class="dropdown-menu">
+							<li><a href="crowdfunding_listing.html">placeholder</a></li>
+							<li><a href="crowdfunding_detail.html">placeholder</a></li>
+							<li><a href="crowdfunding_payment.html">placeholder</a></li>
+						</ul>
+					  </li>
 
  					  <li class="dropdown"> <a class="dropdown-toggle" href="#" >  placeholder <b class="caret"></b> </a>
 						<ul class="dropdown-menu">
@@ -88,28 +93,7 @@
  						</ul>
 					  </li>
 
-   					  <li class="dropdown"> <a class="dropdown-toggle" href="gallery_1_col.html" >  placeholder <b class="caret"></b> </a>
-						<ul class="dropdown-menu">
-						<li>	<a href="#">placeholder			</a></li>
-						<li>	<a href="#">	placeholder		</a></li>
-						<li>	<a href="#">	placeholder	</a></li>
-						<li>	<a href="#">	placeholder		</a></li>
-						<li>	<a href="#">	placeholder		</a></li>
-
- 						</ul>
-					  </li>
-
-  					  <li class="dropdown"> <a class="dropdown-toggle" href="#" >  Pages <b class="caret"></b> </a>
-						<ul class="dropdown-menu">
-						<li><a href="#">Frequently Asked Questions </a></li>
-						<li><a href="#">404 Page </a></li>
-						<li><a href="#">Search Page </a></li>
-						<li><a href="#">Sitemap </a></li>
-						<li><a href="##shortcodes.html">ShortCodes </a></li>
- 						</ul>
-					  </li>
-
-						<li> <a href="#"> Contact </a> </li>
+   					  <li class="dropdown"> <a class="dropdown-toggle" href="{% url 'about_us' %}" >  About Us <b class=""></b> </a></li>
 					</ul>
 				  </div>
 				  <!--/.nav-collapse -->
@@ -123,6 +107,5 @@
 	<!-- End Main Nav Bar -->
 	 </header>
 <!-- End of Header -->
-</div>
 </body>
 </html>
