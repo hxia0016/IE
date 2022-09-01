@@ -102,8 +102,8 @@
                     <figure class="blog_item">
                     <div class="outer_lyr span12 first">
                         <div class="inner_lyr">
-                            <input type="text" name="search" value="Perhaps you can find it using the search option"/>
-                            <button><i class="icon-search"></i></button>
+                            <!-- <input type="text" name="search" value="Perhaps you can find it using the search option"/>
+                            <button><i class="icon-search"></i></button> -->
 
                             <form action="{% url 'clothing' %}" method="GET">
                                 <label for="site">Clothing Disposal Site</label>
@@ -261,7 +261,7 @@
                                                     <tr>
                                                         <th>Name</th>
                                                         <th>Address</th>
-                                                        <th>Telephone</th>
+                                                        <th>District</th>
                                                     </tr>
                                                     {% for clothing in clothings %}
                                                     <tr>

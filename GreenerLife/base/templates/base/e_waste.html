@@ -100,7 +100,7 @@
                     <div class="outer_lyr span12 first">
                         <div class="inner_lyr">
                             <form action="{% url 'e_waste' %}" method="GET">
-                                <div style="display:inline-block;">
+                                <!--<div style="display:inline-block;">
                                     <label><input type="radio" id="trade_in" name="drone" value="trade_in" checked>
                                         trade in</label>
                                 </div>
@@ -108,7 +108,7 @@
                                     <label><input type="radio" id="dispose" name="drone" value="dispose" checked>
                                         dispose</label>
                                 </div>
-                                <br>
+                                <br> -->
                                 <!--                                    <input type="text" name="search" value="Perhaps you can find it using the search option" />-->
                                 <!--                                    <button> <i class="icon-search"></i> </button>-->
                                 <label for="site">E-Waste Collection Site</label>
@@ -202,6 +202,11 @@
                                         <div id="collapse1" class="accordion-body collapse in">
                                             <div class="accordion-inner">
                                                 <table border="1">
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Ownership</th>
+                                                        <th>District</th>
+                                                    </tr>
                                                     {% for ewaste in ewastes %}
                                                     <tr>
                                                         <th>
