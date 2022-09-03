@@ -2,7 +2,7 @@
 
 {% block content %}
 <title>E-Waste Collection Site </title>
-
+    {% load static %}
  <section class="mtop">
         <section class="container-fluid container">
             <section class="row-fluid">
@@ -52,6 +52,7 @@
                                         <div id="collapseOne" class="accordion-body collapse in">
                                             <div class="accordion-inner">
                                             <p>Retailers like H&M, Uniqlo, Zara accepts clothing and textiles for recycle and resue. MacPac have trade-in programs for worn clothing in exchange for in-store credit.  </p>
+                                            <img src="{% static 'images/Used Clothing.png'%}"/>
                                             </div>
                                         </div>
                                     </div>
@@ -64,6 +65,8 @@
                                         <div id="collapseTwo" class="accordion-body collapse">
                                             <div class="accordion-inner">
                                                 <p>Sheridan accepts used quilt and towel for recycling into new product in exchange for 5% off your next purchase.</p>
+                                                <img src="{% static 'images/Quilt Covers and Towel.png'%}"/>
+
                                             </div>
                                         </div>
                                     </div>
@@ -79,7 +82,9 @@
                                                 <p>Visit The Uniform Exchange to sell, buy or donate unused school uniforms in Australia </p>
                                                 <h4>Work Uniforms </h4>
                                                 <p>Loop Upcycling provides recycling services for corporate workwear and assiting companies to adopt sustainable waste management practices </p>
+                                                <img src="{% static 'images/Uniforms.png'%}"/>
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="accordion-group">
@@ -91,7 +96,7 @@
                                         <div id="collapse4" class="accordion-body collapse">
                                             <div class="accordion-inner">
                                                 <p>Visit Australian Red Cross, Red Nose and Fitted for Work to check on how you can donate pre-owned clothes. </p>
-
+                                                <img src="{% static 'images/download.png'%}"/>
                                             </div>
                                         </div>
                                     </div>

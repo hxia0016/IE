@@ -654,7 +654,7 @@ span.countdown_section:first-child { display:inline-block; color:#fff; font-size
 .faq_accordion .toggle_faq{ width:2%; margin-right:1%; background:#1db2b8; display:inline-block; padding:20px 0.5%; text-align:center;}
 .faq_accordion .accordion-group{ border:0px; overflow:hidden; }
 .faq_accordion .accordion-body{ width:95.5%; background:#fff; float:right; margin:10px 0;}
-.faq_accordion .accordion-inner{  border: 3px solid #F7F7F7;  display: block;    padding: 3px 1%; -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.faq_accordion .accordion-inner{    display: block;    padding: 3px 1%; -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
 .faq_accordion .accordion-body.in.collapse{ border:1px solid #e2e2e2;}
 
 

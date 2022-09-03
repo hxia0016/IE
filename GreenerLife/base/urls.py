@@ -10,6 +10,5 @@ urlpatterns = [
     path('index/', views.index, name = "index"),
     path('about_us/', views.about_us, name = "about_us"),
     path('e_waste_classification/', views.e_waste_classification, name = "e_waste_classification"),
-
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
