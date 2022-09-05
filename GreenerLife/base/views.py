@@ -21,7 +21,7 @@ def e_waste_classification(request):
 def e_waste(request):
     site = str(request.GET.get('ESite'))
     print(site)
-    ewastes = EWasteSite.objects.filter(Q(site__gov_area = site))
+    ewastes = EWasteSite.objects.all()
     context = {'ewastes': ewastes}
 
     return render(request, 'base/e_waste.html', context)
@@ -29,7 +29,7 @@ def e_waste(request):
 def clothing(request):
     site = str(request.GET.get('CSite')) if request.GET.get('CSite') != None else ''
     print(site)
-    clothings = Clothing.objects.filter(district__district = site)
+    clothings = Clothing.objects.all()
     context = {'clothings': clothings}
 
     return render(request, 'base/clothing.html', context)

@@ -112,7 +112,7 @@
                                 <!--                                    <input type="text" name="search" value="Perhaps you can find it using the search option" />-->
                                 <!--                                    <button> <i class="icon-search"></i> </button>-->
                                 <label for="site">E-Waste Collection Site</label>
-                                <select name="ESite" id="site">
+                                <select class="target" name="ESite" id="site">
                                     <option value="Alpine">Alpine</option>
                                     <option value="Ararat">Ararat</option>
                                     <option value="Ballarat">Ballarat</option>
@@ -186,7 +186,7 @@
                                     <option value="Yarra Ranges">Yarra Ranges</option>
                                     <option value="Yarriambiack">Yarriambiack</option>
                                 </select>
-                                <input name="Site" type="submit" value="Submit"/>
+
                             </form>
                             <div>
                                 <div class="accordion faq_accordion" id="accordion3">
@@ -201,32 +201,19 @@
 
                                         <div id="collapse1" class="accordion-body collapse in">
                                             <div class="accordion-inner">
-                                                <table border="1">
+                                                <table id="myTable" border="1">
                                                     <tr>
                                                         <th>Name</th>
                                                         <th>Ownership</th>
                                                         <th>District</th>
                                                     </tr>
-                                                    {% for ewaste in ewastes %}
-                                                    <tr>
-                                                        <th>
-                                                            {{ewaste.name}}
-                                                        </th>
-                                                        <th>
-                                                            {{ewaste.ownership}}
-                                                        </th>
-                                                        <th>
-                                                            {{ewaste.site}}
-                                                        </th>
-                                                    </tr>
-
-                                                    {% endfor %}
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgX16AyleX9Cjjnno5uYQKyliz-_NGKO4"></script>
                             <div id="map_canvas"
                                  style="border: 2px solid #3872ac; min-height: 500px; width: 100%; margin: 5px; padding: 0px;"></div>
@@ -294,13 +281,37 @@
 <body>
 <script>
     var locations = [];
+
+    $('.target').change(function () {
+    var table = document.getElementById("myTable");
+    var totalRowCount = table.rows.length;
+    if(totalRowCount<2){
+    console.log('skip');}
+    else{
+    for (let i = totalRowCount-1; i >0; i--) {
+        document.getElementById("myTable").deleteRow(i);
+}}
+    var location = $('select option:selected').val();
+    locations = [];
     var i =0;
     {% for ewaste in ewastes %}
+        if(location == "{{ewaste.site}}"){
         locations[i] = "{{ewaste.name}}"+","+"{{ewaste.site}}" + ",Australia";
         i+=1;
+        var table = document.getElementById("myTable");
+  var row = table.insertRow(-1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  cell1.innerHTML = "{{ewaste.name}}";
+  cell2.innerHTML = "{{ewaste.ownership}}";
+  cell3.innerHTML = "{{ewaste.site}}";
+  }
     {% endfor %}
+    initialize();
+    });
 
-    console.log(locations);
+
 
 var geocoder;
 var map;
