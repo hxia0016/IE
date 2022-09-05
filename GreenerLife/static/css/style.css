@@ -141,7 +141,7 @@ body{ background:url('../images/bg_main.png') top center repeat;}
 .top_bar .social li a.s7:hover{ background-position: -202px 32px;}
 .top_bar .social li a.s8{ background-position: -236px 0;}
 .top_bar .social li a.s8:hover{ background-position: -236px 32px;}
-.logo_container{ padding:30px 0;}
+.logo_container{ padding:5px 0;}
 #logo img{ width:auto; height:auto;}
 
 /** Navigation **/
@@ -161,8 +161,8 @@ span.countdown_amount { display:block; font-size:24px; margin:0 0 2px; line-heig
 span.countdown_section { display:inline-block; color:#fff; font-size:14px; line-height:5px; }
 span.countdown_section:first-child { display:inline-block; color:#fff; font-size:14px; }
 .countdown_section br { margin:0px !important; padding:0px !important; display:inline-block; float:left; line-height:0px; }
-.charity_counter_wrapper{ background:url('../images/bg_counter.png') top center repeat; overflow:hidden; width:100%; margin-top:19px;}
-.charity_title {    background: url("../images/marathon_icon.png") no-repeat scroll 0 center transparent;    color: #1CC3C9;    float: left;    font-size: 14px;    font-weight: bold;    margin: 3px 0 -1px 16px;    min-height: 51px;    padding: 8px 0 0 52px;}
+.charity_counter_wrapper{ background:url('../images/bg_counter.png') top center repeat; overflow:hidden; width:100%; margin-top:0px;}
+.charity_title {    background: url("../images/marathon_icon.png") no-repeat scroll 0 center transparent;    color: #1CC3C9;    float: left;    font-size: 14px;    font-weight: bold;    margin: 0px 0 -1px 0px;    min-height: 51px;    padding: 0px 0 0 52px;}
 .event_more a{    background: none repeat scroll 0 0 #1CC3C9;    font-size: 21px;    padding: 21px 0 22px;    text-align: center; color:#fff;  display:block; }
 .event_more{ margin-left:0 !important;}
 
@@ -799,7 +799,7 @@ span.countdown_section:first-child { display:inline-block; color:#fff; font-size
 #dayz{ text-align:right; padding-right:10px;}
 #project_contet .inner_lyr{ padding:25px 20px;}
 #project_contet{ margin-bottom:20px;}
-.tier_button { background:url('../images/link_bg_active.jpg') bottom left repeat-x #3dccd1; color:#fff; border:1px solid #11979c; display:inline-block; padding:7px 20px;  font-weight:bold; font-size:16px; margin-bottom:20px; }
+.tier_button { background:url('../images/link_bg_active.jpg') bottom left repeat-x #3dccd1; color:#fff; border:1px solid #11979c; display:inline-block; padding:7px 20px;  font-weight:bold; font-size:16px; margin-bottom:5px; }
 .tier_button:hover{color:#444;}
 #tiers{ list-style-type:none; margin:0; padding:0; }
 #tiers li{ width:100%; display:block; clear:both; margin-bottom:10px; overflow:hidden;}
