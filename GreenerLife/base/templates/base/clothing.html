@@ -1,31 +1,136 @@
+{% extends 'main.html' %}
 
-<title> Clothing - GreenerLife </title>
 {% block content %}
+<title>E-Waste Collection Site </title>
 {% load static %}
-{% include 'header.html' %}
-{% include 'rely_js.html' %}
+<section class="mtop">
+    <section class="container-fluid container">
+        <section class="row-fluid">
+            <section id="donation_box">
+                <section class="container container-fluid">
+                    <section class="row-fluid">
+                        <div class="span8 first"><h2> Clothing Collection Site </h2></div>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section class="row-fluid">
+            <!-- BreadCrumbs -->
+            <figure id="breadcrumbs" class="span12">
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'index' %}">Home</a> <span class="divider">/</span></li>
+                    <li class="active">Clothing Collection Site</li>
+                </ul>
+            </figure>
+            <!-- End of breadcrumbs -->
+        </section>
+    </section>
+</section>
+
 <section id="content" class="mbtm blog">
-	<section class="container-fluid container">
-		<section class="row-fluid">
-				<section class="span12" id="blog_listing">
-                    <figure class="blog_item">
-                        <div class="outer_lyr span12 first">
-                            <div class="inner_lyr">
-                                <h3>Clothing Recycling</h3>
-                                <p style="font-size: 17px">Did you know the average American throws away 70lbs of textiles per year? The fact that only 15% of unwanted clothing is actually recycled is a huge part of the problem. There are a few different options when it comes to unwanted or worn-out clothing depending on the condition. We will break them each down and help you decide how to responsibly get rid of your unwanted clothing and accessories.</p>
+    <section class="container-fluid container">
+        <section class="row-fluid">
+            <section class="span12" id="blog_listing">
+                <figure class="blog_item">
+                    <div class="outer_lyr span12 first">
+                        <div class="inner_lyr">
+                            <h3>Clothing Recycling</h3>
+                            <p style="font-size: 17px">Did you know the average American throws away 70lbs of textiles
+                                per year? The fact that only 15% of unwanted clothing is actually recycled is a huge
+                                part of the problem. There are a few different options when it comes to unwanted or
+                                worn-out clothing depending on the condition. We will break them each down and help you
+                                decide how to responsibly get rid of your unwanted clothing and accessories.</p>
+                        </div>
+                    </div>
+                </figure>
+                <figure class="blog_item">
+                    <div class="outer_lyr span12 first">
+                        <div class="inner_lyr">
+                            <div class="accordion faq_accordion" id="accordion1">
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <a class="accordion-toggle active" data-toggle="collapse"
+                                           data-parent="#accordion1" href="#collapseOne">
+                                            <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
+                                            <h3><strong> Used Clothing </strong></h3>
+                                        </a>
+                                    </div>
+                                    <div id="collapseOne" class="accordion-body collapse in">
+                                        <div class="accordion-inner">
+                                            <p>Retailers like H&M, Uniqlo, Zara accepts clothing and textiles for
+                                                recycle and resue. MacPac have trade-in programs for worn clothing in
+                                                exchange for in-store credit. </p>
+                                            <img src="{% static 'images/Used Clothing.png'%}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <a class="accordion-toggle inactive" data-toggle="collapse"
+                                           data-parent="#accordion1" href="#collapseTwo">
+                                            <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
+                                            <h3><strong> Quilt Covers and Towel</strong></h3>
+                                        </a>
+                                    </div>
+                                    <div id="collapseTwo" class="accordion-body collapse">
+                                        <div class="accordion-inner">
+                                            <p>Sheridan accepts used quilt and towel for recycling into new product in
+                                                exchange for 5% off your next purchase.</p>
+                                            <img src="{% static 'images/Quilt Covers and Towel.png'%}"/>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <a class="accordion-toggle inactive" data-toggle="collapse"
+                                           data-parent="#accordion1" href="#collapse3">
+                                            <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
+                                            <h3><strong> Uniforms</strong></h3>
+                                        </a>
+                                    </div>
+                                    <div id="collapse3" class="accordion-body collapse">
+                                        <div class="accordion-inner">
+                                            <h4>School Uniforms</h4>
+                                            <p>Visit The Uniform Exchange to sell, buy or donate unused school uniforms
+                                                in Australia </p>
+                                            <h4>Work Uniforms </h4>
+                                            <p>Loop Upcycling provides recycling services for corporate workwear and
+                                                assiting companies to adopt sustainable waste management practices </p>
+                                            <img src="{% static 'images/Uniforms.png'%}"/>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <a class="accordion-toggle inactive" data-toggle="collapse"
+                                           data-parent="#accordion1" href="#collapse4">
+                                            <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
+                                            <h3><strong>Donation Programs </strong></h3>
+                                        </a>
+                                    </div>
+                                    <div id="collapse4" class="accordion-body collapse">
+                                        <div class="accordion-inner">
+                                            <p>Visit Australian Red Cross, Red Nose and Fitted for Work to check on how
+                                                you can donate pre-owned clothes. </p>
+                                            <img src="{% static 'images/download.png'%}"/>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </figure>
-
-                     <figure class="blog_item">
+                    </div>
+                </figure>
+                <figure class="blog_item">
                     <div class="outer_lyr span12 first">
                         <div class="inner_lyr">
                             <!-- <input type="text" name="search" value="Perhaps you can find it using the search option"/>
                             <button><i class="icon-search"></i></button> -->
 
                             <form action="{% url 'clothing' %}" method="GET">
-                                <label for="site"><h2>Choose a suburb to find clothing disposal sites</h2></label>
-                                <select class="target" data-live-search="true" name="CSite" id="site">
+                                <label for="site">Clothing Disposal Site</label>
+                                <select class="target" name="CSite" id="site">
                                     <option value="Melbourne" selected>Melbourne</option>
                                     <option value="Abbotsford">Abbotsford</option>
                                     <option value="Alphington">Alphington</option>
@@ -162,258 +267,187 @@
                                 </select>
 
                             </form>
-<!--                            <div>-->
-<!--                                <div class="accordion faq_accordion" id="accordion3">-->
-<!--                                    <div class="accordion-group">-->
-<!--                                        <div class="accordion-heading">-->
-<!--                                            <a class="accordion-toggle active" data-toggle="collapse"-->
-<!--                                               data-parent="#accordion3" href="#collapse1">-->
-<!--                                                <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>-->
-<!--                                                <h3><strong> Clothing Collection Point </strong></h3> <br>-->
-<!--                                            </a>-->
-<!--                                        </div>-->
+                            <div>
+                                <div class="accordion faq_accordion" id="accordion3">
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                            <a class="accordion-toggle active" data-toggle="collapse"
+                                               data-parent="#accordion3" href="#collapse1">
+                                                <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
+                                                <h3><strong> Clothing Collection Point </strong></h3> <br>
+                                            </a>
+                                        </div>
 
-<!--                                        <div id="collapse1" class="accordion-body collapse in">-->
-<!--                                            <div class="accordion-inner">-->
-<!--                                                <table id="myTable" border="1">-->
-<!--                                                    <tr>-->
-<!--                                                        <th>Name</th>-->
-<!--                                                        <th>Address</th>-->
-<!--                                                        <th>District</th>-->
-<!--                                                    </tr>-->
-<!--                                                </table>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                                        <div id="collapse1" class="accordion-body collapse in">
+                                            <div class="accordion-inner">
+                                                <table id="myTable" border="1">
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Address</th>
+                                                        <th>District</th>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgX16AyleX9Cjjnno5uYQKyliz-_NGKO4"></script>
                             <div id="map_canvas"
                                  style="border: 2px solid #3872ac; min-height: 500px;  width: 100%;  margin: 0px;  padding: 0px"></div>
                         </div>
                     </div>
                 </figure>
+            </section>
 
-					<figure class="blog_item">
-                        <div class="outer_lyr span12 first">
-                            <div class="inner_lyr">
-                                <div class="accordion faq_accordion" id="accordion1">
-                                    <div class="accordion-group">
-                                        <div class="accordion-heading">
-                                        <a class="accordion-toggle active" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
-                                             <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>  <h3>	<strong> Used Clothing </strong> </h3>
-                                        </a>
-                                        </div>
-                                        <div id="collapseOne" class="accordion-body collapse in">
-                                            <div class="accordion-inner">
-                                            <p>Retailers like H&M, Uniqlo, Zara accepts clothing and textiles for recycle and resue. MacPac have trade-in programs for worn clothing in exchange for in-store credit.  </p>
-                                            <img src="{% static 'images/Used Clothing.png'%}"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-group">
-                                        <div class="accordion-heading">
-                                        <a class="accordion-toggle inactive" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
-                                             <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>  <h3>	<strong> Quilt Covers and Towel</strong> </h3>
-                                        </a>
-                                        </div>
-                                        <div id="collapseTwo" class="accordion-body collapse">
-                                            <div class="accordion-inner">
-                                                <p>Sheridan accepts used quilt and towel for recycling into new product in exchange for 5% off your next purchase.</p>
-                                                <img src="{% static 'images/Quilt Covers and Towel.png'%}"/>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-group">
-                                        <div class="accordion-heading">
-                                        <a class="accordion-toggle inactive" data-toggle="collapse" data-parent="#accordion1" href="#collapse3">
-                                             <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>  <h3>	<strong> Uniforms</strong> </h3>
-                                        </a>
-                                        </div>
-                                        <div id="collapse3" class="accordion-body collapse">
-                                            <div class="accordion-inner">
-                                                <h4>School Uniforms</h4>
-                                                <p>Visit The Uniform Exchange to sell, buy or donate unused school uniforms in Australia </p>
-                                                <h4>Work Uniforms </h4>
-                                                <p>Loop Upcycling provides recycling services for corporate workwear and assiting companies to adopt sustainable waste management practices </p>
-                                                <img src="{% static 'images/Uniforms.png'%}"/>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="accordion-group">
-                                        <div class="accordion-heading">
-                                        <a class="accordion-toggle inactive" data-toggle="collapse" data-parent="#accordion1" href="#collapse4">
-                                             <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>  <h3>	<strong>Donation Programs </strong> </h3>
-                                        </a>
-                                        </div>
-                                        <div id="collapse4" class="accordion-body collapse">
-                                            <div class="accordion-inner">
-                                                <p>Visit Australian Red Cross, Red Nose and Fitted for Work to check on how you can donate pre-owned clothes. </p>
-                                                <img src="{% static 'images/download.png'%}"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-				            </div>
-				        </div>
-					</figure>
-
-	</section>
-
-</section>
+        </section>
 
 
-
-</section>
+    </section>
 </section>
 <head>
 
 </head>
 <script>
-        var locations = [];
+    var locations = [];
 
     $('.target').change(function () {
-    var table = document.getElementById("myTable");
-    var totalRowCount = table.rows.length;
-    if(totalRowCount<2){
-    console.log('skip');}
-    else{
-    for (let i = totalRowCount-1; i >0; i--) {
-        document.getElementById("myTable").deleteRow(i);
-}}
-    var location = $('select option:selected').val();
-    locations = [];
-    var i =0;
-    {% for clothing in clothings %}
-        if(location == "{{clothing.district}}"){
-        locations[i] = "{{clothing.address}}"+","+"{{clothing.district}}" + ",Australia";
-        i+=1;
         var table = document.getElementById("myTable");
-  var row = table.insertRow(-1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(2);
-  cell1.innerHTML = "{{clothing.name}}";
-  cell2.innerHTML = "{{clothing.address}}";
-  cell3.innerHTML = "{{clothing.district}}";
-  }
-    {% endfor %}
-    initialize();
+        var totalRowCount = table.rows.length;
+        if(totalRowCount<2){
+            console.log('skip');} else{
+            for (let i = totalRowCount-1; i >0; i--) {
+                document.getElementById("myTable").deleteRow(i);
+}}
+        var location = $('select option:selected').val();
+        locations = [];
+        var i =0;
+        {% for clothing in clothings %}
+        if(location == "{{clothing.district}}"){
+            locations[i] = "{{clothing.address}}"+","+"{{clothing.district}}" + ",Australia";
+            i+=1;
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            cell1.innerHTML = "{{clothing.name}}";
+            cell2.innerHTML = "{{clothing.address}}";
+            cell3.innerHTML = "{{clothing.district}}";
+        }
+        {% endfor %}
+        initialize();
     });
 
-var geocoder;
+    var geocoder;
 var map;
 var lat;
 var lon;
 var bounds = new google.maps.LatLngBounds();
 
-function initialize() {
-  map = new google.maps.Map(
-    document.getElementById("map_canvas"), {
-      center: new google.maps.LatLng( -37, 144),
-      zoom: 5,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-  geocoder = new google.maps.Geocoder();
+    function initialize() {
+        map = new google.maps.Map(
+            document.getElementById("map_canvas"), {
+                center: new google.maps.LatLng( -37, 144),
+                zoom: 5,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+        geocoder = new google.maps.Geocoder();
 
-  for (i = 0; i < locations.length; i++) {
+        for (i = 0; i < locations.length; i++) {
 
 
-    geocodeAddress(locations, i);
-  }
+            geocodeAddress(locations, i);
+        }
 }
 google.maps.event.addDomListener(window, "load", initialize);
 
-function geocodeAddress(locations, i) {
+    function geocodeAddress(locations, i) {
 
-  var address = locations[i];
-  geocoder.geocode({
-      'address': locations[i]
-    },
+        var address = locations[i];
+        geocoder.geocode({
+                'address': locations[i]
+            },
 
-    function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        var marker = new google.maps.Marker({
-          icon: 'http://maps.google.com/mapfiles/ms/icons/red.png',
-          map: map,
-          position: results[0].geometry.location,
+            function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var marker = new google.maps.Marker({
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/red.png',
+                        map: map,
+                        position: results[0].geometry.location,
 
-          animation: google.maps.Animation.DROP,
-          address: address
+                        animation: google.maps.Animation.DROP,
+                        address: address
 
-        })
-        infoWindow(marker, map, address,results[0].geometry.location);
-        bounds.extend(marker.getPosition());
-        map.fitBounds(bounds);
-      }
-    });
+                    })
+                    infoWindow(marker, map, address,results[0].geometry.location);
+                    bounds.extend(marker.getPosition());
+                    map.fitBounds(bounds);
+                }
+            });
 }
 
-function calcCrow(lat1, lon1, lat2, lon2)
-    {
-      var R = 6371; // km
-      var dLat = toRad(lat2-lat1);
-      var dLon = toRad(lon2-lon1);
-      var lat1 = toRad(lat1);
-      var lat2 = toRad(lat2);
+    function calcCrow(lat1, lon1, lat2, lon2) {
+        var R = 6371; // km
+        var dLat = toRad(lat2-lat1);
+        var dLon = toRad(lon2-lon1);
+        var lat1 = toRad(lat1);
+        var lat2 = toRad(lat2);
 
-      var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
-      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-      var d = R * c;
-      return d;
+        var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        var d = R * c;
+        return d;
     }
 
     // Converts numeric degrees to radians
-    function toRad(Value)
-    {
+    function toRad(Value) {
         return Value * Math.PI / 180;
     }
 
     function infoWindow(marker, map, address, position) {
-  getLocation();
-  google.maps.event.addListener(marker, 'click', function() {
-    var lat1 = position.lat();
-    var lon1 = position.lng();
-    var distance = calcCrow(lat, lon, lat1, lon1).toFixed(2);
-    console.log(lat, lon, lat1, lon1);
-    var html =  "<div><h3>" + address  + "</h3><p>"+distance.toString()+"Km from your location." + "<br></div></p></div>";
-    iw = new google.maps.InfoWindow({
-      content: html,
-      maxWidth: 350
-    });
-    iw.open(map, marker);
-  });
+        getLocation();
+        google.maps.event.addListener(marker, 'click', function() {
+            var lat1 = position.lat();
+            var lon1 = position.lng();
+            var distance = calcCrow(lat, lon, lat1, lon1).toFixed(2);
+            console.log(lat, lon, lat1, lon1);
+            var html =  "<div><h3>" + address  + "</h3><p>"+distance.toString()+"Km from your location." + "<br></div></p></div>";
+            iw = new google.maps.InfoWindow({
+                content: html,
+                maxWidth: 350
+            });
+            iw.open(map, marker);
+        });
 }
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
 }
 
-function showPosition(position) {
-  lat= Number(position.coords.latitude);
-  lon = Number(position.coords.longitude);
+    function showPosition(position) {
+        lat= Number(position.coords.latitude);
+        lon = Number(position.coords.longitude);
 }
 
 
-function createMarker(results) {
-  var marker = new google.maps.Marker({
-    icon: 'http://maps.google.com/mapfiles/ms/icons/blue.png',
-    map: map,
-    position: results[0].geometry.location,
+    function createMarker(results) {
+        var marker = new google.maps.Marker({
+            icon: 'http://maps.google.com/mapfiles/ms/icons/blue.png',
+            map: map,
+            position: results[0].geometry.location,
 
-    animation: google.maps.Animation.DROP,
-    address: address
-  })
-  bounds.extend(marker.getPosition());
-  map.fitBounds(bounds);
-  return marker;
+            animation: google.maps.Animation.DROP,
+            address: address
+        })
+        bounds.extend(marker.getPosition());
+        map.fitBounds(bounds);
+        return marker;
 }
 
 </script>
