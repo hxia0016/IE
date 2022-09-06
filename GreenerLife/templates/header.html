@@ -4,49 +4,7 @@
 	<header>
 		{% load static %}
   <!-- Start Main Header -->
-	 <section class="top_bar">
-	<section class="container-fluid container">
-		<section class="row-fluid">
-			<article class="span6">
-				<ul class="details">
-					<li><i class="icon-envelope-alt"> </i> TA34-GreenerLife</li>
-				</ul>
-			</article>
-			<article class="span4 offset2">
-				<ul class="social">
-					<li> <a href="https://www.youtube.com/c/SustainabilityVictoria" class="s7"> Youtube</a> </li>
-					<li> <a href="https://twitter.com/SustainVic" class="s5"> Twitter</a> </li>
-					<li> <a href="https://www.instagram.com/sustainabilityvictoria/" class="s2"> Dribble</a> </li>
-					<li> <a href="https://www.facebook.com/pages/category/Environmental-Service/VicRecycle-105765307963504/" class="s1"> Facebook</a> </li>
-				</ul>
-			</article>
-		</section>
-	</section>
-  </section>
-  <section class="logo_container">
-		  <section class="container-fluid container">
-				<section class="row-fluid">
-					  <section class="span4">
-							<h1 id="logo">
-								<a href="{% url 'index' %}"> <img src="{% static 'images/logo.png'%}" style=""></a>
-							</h1>
-						</section>
-					<section class="span4 pull-right">
-						<figure class="charity_counter_wrapper">
-								<section class="span12">
-								<div class="charity_title">
-								<h4>Help international student families reduce waste and recycle waste</h4>
-								</div>
-								<div>
-									<center><a href="#nav" class="tier_button" style="margin-bottom: 20px;" ><p><center>Explore more</center></p></a></center>
-								</div>
-								</section>
-						</figure>
-					</section>
-				</section>
-			</section>
-  </section>
-	<!-- Main Nav Bar -->
+<!-- Main Nav Bar -->
 			<nav id="nav">
 				<section class="container-fluid container">
 					<section class="row-fluid">
@@ -59,14 +17,13 @@
 					<li class="active"> <a href="{% url 'index' %}"> Home </a> </li>
 
 
-					  <li class="dropdown"> <a class="dropdown-toggle"> E-waste	<b class="caret"></b> </a>
-						<ul class="dropdown-menu">
-							<li><a href="{% url 'e_waste_classification' %}">E-waste classification</a></li>
-							<li><a href="{% url 'e_waste' %}">E-Waste Site</a></li>
+					  <li class="dropdown"> <a class="dropdown-toggle" href="{% url 'e_waste_classification' %}"> E-waste </a>
+<!--						<ul class="dropdown-menu">-->
+<!--							<li><a href="{% url 'e_waste_classification' %}">E-waste classification</a></li>-->
+<!--							<li><a href="{% url 'e_waste' %}">E-Waste Site</a></li>-->
 
-						</ul>
+
 					  </li>
-						clothing
 
 					  <li > <a class="dropdown-toggle" href="{% url 'clothing' %}"> Clothing </a></li>
 <!--						<ul class="dropdown-menu">-->
@@ -93,7 +50,6 @@
 <!-- 						</ul>-->
 <!--					  </li>-->
 
-   					  <li class="dropdown"> <a class="dropdown-toggle" href="{% url 'about_us' %}" >  About Us <b class=""></b> </a></li>
 					</ul>
 				  </div>
 				  <!--/.nav-collapse -->
@@ -105,5 +61,26 @@
 				</section>
 			</nav>
 	<!-- End Main Nav Bar -->
+  <section class="logo_container">
+		  <section class="container-fluid container">
+				<section class="row-fluid">
+					  <section class="span4">
+							<h1 id="logo">
+								<a href="{% url 'index' %}"> <img src="{% static 'images/logo.png'%}" style=""></a>
+							</h1>
+						</section>
+					<section class="span4 pull-right">
+						<figure class="charity_counter_wrapper">
+								<section class="span12">
+								<div class="charity_title">
+								<h4>Help international student families reduce waste and recycle waste</h4>
+								</div>
+								</section>
+						</figure>
+					</section>
+				</section>
+			</section>
+  </section>
+
 	 </header>
 </html>

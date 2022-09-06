@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
     /* BX slider 1*/
 	var bannerslider = $('#banner_slider');
     if (bannerslider.length) {
-        bannerslider.bxSlider({ auto: true, minSlides: 1, maxSlides: 1, slideMargin: 18, speed: 500 });
+        bannerslider.bxSlider({ auto: true, minSlides: 1, maxSlides: 1, slideMargin: 18, speed: 800, interval : 2000  });
     }
 	var newslider = $('#news_slider');
     if (newslider.length) {
