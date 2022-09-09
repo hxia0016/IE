@@ -10,8 +10,11 @@ import base64
 import os
 import cv2
 from .model.garbageDetection import modelThread
+import tensorflow
+import numpy as np
 
-
+tensorflow.keras.backend.clear_session()
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 model = modelThread()
 model.__int__("./base/model/")
 model.model.summary
@@ -58,24 +61,12 @@ def getbase64byndarray(pic_img):
 
 
 def garbageClassification(request):
-    print("in")
-    try:
-        # 当不使用JS时
-        # image = request.FILES.get('garbageImage')
-        # 当使用ajax时
-        # 得到img文件
-        image = request.FILES['garbageImage']
-        print(image)
-        path = default_storage.save('' + image.name, ContentFile(image.read()))
-        print(path.__str__())
-        # 保存图像
-        path = os.path.join(settings.MEDIA_ROOT, path)
-        img = cv2.imread(path)
-
-        img = cv2.resize(img, (224, 224))
-        res,idx = model.predict(img)
-        res = base64.b64encode(res)
-        print("predict classes index",idx)
-        return HttpResponse(res)
-    except:
-        return HttpResponse("<p>图片上传不成功</p>")
+    image = request.FILES['img']
+    file_bytes = np.asarray(bytearray(image.read()), dtype=np.uint8)
+    img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
+    img = cv2.resize(img, (224, 224))
+    res,idx = model.predict(img)
+    res = base64.b64encode(res)
+    print("predict classes index",idx)
+    content = {"image":res}
+    return render(request, 'base/garbage.html', content)
