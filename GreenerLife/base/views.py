@@ -3,7 +3,10 @@ from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django.db.models import Q
 from django.shortcuts import render
+from django.http import StreamingHttpResponse
 from django.http import HttpResponse
+
+from .camera import MaskDetect
 from .models import EWasteSite, Clothing
 from django.core import serializers
 import base64
@@ -25,14 +28,18 @@ model.predict(img)
 def home(request):
     return render(request, 'base/home.html')
 
+
 def index(request):
     return render(request, 'base/index.html')
+
 
 def about_us(request):
     return render(request, 'base/team.html')
 
+
 def e_waste_classification(request):
     return render(request, 'base/e-waste-classification.html')
+
 
 def e_waste(request):
     site = str(request.GET.get('ESite'))
@@ -41,6 +48,7 @@ def e_waste(request):
     context = {'ewastes': ewastes}
 
     return render(request, 'base/e_waste.html', context)
+
 
 def clothing(request):
     site = str(request.GET.get('CSite')) if request.GET.get('CSite') != None else ''
@@ -54,6 +62,11 @@ def clothing(request):
 def garbage(request):
     return render(request, 'base/garbage.html', )
 
+
+def garbage_video(request):
+    return render(request, 'base/garbage-webcam.html', )
+
+
 def getbase64byndarray(pic_img):
     retval, buffer = cv2.imencode('.jpg', pic_img)
     pic_str = base64.b64encode(buffer)
@@ -65,8 +78,19 @@ def garbageClassification(request):
     file_bytes = np.asarray(bytearray(image.read()), dtype=np.uint8)
     img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
     img = cv2.resize(img, (224, 224))
-    res,idx = model.predict(img)
+    res, idx = model.predict(img)
     res = base64.b64encode(res)
-    print("predict classes index",idx)
-    content = {"image":res}
+    print("predict classes index", idx)
+    content = {"image": res}
     return render(request, 'base/garbage.html', content)
+
+
+def gen(camera):
+    while True:
+        frame = camera.get_frame(model)
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+
+def video(request):
+    return StreamingHttpResponse(gen(MaskDetect(model)),content_type='multipart/x-mixed-replace; boundary=frame')

@@ -13,6 +13,8 @@ urlpatterns = [
     path('e_waste_classification/', views.e_waste_classification, name = "e_waste_classification"),
     path('garbage/', views.garbage, name = "garbage"),
     path('garbageClassification/', views.garbageClassification, name = "garbageClassification"),
+    path('mask_feed', views.video, name='video'),
+    path('garbage_video', views.garbage_video, name='garbage_video'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
