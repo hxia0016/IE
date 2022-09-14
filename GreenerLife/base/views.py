@@ -21,9 +21,16 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 model = modelThread()
 model.__int__("./base/model/")
 model.model.summary
-img = cv2.imread(".\static\images\coffee.png")
+img = cv2.imread("./static/images/coffee.png")
 model.predict(img)
 
+tensorflow.keras.backend.clear_session()
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+model = modelThread()
+model.__int__("./base/model/")
+model.model.summary
+img = cv2.imread("./static/images/coffee.png")
+model.predict(img)
 
 def home(request):
     return render(request, 'base/home.html')
