@@ -45,16 +45,20 @@ def about_us(request):
 
 
 def e_waste_classification(request):
-    return render(request, 'base/e-waste-classification.html')
+    site = str(request.GET.get('ESite')) if request.GET.get('ESite') != None else ''
+    print(site)
+    ewastes = EWasteSite.objects.all()
+    context = {'ewastes': ewastes}
+    return render(request, 'base/e-waste-classification.html', context)
 
 
 def e_waste(request):
-    site = str(request.GET.get('ESite'))
+    site = str(request.GET.get('ESite')) if request.GET.get('ESite') != None else ''
     print(site)
     ewastes = EWasteSite.objects.all()
     context = {'ewastes': ewastes}
 
-    return render(request, 'base/e_waste.html', context)
+    return render(request, 'base/e-waste-classification.html', context)
 
 
 def clothing(request):

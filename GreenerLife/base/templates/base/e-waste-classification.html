@@ -280,7 +280,7 @@
 												<li>  have it collected from your home through eMeals </li>
 											</ol></div></div>
 <!--											<a href="{% url 'e_waste' %}" class="tier_button"> Quick Access </a>-->
-											<form action="{% url 'e_waste' %}" method="GET">
+											<form action="{% url 'e_waste_classification' %}" method="GET">
 												<label for="site"><h2>Choose a council to find E-Waste collection sites</h2></label>
 
 											<select class="target"  name="ESite" id="site">
@@ -359,6 +359,31 @@
 											</select>
 
                             </form>
+										<div>
+                                <div class="accordion faq_accordion" id="accordion4">
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                            <a class="accordion-toggle active" data-toggle="collapse"
+                                               data-parent="#accordion3" href="#collapse1">
+                                                <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
+                                                <h3><strong> Clothing Collection Point </strong></h3> <br>
+                                            </a>
+                                        </div>
+
+                                        <div id="collapse5" class="accordion-body collapse in">
+                                            <div class="accordion-inner">
+                                                <table id="myTable" border="1">
+                                                    <tr>
+                                                        <th>Address</th>
+                                                        <th>Ownership</th>
+                                                        <th>Council</th>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 												<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgX16AyleX9Cjjnno5uYQKyliz-_NGKO4"></script>
                             <div id="map_canvas"
@@ -534,7 +559,8 @@
 </body>
 <script>
     var locations = [];
-    $('.target').selectpicker().change(function () {
+
+    $('.target').change(function () {
     var table = document.getElementById("myTable");
     var totalRowCount = table.rows.length;
     if(totalRowCount<2){
