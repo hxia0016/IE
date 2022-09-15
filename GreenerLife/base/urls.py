@@ -15,6 +15,8 @@ urlpatterns = [
     path('garbageClassification/', views.garbageClassification, name = "garbageClassification"),
     path('mask_feed', views.video, name='video'),
     path('garbage_video', views.garbage_video, name='garbage_video'),
+    path('edu/', views.edu, name='edu'),
+    path('edu_video/', views.edu_video, name='edu_video'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

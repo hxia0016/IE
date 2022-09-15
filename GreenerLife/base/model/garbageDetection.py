@@ -26,7 +26,7 @@ class modelThread():
 
     def predict(self,image):
         img = cv2.resize(image,(224 ,224))
-        index_list= self.model.predict(np.expand_dims(img, axis=0))
+        index_list= self.model.predict(np.expand_dims(img, axis=0),verbose=0)
         index = np.argmax(index_list)
         if index == 0 or index == 11:
             text_shape = cv2.getTextSize("Red Lid Bin", cv2.FONT_HERSHEY_PLAIN, 2, 2)

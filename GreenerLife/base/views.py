@@ -6,31 +6,26 @@ from django.shortcuts import render
 from django.http import StreamingHttpResponse
 from django.http import HttpResponse
 
-from .camera import MaskDetect
+from .camera import camDetect
 from .models import EWasteSite, Clothing
 from django.core import serializers
 import base64
 import os
 import cv2
 from .model.garbageDetection import modelThread
+from .model.educationGame import EudcationGame
 import tensorflow
 import numpy as np
 
 tensorflow.keras.backend.clear_session()
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-model = modelThread()
-model.__int__("./base/model/")
-model.model.summary
-img = cv2.imread("./static/images/coffee.png")
-model.predict(img)
 
-tensorflow.keras.backend.clear_session()
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 model = modelThread()
 model.__int__("./base/model/")
-model.model.summary
 img = cv2.imread("./static/images/coffee.png")
 model.predict(img)
+edu_game = EudcationGame("./base/model/")
 
 def home(request):
     return render(request, 'base/home.html')
@@ -96,12 +91,29 @@ def garbageClassification(request):
     return render(request, 'base/garbage.html', content)
 
 
-def gen(camera):
+def gen_garbage(camera):
     while True:
-        frame = camera.get_frame(model)
+        frame = camera.get_frame_garbage(model)
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
+def gen_game(camera):
+    while True:
+        frame = camera.get_frame_game(edu_game)
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
 def video(request):
-    return StreamingHttpResponse(gen(MaskDetect(model)),content_type='multipart/x-mixed-replace; boundary=frame')
+    garbage_cam = camDetect(model)
+    return StreamingHttpResponse(gen_garbage(garbage_cam),content_type='multipart/x-mixed-replace; boundary=frame')
+
+def edu(request):
+    edu_game.flag = False
+    edu_game.updateLocation()
+    return render(request, 'base/edu.html')
+
+def edu_video(request):
+    game = camDetect(edu_game)
+    edu_game.flag = False
+    edu_game.score = 0
+    return StreamingHttpResponse(gen_game(game),content_type='multipart/x-mixed-replace; boundary=frame')
