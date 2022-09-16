@@ -12,20 +12,27 @@ from django.core import serializers
 import base64
 import os
 import cv2
-from .model.garbageDetection import modelThread
+from .model.garbageDetection import GarbageModel
 from .model.educationGame import EudcationGame
 import tensorflow
 import numpy as np
+import pathlib
 
+
+path = pathlib.Path.cwd()
+path = path / 'base' / 'model'
+print(path)
 tensorflow.keras.backend.clear_session()
-
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-model = modelThread()
-model.__int__("./base/model/")
+model = GarbageModel(path)
+
+# model = ModelThread("./base/model/")
+# model.__int__("./base/model/")
 img = cv2.imread("./static/images/coffee.png")
-model.predict(img)
-edu_game = EudcationGame("./base/model/")
+# model.predict(img)
+edu_game = EudcationGame(path)
+
 
 def home(request):
     return render(request, 'base/home.html')
@@ -97,23 +104,27 @@ def gen_garbage(camera):
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
+
 def gen_game(camera):
     while True:
         frame = camera.get_frame_game(edu_game)
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
+
 def video(request):
     garbage_cam = camDetect(model)
-    return StreamingHttpResponse(gen_garbage(garbage_cam),content_type='multipart/x-mixed-replace; boundary=frame')
+    return StreamingHttpResponse(gen_garbage(garbage_cam), content_type='multipart/x-mixed-replace; boundary=frame')
+
 
 def edu(request):
     edu_game.flag = False
     edu_game.updateLocation()
     return render(request, 'base/edu.html')
 
+
 def edu_video(request):
     game = camDetect(edu_game)
     edu_game.flag = False
     edu_game.score = 0
-    return StreamingHttpResponse(gen_game(game),content_type='multipart/x-mixed-replace; boundary=frame')
+    return StreamingHttpResponse(gen_game(game), content_type='multipart/x-mixed-replace; boundary=frame')
