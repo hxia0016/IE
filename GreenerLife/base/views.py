@@ -20,18 +20,18 @@ import pathlib
 
 
 path = pathlib.Path.cwd()
-path = path / 'base' / 'model'
+# path = path / 'base' / 'model'
 print(path)
 tensorflow.keras.backend.clear_session()
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-model = GarbageModel(path)
+model = GarbageModel(path / 'base' / 'model')
 
 # model = ModelThread("./base/model/")
 # model.__int__("./base/model/")
-img = cv2.imread("./static/images/coffee.png")
+img = cv2.imread(str(path / 'static' / 'images' / 'coffee.png'))
 # model.predict(img)
-edu_game = EudcationGame(path)
+edu_game = EudcationGame(path / 'base' / 'model')
 
 
 def home(request):

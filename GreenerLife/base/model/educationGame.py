@@ -17,7 +17,8 @@ class EudcationGame:
         self.wCam = wCam
         self.hCam = hCam
         ############################################
-        self.cap = cv2.VideoCapture(0)
+        self.camIdx = self.findCamerIndex()[-1]
+        self.cap = cv2.VideoCapture(self.camIdx)
         self.cap.set(3, self.wCam)
         self.cap.set(4, self.hCam)
         # hand track model
@@ -36,6 +37,22 @@ class EudcationGame:
         self.cx_before, self.cy_before = 0, 0
         self.score = 0
         self.flag = False
+
+        # print(self.findCamerIndex())
+
+    def findCamerIndex(self):
+        index = 0
+        arr = []
+        while True:
+            cap = cv2.VideoCapture(index)
+            try:
+                if cap.getBackendName() == "MSMF":
+                    arr.append(index)
+            except:
+                break
+            cap.release()
+            index += 1
+        return arr
 
     def updateLocation(self):
         self.ix, self.iy, self.cla = self.randomLocationAndIndex()
