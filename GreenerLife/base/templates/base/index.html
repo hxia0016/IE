@@ -2,6 +2,7 @@
 <head>
 <title> Home Page - GreenerLife </title>
     {% load static %}
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
 <!--[if lt IE 9]>
 	<script src="{% static 'js/html5shiv.js'%}"></script>
 <![endif]-->
@@ -70,7 +71,7 @@
 
 			<figure class="span3 feature">
 			<div class="ftr_img f-img-3">
-				<img src="{% static 'images/detection.png'%}" style="height: 80px;width:80px;margin-left: 35% ">  <a href="{% url 'edu' %}">  </a> </img>
+				<a href="{% url 'edu' %}"><img src="{% static 'images/detection.png'%}" style="height: 80px;width:80px;margin-left: 35% "/> </a>
 			</div>
 			<div class="ftr_txt">
 			<strong> Video Game   </strong>
@@ -84,7 +85,7 @@
 			<figure class="span3 feature" >
 			<div class="ftr_img f-img-1">
 <!--				<div style="BACKGROUND: url('../../../static/images/feature_img_1_hover.png')  no-repeat center;">-->
-				<img src="{% static 'images/e-waste-logo.png'%}" style="height: 80px;width:80px;margin-left: 35% "> <a href="{% url 'e_waste_classification' %}"></a></img>
+				 <a href="{% url 'e_waste_classification' %}"><img src="{% static 'images/e-waste-logo.png'%}" style="height: 80px;width:80px;margin-left: 35% "/></a>
 			</div>
 			<div class="ftr_txt">
 			<strong> E-waste</strong>
@@ -97,7 +98,7 @@
 			<!-- Start of Features Box 2 -->
 			<figure class="span3 feature" >
 			<div class="ftr_img">
-				<img src="{% static 'images/clothing-waste-logo.png'%}" style="height: 80px;width:80px;margin-left: 35% "> <a href="{% url 'clothing' %}"> </a></img>
+				<a href="{% url 'clothing' %}"><img src="{% static 'images/clothing-waste-logo.png'%}" style="height: 80px;width:80px;margin-left: 35% "/>  </a>
 			</div>
 			<div class="ftr_txt">
 			<strong> Clothing  </strong>
@@ -109,7 +110,7 @@
 			<!-- Start of Features Box 3 --> 
 			<figure class="span3 feature">
 			<div class="ftr_img f-img-3">
-				<img src="{% static 'images/detection.png'%}" style="height: 80px;width:80px;margin-left: 35% ">  <a href="{% url 'garbage_video' %}">  </a> </img>
+				<a href="{% url 'garbage_video' %}"> <img src="{% static 'images/detection.png'%}" style="height: 80px;width:80px;margin-left: 35% "/> </a>
 			</div>
 			<div class="ftr_txt">
 			<strong> Detection   </strong>

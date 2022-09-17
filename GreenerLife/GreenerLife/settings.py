@@ -27,7 +27,6 @@ SECRET_KEY = 'django-insecure-wpprspg&o7h$oh@pt1ig))ogkiberxg@=!mafo!lmo7r+ha_i1
 DEBUG = True
 
 ALLOWED_HOSTS = ["Greenerlife-env.eba-xj4z4jvc.ap-southeast-2.elasticbeanstalk.com ",'127.0.0.1','*',]
-ALLOWED_HOSTS = ['*']
 
 
 # Application definition

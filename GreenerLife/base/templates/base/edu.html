@@ -1,7 +1,7 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<title>Garbage Detection </title>
+<title>Game - GreenerLife </title>
 {% load static %}
 <section class="mtop">
     <section class="container-fluid container">
@@ -27,40 +27,69 @@
     </section>
 </section>
 <section id="content" class="mbtm blog">
-    <section class="container-fluid container">
-        <section class="row-fluid">
-            <section class="span12" id="blog_listing">
-                <figure class="blog_item">
-                    <div class="outer_lyr span12 first">
-                        <div class="inner_lyr">
-                            <h2>What can this game do?</h2>
-                            <p style="font-size: 17px">This game helps you to learn about recycling in an interactive way by placing the item to the right bin. Recommended for teaching children about recycling in a fun way.</p>
-                            <h2>How to play the game?</h2>
-                            <p style="font-size: 17px">
-                            <ol>
-                            <li>Enable/Allow camera access</li>
-                            <li> Use your hand to pick the displayed item</li>
-                            <li>Move the item to the right recycling bin color</li>
-                            </ol>
-                            </p>
-                        </div>
-                    </div>
-                </figure></section></section></section></section>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>基于OpenCv+Django的网络实时视频流传输（前后端分离）</title>
-    <style>
-        #video {
-            width: 720px;
-            height: 576px;
-        }
-    </style>
-</head>
-<body>
-    <!-- 显示视频流 -->
-    <div align="center"><img src="{% url 'edu_video' %}" id="video"></div>
-</body>
+	<section class="container-fluid container">
+		<section class="row-fluid">
+				<section class="span9" id="blog_listing">
+					<figure class="blog_item">
+                        <div class="outer_lyr span12 first">
+                            <div class="inner_lyr">
+                                <h2>What can this game do?</h2>
+                                <p style="font-size: 17px">This game helps you to learn about recycling in an
+                                    interactive way by placing the item to the right bin. Recommended for teaching
+                                    children about recycling in a fun way.</p>
+<!--                                <h2>How to play the game?</h2>-->
+<!--                                <p style="font-size: 17px">-->
+<!--                                <ol>-->
+<!--                                    <li>Enable/Allow camera access</li>-->
+<!--                                    <li> Use your hand to pick the displayed item</li>-->
+<!--                                    <li>Move the item to the right recycling bin color</li>-->
+<!--                                </ol>-->
+<!--                                </p>-->
+                            </div>
+				        </div>
+					</figure>
+
+                    <figure class="blog_item">
+                        <div class="outer_lyr span12 first">
+                            <div class="inner_lyr">
+                                <div align="center"><img src="{% url 'edu_video' %}"></div>
+                            </div>
+				        </div>
+					</figure>
+                </section>
+            <section id="sidebar" class="span3">
+                    <figure class="widget events">
+                        <h3> <i class="icon-bullhorn"></i> How to play the game? </h3>
+                        <ul id="posts1">
+                            <li>
+                                <div class="post_content span12">
+                                    <p style="font-size: 17px">
+                                        <ol>
+                                            <li>Enable/Allow camera access</li>
+                                            <li> Use your hand to pick the displayed item</li>
+                                            <li>Move the item to the right recycling bin color</li>
+                                        </ol>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </figure>
+
+                    <figure class="widget events">
+                        <h3> <i class="icon-bullhorn"></i> Game Rules </h3>
+                        <ul id="posts2">
+                            <li>
+                                <div class="post_content span12">
+                                    <h4> Consider buying secondhand  </h4>
+                                    <p>The idea of regularly upgrading devices has become all too common in our society. With new models being released regularly, we can feel compelled to purchase the latest version. But it’s worth checking the second-hand market or purchasing an item that’s pre-loved or refurbished before buying new.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </figure>
+                </section>
+            </section>
+        </section>
+    </section>
+</section>
 
 {% endblock content %}
