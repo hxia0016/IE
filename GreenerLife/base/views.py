@@ -34,10 +34,6 @@ img = cv2.imread(str(path / 'static' / 'images' / 'coffee.png'))
 edu_game = EudcationGame(path / 'base' / 'model')
 
 
-def home(request):
-    return render(request, 'base/home.html')
-
-
 def index(request):
     return render(request, 'base/index.html')
 

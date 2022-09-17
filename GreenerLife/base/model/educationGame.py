@@ -26,7 +26,7 @@ class EudcationGame:
         self.path = pathlib.Path(str(path))
         self.bin_image = cv2.imread(str(self.path / "bin.png"), cv2.IMREAD_UNCHANGED)
         self.bin_image = cv2.resize(self.bin_image, (540, 80), interpolation=cv2.INTER_AREA)
-        self.path = self.path/ "images"
+        self.path = self.path / "images"
         # self.image_list = self.read_directory("images")
         self.image_list = self.read_directory(self.path)
         self.ix, self.iy, self.cla = self.randomLocationAndIndex()
@@ -106,27 +106,24 @@ class EudcationGame:
             cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
             length = math.hypot(x1 - x2, y1 - y2)
             if length < 20:
-                cv2.circle(img, (cx, cy), 10, (0, 255, 0), cv2.FILLED)
                 if self.ix < cx < self.ix + 100 and self.iy < cy < self.iy + 100 and self.iy + 50 < img.shape[
                     0] and self.ix + 50 < img.shape[1]:
                     self.ix, self.iy = cx - 50, cy - 50
-            if abs(cy - self.cy_before) > 50 or abs(cx - self.cx_before) > 50:
-                cv2.putText(img, "You move to fast! ", (640, 70), cv2.FONT_HERSHEY_PLAIN, 3,
-                            (255, 0, 0), 3)
-            self.cy_before, self.cx_before = cy, cx
 
         if 100 < self.ix + 100 < img.shape[1] and 100 < self.iy + 100 < img.shape[0]:
-            if self.image.any() != None:
+            if self.image.any() is not None:
                 img = self.overlayPNG(img, self.image, [self.ix, self.iy])
         # get reward
-        if self.rewardArea[str(self.cla)][2] < self.iy < self.rewardArea[str(self.cla)][3]:
-            if self.rewardArea[str(self.cla)][0] < self.ix < self.rewardArea[str(self.cla)][1]:
+        if self.rewardArea[str(self.cla)][2] < self.iy + 50 < self.rewardArea[str(self.cla)][3]:
+            if self.rewardArea[str(self.cla)][0] < self.ix + 50 < self.rewardArea[str(self.cla)][1]:
                 self.score += 1
                 self.ix, self.iy, self.cla = self.randomLocationAndIndex()
                 self.image = self.image_list[str(self.cla)][0]
             else:
                 self.flag = True
-
+        if len(lmList) != 0:
+            if length < 20:
+                cv2.circle(img, (cx, cy), 10, (0, 255, 0), cv2.FILLED)
         img = cv2.rectangle(img, (50, 50), (590, 400), (0, 255, 0), 2)
         img = self.overlayPNG(img, self.bin_image, [50, 400])
         return img
