@@ -28,14 +28,14 @@ class GarbageModel:
         index = np.argmax(index_list)
         if index == 0 or index == 11:
             text_shape = cv2.getTextSize("Put into Red Lid Bin", cv2.FONT_HERSHEY_PLAIN, 2, 2)
-            cv2.putText(image, "Red Lid Bin", (
+            cv2.putText(image, "Put into Red Lid Bin", (
                 (image.shape[0] // 2) - (text_shape[0][0] // 2) - 20,
                 (image.shape[1] // 2) - (text_shape[0][1] // 2) + 50),
                         cv2.FONT_HERSHEY_PLAIN, 2, (0, 0, 255), 2)
             return image, index
         elif index == 3 or index == 4 or index == 6 or index == 7 or index == 9 or index == 12 or index == 8:
             text_shape = cv2.getTextSize("Put into Yellow Lid Bin", cv2.FONT_HERSHEY_PLAIN, 2, 2)
-            cv2.putText(image, "Yellow Lid Bin", (
+            cv2.putText(image, "Put into Yellow Lid Bin", (
                 (image.shape[0] // 2) - (text_shape[0][0] // 2) - 20,
                 (image.shape[1] // 2) - (text_shape[0][1] // 2) + 50),
                         cv2.FONT_HERSHEY_PLAIN, 2, (255, 255, 0), 2)
