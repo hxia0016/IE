@@ -34,27 +34,39 @@
                     <div class="outer_lyr span12 first">
                         <div class="inner_lyr">
                             <h2>Why we need garbage classification?</h2>
-                            <p style="font-size: 17px">Data shows 84 - 96% of kerbside recycling is recycled, and the remaining 4 -
-                                16% that goes to landfill is primarily a result of the wrong thing going in the wrong bin.
+                            <p style="font-size: 17px">Data shows 84 - 96% of kerbside recycling is recycled, and the
+                                remaining 4 -
+                                16% that goes to landfill is primarily a result of the wrong thing going in the wrong
+                                bin.
 
                             </p>
                             <h2>How to use classify garbage function?</h2>
                             <p style="font-size: 25px">
                             <ol>
-                            <li>Put the garbage in front of webcam</li>
-                            <li>Keep the garbage occupy the main area of video</li>
-                            <li>keep holding that garbage until the information won't change </li>
-                            <li>The classification information will show in the video </li>
+                                <li>Put the garbage in front of webcam</li>
+                                <li>Keep the garbage occupy the main area of video</li>
+                                <li>keep holding that garbage until the information won't change</li>
+                                <li>The classification information will show in the video</li>
                             </ol>
                             </p>
                         </div>
                     </div>
-                </figure></section></section></section></section>
+                </figure>
+                 <figure class="blog_item">
+                    <div class="outer_lyr span12 first">
+                        <div class="inner_lyr">
+                           <div align="center"><img src="{% url 'video' %}" id="video"></div>
+                        </div>
+                    </div>
+                </figure>
+            </section>
+        </section>
+    </section>
+</section>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>基于OpenCv+Django的网络实时视频流传输（前后端分离）</title>
     <style>
         #video {
             width: 720px;
@@ -64,7 +76,6 @@
 </head>
 <body>
     <!-- 显示视频流 -->
-    <div align="center"><img src="{% url 'video' %}" id="video"></div>
 </body>
 
 {% endblock content %}
