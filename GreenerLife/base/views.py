@@ -25,13 +25,13 @@ print(path)
 tensorflow.keras.backend.clear_session()
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-model = GarbageModel(path / 'base' / 'model')
+model = GarbageModel("./GreenerLife/base/model/")
 
 # model = ModelThread("./base/model/")
 # model.__int__("./base/model/")
-img = cv2.imread(str(path / 'static' / 'images' / 'coffee.png'))
+img = cv2.imread("./GreenerLife/static/images/coffee.png")
 # model.predict(img)
-edu_game = EudcationGame(path / 'base' / 'model')
+edu_game = EudcationGame("./GreenerLife/base/model/")
 
 
 def index(request):

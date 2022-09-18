@@ -23,12 +23,12 @@ class EudcationGame:
         self.cap.set(4, self.hCam)
         # hand track model
         self.detector = handDector(detectionCon=detectionCon)
-        self.path = pathlib.Path(str(path))
-        self.bin_image = cv2.imread(str(self.path / "bin.png"), cv2.IMREAD_UNCHANGED)
+        self.path = path
+        self.bin_image = cv2.imread(self.path + "bin.png", cv2.IMREAD_UNCHANGED)
         self.bin_image = cv2.resize(self.bin_image, (540, 80), interpolation=cv2.INTER_AREA)
-        self.path = self.path / "images"
+        # self.path = self.path / "images"
         # self.image_list = self.read_directory("images")
-        self.image_list = self.read_directory(self.path)
+        self.image_list = self.read_directory(self.path + "images")
         self.ix, self.iy, self.cla = self.randomLocationAndIndex()
         # self.image = self.image_list[str(self.cla)][random.randint(0,len(self.image_list[self.cla])-1)]
         self.image = self.image_list[str(self.cla)][0]
@@ -60,11 +60,10 @@ class EudcationGame:
     def read_directory(self, directory_name):
         # this loop is for read each image in this foder,directory_name is the foder name with images.
         img_list = {}
-        for filename in os.listdir(self.path):
+        for filename in os.listdir(directory_name):
             temp = filename.split("_")
-            temp_path = self.path
-            temp_path = temp_path / str(filename)
-            img = cv2.imread(str(temp_path), cv2.IMREAD_UNCHANGED)
+            temp_path = directory_name + str(filename)
+            img = cv2.imread(temp_path, cv2.IMREAD_UNCHANGED)
             img = cv2.resize(img, (100, 100), interpolation=cv2.INTER_AREA)
             if temp[0] in img_list:
                 img_list[temp[0]].append(img)
