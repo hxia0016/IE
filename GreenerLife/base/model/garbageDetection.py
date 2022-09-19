@@ -11,17 +11,17 @@ from keras.models import model_from_json
 class GarbageModel:
 
     def __init__(self, path=None, IMAGE_WIDTH=224, IMAGE_HEIGHT=224):
-        self.path = pathlib.Path(str(path))
+        self.path = path
         self.IMAGE_WIDTH = IMAGE_WIDTH
         self.IMAGE_HEIGHT = IMAGE_HEIGHT
         self.classes = {0: 'bag', 1: 'battery', 2: 'biological', 3: 'brown-glass', 4: 'cardboard', 5: 'clothes',
                         6: 'green-glass', 7: 'metal', 8: 'paper', 9: 'plastic', 10: 'shoes', 11: 'trash',
                         12: 'white-glass'}
-        json_file = open(str(self.path / 'model.json'), 'r')
+        json_file = open(self.path+ 'model.json')
         loaded_model_json = json_file.read()
         json_file.close()
         self.model = model_from_json(loaded_model_json)
-        self.model.load_weights( str(self.path / "model.h5"))
+        self.model.load_weights( self.path + "model.h5")
 
     def predict(self, image):
         img = cv2.resize(image, (224, 224))
