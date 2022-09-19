@@ -118,8 +118,19 @@ def edu_video(request):
     head, image = image.split(',')
     imagedata = base64.b64decode(image)
     nparr = np.frombuffer(imagedata, np.uint8)
-    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-    img = edu_game.run(img)
-    ret, jpeg = cv2.imencode(".jpg", img)
-    image = head + ',' + str(base64.b64encode(jpeg))[2:-1]
-    return HttpResponse(image, content_type='multipart/x-mixed-replace; boundary=frame')
+    image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    img = edu_game.run(image)
+    # ret, jpeg = cv2.imencode(".jpg", img)
+    # image = head + ',' + str(base64.b64encode(jpeg))[2:-1]
+    if not edu_game.flag:
+        ret, jpeg = cv2.imencode(".jpg", img)
+        img = head + ',' + str(base64.b64encode(jpeg))[2:-1]
+    else:
+        frame = cv2.flip(image, 1)
+        img = cv2.putText(frame, "You Lost!", (250, 240), cv2.FONT_HERSHEY_PLAIN, 3,
+                          (0, 0, 255), 3)
+        img = cv2.putText(img, "score : " + str(edu_game.score), (250, 340), cv2.FONT_HERSHEY_PLAIN, 3,
+                          (0, 0, 255), 3)
+        ret, jpeg = cv2.imencode(".jpg", img)
+        img = head + ',' + str(base64.b64encode(jpeg))[2:-1]
+    return HttpResponse(img, content_type='multipart/x-mixed-replace; boundary=frame')
