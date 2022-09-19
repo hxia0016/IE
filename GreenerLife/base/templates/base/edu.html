@@ -51,11 +51,19 @@
 
                     <figure class="blog_item">
                         <div class="outer_lyr span12 first">
-                            <div class="inner_lyr">
-                                <div align="center"><img src="{% url 'edu_video' %}"></div>
+                            <div class="outer_lyr span12 first">
+                                <div class="messgae" id="message" hidden="hidden" >
+                                    <video name="video" autoplay="true" id="videoElement"></video>
+                                    <canvas id="canvas" width="640" height="480"></canvas>
+                                    <canvas id="canvas1" width="640" height="480"></canvas>
+                                </div>
+                                <div class="inner_lyr">
+                                    <div align="center"><img src="" id="video"></div>
+                                </div>
                             </div>
-				        </div>
-					</figure>
+
+                        </div>
+                    </figure>
                 </section>
             <section id="sidebar" class="span3">
                     <figure class="widget events">
@@ -98,5 +106,36 @@
         </section>
     </section>
 </section>
+<script>
 
+    let canvas = document.querySelector("#canvas");
+     var video = document.querySelector("#videoElement");
+    // chunks = [];
+    if (navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({
+        video: true
+      })
+        .then(function (stream) {
+            video.srcObject = stream;
+        })
+        .catch(function (err0r) {
+          console.log("Something went wrong!");
+        });
+    }
+
+    function takephoto() {
+        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+        let image_data_url = canvas.toDataURL('image/jpeg');
+        // data url of the image
+        var CSRFtoken = $('input[name=csrfmiddlewaretoken]').val();
+        $.post("/edu_video/",{data:image_data_url,csrfmiddlewaretoken: '{{ csrf_token }}'}, function (data, status) {
+            $('#video').attr("src", data)
+            $("#video").show();
+        });
+    }
+
+    setInterval("takephoto()",1000)
+
+
+</script>
 {% endblock content %}

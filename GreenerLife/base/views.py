@@ -76,22 +76,16 @@ def garbage_video(request):
     return render(request, 'base/garbage-webcam.html', )
 
 
-def getbase64byndarray(pic_img):
-    retval, buffer = cv2.imencode('.jpg', pic_img)
-    pic_str = base64.b64encode(buffer)
-    return pic_str.decode()
-
-
 def garbageClassification(request):
-    image = request.FILES['img']
-    file_bytes = np.asarray(bytearray(image.read()), dtype=np.uint8)
-    img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
-    img = cv2.resize(img, (224, 224))
-    res, idx = model.predict(img)
-    res = base64.b64encode(res)
-    print("predict classes index", idx)
-    content = {"image": res}
-    return render(request, 'base/garbage.html', content)
+    image = request.POST['data']
+    head, image = image.split(',')
+    imagedata = base64.b64decode(image)
+    nparr = np.frombuffer(imagedata, np.uint8)
+    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    img, b = model.predict(img)
+    ret, jpeg = cv2.imencode(".jpg", img)
+    image = head + ',' + str(base64.b64encode(jpeg))[2:-1]
+    return HttpResponse(image, content_type='multipart/x-mixed-replace; boundary=frame')
 
 
 def gen_garbage(camera):
@@ -120,7 +114,12 @@ def edu(request):
 
 
 def edu_video(request):
-    game = camDetect(edu_game)
-    edu_game.flag = False
-    edu_game.score = 0
-    return StreamingHttpResponse(gen_game(game), content_type='multipart/x-mixed-replace; boundary=frame')
+    image = request.POST['data']
+    head, image = image.split(',')
+    imagedata = base64.b64decode(image)
+    nparr = np.frombuffer(imagedata, np.uint8)
+    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    img = edu_game.run(img)
+    ret, jpeg = cv2.imencode(".jpg", img)
+    image = head + ',' + str(base64.b64encode(jpeg))[2:-1]
+    return StreamingHttpResponse(image, content_type='multipart/x-mixed-replace; boundary=frame')

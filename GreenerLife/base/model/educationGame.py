@@ -12,25 +12,15 @@ import math
 
 class EudcationGame:
 
-    def __init__(self, path=None, wCam=640, hCam=480, detectionCon=0.8):
-        ########### Cam paramiter ##################
-        self.wCam = wCam
-        self.hCam = hCam
-        ############################################
-        self.camIdx = self.findCamerIndex()[-1]
-        self.cap = cv2.VideoCapture(self.camIdx)
-        self.cap.set(3, self.wCam)
-        self.cap.set(4, self.hCam)
+    def __init__(self, path=None, detectionCon=0.8):
         # hand track model
         self.detector = handDector(detectionCon=detectionCon)
         self.path = pathlib.Path(str(path))
         self.bin_image = cv2.imread(str(self.path / "bin.png"), cv2.IMREAD_UNCHANGED)
         self.bin_image = cv2.resize(self.bin_image, (540, 80), interpolation=cv2.INTER_AREA)
         self.path = self.path / "images"
-        # self.image_list = self.read_directory("images")
         self.image_list = self.read_directory(self.path)
         self.ix, self.iy, self.cla = self.randomLocationAndIndex()
-        # self.image = self.image_list[str(self.cla)][random.randint(0,len(self.image_list[self.cla])-1)]
         self.image = self.image_list[str(self.cla)][0]
         self.rewardArea = {"0": (50, 180 + 50, 400, 480), "1": (180 + 50, 180 + 50 + 180, 400, 480),
                            "2": (180 + 50 + 180, 180 + 50 + 180 + 180, 400, 480)}
@@ -38,27 +28,12 @@ class EudcationGame:
         self.score = 0
         self.flag = False
 
-        # print(self.findCamerIndex())
-
-    def findCamerIndex(self):
-        index = 0
-        arr = []
-        while True:
-            cap = cv2.VideoCapture(index)
-            try:
-                if cap.getBackendName() == "MSMF":
-                    arr.append(index)
-            except:
-                break
-            cap.release()
-            index += 1
-        return arr
 
     def updateLocation(self):
         self.ix, self.iy, self.cla = self.randomLocationAndIndex()
 
     def read_directory(self, directory_name):
-        # this loop is for read each image in this foder,directory_name is the foder name with images.
+
         img_list = {}
         for filename in os.listdir(self.path):
             temp = filename.split("_")
