@@ -18,8 +18,8 @@ class EudcationGame:
         self.path = pathlib.Path(str(path))
         self.bin_image = cv2.imread(self.path + "bin.png", cv2.IMREAD_UNCHANGED)
         self.bin_image = cv2.resize(self.bin_image, (540, 80), interpolation=cv2.INTER_AREA)
-        self.path = self.path + "images"
-        self.image_list = self.read_directory(self.path)
+        # self.path = self.path + "images"
+        self.image_list = self.read_directory(self.path + "images")
         self.ix, self.iy, self.cla = self.randomLocationAndIndex()
         self.image = self.image_list[str(self.cla)][0]
         self.rewardArea = {"0": (50, 180 + 50, 400, 480), "1": (180 + 50, 180 + 50 + 180, 400, 480),
