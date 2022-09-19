@@ -18,7 +18,7 @@ class EudcationGame:
         self.path = pathlib.Path(str(path))
         self.bin_image = cv2.imread(self.path + "bin.png", cv2.IMREAD_UNCHANGED)
         self.bin_image = cv2.resize(self.bin_image, (540, 80), interpolation=cv2.INTER_AREA)
-        # self.path = self.path / "images"
+        self.path = self.path + "images"
         self.image_list = self.read_directory(self.path)
         self.ix, self.iy, self.cla = self.randomLocationAndIndex()
         self.image = self.image_list[str(self.cla)][0]
@@ -35,10 +35,9 @@ class EudcationGame:
     def read_directory(self, directory_name):
 
         img_list = {}
-        for filename in os.listdir(self.path + "images"):
+        for filename in os.listdir(directory_name):
             temp = filename.split("_")
-            temp_path = self.path + "images"
-            temp_path = temp_path + "/" + str(filename)
+            temp_path = directory_name  + "/" + str(filename)
             img = cv2.imread(temp_path, cv2.IMREAD_UNCHANGED)
             img = cv2.resize(img, (100, 100), interpolation=cv2.INTER_AREA)
             if temp[0] in img_list:
