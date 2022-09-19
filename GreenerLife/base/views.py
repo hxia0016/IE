@@ -104,7 +104,7 @@ def gen_game(camera):
 
 def video(request):
     garbage_cam = camDetect(model)
-    return StreamingHttpResponse(gen_garbage(garbage_cam), content_type='multipart/x-mixed-replace; boundary=frame')
+    return HttpResponse(gen_garbage(garbage_cam), content_type='multipart/x-mixed-replace; boundary=frame')
 
 
 def edu(request):
@@ -122,4 +122,4 @@ def edu_video(request):
     img = edu_game.run(img)
     ret, jpeg = cv2.imencode(".jpg", img)
     image = head + ',' + str(base64.b64encode(jpeg))[2:-1]
-    return StreamingHttpResponse(image, content_type='multipart/x-mixed-replace; boundary=frame')
+    return HttpResponse(image, content_type='multipart/x-mixed-replace; boundary=frame')
