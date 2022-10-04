@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-waste - GreenerLife </title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"/>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="{% static 'new_template/css/css2.css'%}" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'new_template/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/animate.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/custom-animate.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/all.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jarallax.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jquery.magnific-popup.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/nouislider.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/nouislider.pips.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/odometer.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/swiper.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/tiny-slider.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/stylesheet.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/twentytwenty.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jquery.bxslider.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/bootstrap-select.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/vegas.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jquery-ui.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/timePicker.css'%}">
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="{% static 'new_template/css/izeetak.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/izeetak-responsive.css'%}">
+</head>
+
+<body>
+<div class="preloader">
+    <img class="preloader__image" width="60" src="static/picture/loader.png" alt="">
+</div>
+<!-- /.preloader -->
+<div class="page-wrapper">
+    <header class="main-header clearfix">
+        <nav class="main-menu clearfix">
+            <div class="main-menu-wrapper clearfix">
+                <div class="main-menu-wrapper-inner clearfix">
+                    <div class="main-menu-wrapper__left clearfix">
+                        <div class="main-menu-wrapper__logo">
+                            <a href="{% url 'index' %}"><img src="{% static 'images/logo_1.png'%}" alt=""></a>
+                        </div>
+                        <div class="main-menu-wrapper__main-menu">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li ><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li><a href="{% url 'clothing' %}">Clothing</a></li>
+                                <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+                                <li><a href="{% url 'edu' %}">Game </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="stricky-header stricked-menu main-menu">
+        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+    </div><!-- /.stricky-header -->
+
+    <!--Page Header Start-->
+    <section class="page-header">
+        <div class="page-header-bg" style="background-image: url(/static/images/slide1.png)">
+        </div>
+        <div class="page-header-bg-overly"></div>
+        <div class="page-header-shape wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms"
+             style="background-image: url(/static/new_template/image/page-header-shape.png)"></div>
+        <div class="container">
+            <div class="page-header__inner">
+                <ul class="thm-breadcrumb list-unstyled">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><span>/</span></li>
+                    <li>E-waste Classification</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--Page Header End-->
+
+    <!--Service Details Start-->
+    <section class="service-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-7">
+                    <div class="service-details__right">
+                        <div class="service-details__content">
+                            <h3 class="service-details__title"> What is E-waste?</h3>
+                            <p class="service-details__text">E-waste is any item with a plug, battery or power cord
+                                that’s no longer working or wanted. It covers a whole range of items from phones and
+                                refrigerators to fluorescent light tubes.</p>
+                            <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion">
+                                <div class="accrodion active">
+                                    <div class="accrodion-title">
+                                        <h4>Electrical and electronic tools</h4>
+                                    </div>
+                                    <div class="accrodion-content">
+                                        <div class="inner">
+                                            <ol>
+                                                <li> Batteries</li>
+                                                <li> Drills</li>
+                                                <li> Lawn mowers</li>
+                                                <li> Saws</li>
+                                                <li> Sewing machines</li>
+                                            </ol>
+                                            <div class="col-xl-2">
+                                                <IMG SRC="{% static 'images/Photo-Waste-Batteries.jpg'%}"/>
+                                            </div>
+                                        </div><!-- /.inner -->
+                                    </div>
+                                </div>
+                                <div class="accrodion">
+                                    <div class="accrodion-title">
+                                        <h4>IT, telecommunications and TV equipment</h4>
+                                    </div>
+                                    <div class="accrodion-content" style="display: none;">
+                                        <div class="inner">
+                                            <ol>
+                                                <li> Computers</li>
+                                                <li> Laptops</li>
+                                                <li> Mobile phones</li>
+                                                <li> Printers</li>
+                                                <li> Remote controls</li>
+                                                <li> Televisions</li>
+                                            </ol>
+                                            <div>
+                                                <IMG class="col-xl-6"
+                                                     SRC="{% static 'images/Photo-dispose-of-mobile-phones-880x250.jpg'%}"/>
+                                                <IMG class="col-xl-6"
+                                                     SRC="{% static 'images/Photo-Waste-Laptop.jpg'%}"/>
+                                            </div>
+                                        </div><!-- /.inner -->
+                                    </div>
+                                </div>
+                                <div class="accrodion">
+                                    <div class="accrodion-title">
+                                        <h4>Home appliances (large)</h4>
+                                    </div>
+                                    <div class="accrodion-content" style="display: none;">
+                                        <div class="inner">
+                                            <ol>
+                                                <li> Air conditioners</li>
+                                                <li> Cookers</li>
+                                                <li> Electric fans</li>
+                                                <li> Microwaves</li>
+                                                <li> Refrigerators</li>
+                                                <li> Washing machines</li>
+                                            </ol>
+                                            <div>
+                                                <IMG class="col-xl-6" SRC="{% static 'images/shopping.png'%}"/>
+                                            </div>
+                                        </div><!-- /.inner -->
+
+                                    </div>
+                                </div>
+                                <div class="accrodion">
+                                    <div class="accrodion-title">
+                                        <h4>Home appliances (small)</h4>
+                                    </div>
+                                    <div class="accrodion-content" style="display: none;">
+                                        <div class="inner">
+                                            <ol>
+                                                <li> Coffee machines</li>
+                                                <li> Hair dryers</li>
+                                                <li> Irons</li>
+                                                <li> Toasters</li>
+                                                <li> Watches</li>
+                                            </ol>
+                                            <div>
+                                                <IMG class="col-xl-6" SRC="{% static 'images/coffee.png'%}"/>
+                                            </div>
+                                        </div><!-- /.inner -->
+
+                                    </div>
+                                </div>
+                                <div class="accrodion">
+                                    <div class="accrodion-title">
+                                        <h4>Lighting equipment</h4>
+                                    </div>
+                                    <div class="accrodion-content" style="display: none;">
+                                        <div class="inner">
+                                            <ol>
+                                                <li> Compact fluorescent lamps</li>
+                                                <li> Discharge lamps</li>
+                                                <li> Fluorescent lamps</li>
+                                                <li> High-intensity LEDs</li>
+                                            </ol>
+                                            <div>
+                                                <IMG class="col-xl-6" SRC="{% static 'images/light.png'%}"/>
+                                            </div>
+                                        </div><!-- /.inner -->
+
+                                    </div>
+                                </div>
+                                <div class="accrodion">
+                                    <div class="accrodion-title">
+                                        <h4>Other items</h4>
+                                    </div>
+                                    <div class="accrodion-content" style="display: none;">
+                                        <div class="inner">
+                                            <ol>
+                                                <li> Automatic dispensers</li>
+                                                <li> Medical devices</li>
+                                                <li> Printer cartridges</li>
+                                                <li> Thermostats</li>
+                                            </ol>
+                                            <div>
+                                                <IMG class="col-xl-6" SRC="{% static 'images/cartridges.png'%}"/>
+                                            </div>
+                                        </div><!-- /.inner -->
+
+                                    </div>
+                                </div>
+                                <div class="accrodion">
+                                    <div class="accrodion-title">
+                                        <h4> Toys, leisure and sports equipment</h4>
+                                    </div>
+                                    <div class="accrodion-content" style="display: none;">
+                                        <div class="inner">
+                                            <ol>
+                                                <li> Amplifiers</li>
+                                                <li> Consoles</li>
+                                                <li> Hand-held video games</li>
+                                                <li> Musical instruments</li>
+                                                <li> Radios</li>
+                                                <li> Toys like electric trains and racing cars</li>
+                                            </ol>
+                                            <div>
+                                                <IMG class="col-xl-6" SRC="{% static 'images/switch.png'%}"/>
+                                            </div>
+                                        </div><!-- /.inner -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-details__benefits">
+                            <div class="row">
+                                <div>
+                                    <div class="service-details__benefits-text">
+                                        <h3 class="service-details__benefits-title">E-waste drop-off points</h3>
+                                        <p class="service-details__benefits-text">E-waste should not be put in your
+                                            rubbish or recycling bin. Take e-waste to a drop-off point. To find your
+                                            closest e-waste drop-off point, use the Recycling Near You directory
+                                        </p>
+                                        <ul class="list-unstyled service-details__benefits-list">
+                                            <li>
+                                                <div class="icon">
+                                                    <span class="fa fa-check"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Wsing our website's finding E-waste collection point</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="icon">
+                                                    <span class="fa fa-check"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Check your local council's website for other disposal options in
+                                                        your area</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="icon">
+                                                    <span class="fa fa-check"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Pass it onto your friends, family or sell second hand, if it’s
+                                                        still working</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="icon">
+                                                    <span class="fa fa-check"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Have it collected from your home through eMeals</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="service-details__benefits">
+                            <div class="row">
+                                <div>
+                                    <div class="service-details__text">
+                                        <form action="{% url 'e_waste_classification' %}" method="GET">
+                                            <label for="site"><h3 class="service-details__benefits-title">Choose a
+                                                council
+                                                to find E-Waste collection sites</h3>
+                                            </label>
+
+                                            <select class="target" name="ESite" id="site">
+                                                <option value="Alpine">Alpine</option>
+                                                <option value="Ararat">Ararat</option>
+                                                <option value="Ballarat">Ballarat</option>
+                                                <option value="Banyule">Banyule</option>
+                                                <option value="Bass Coast">Bass Coast</option>
+                                                <option value="Baw Baw">Baw Baw</option>
+                                                <option value="Bayside">Bayside</option>
+                                                <option value="Benalla">Benalla</option>
+                                                <option value="Boroondara">Boroondara</option>
+                                                <option value="Brimbank">Brimbank</option>
+                                                <option value="Buloke">Buloke</option>
+                                                <option value="Campaspe">Campaspe</option>
+                                                <option value="Cardinia">Cardinia</option>
+                                                <option value="Casey">Casey</option>
+                                                <option value="Central Goldfields">Central Goldfields</option>
+                                                <option value="Corangamite">Corangamite</option>
+                                                <option value="Darebin">Darebin</option>
+                                                <option value="East Gippsland">East Gippsland</option>
+                                                <option value="Falls Creek">Falls Creek</option>
+                                                <option value="Frankston">Frankston</option>
+                                                <option value="Gannawarra">Gannawarra</option>
+                                                <option value="Glenelg">Glenelg</option>
+                                                <option value="Golden Plains">Golden Plains</option>
+                                                <option value="Greater Bendigo">Greater Bendigo</option>
+                                                <option value="Greater Geelong">Greater Geelong</option>
+                                                <option value="Greater Shepparton">Greater Shepparton</option>
+                                                <option value="Hepburn">Hepburn</option>
+                                                <option value="Hindmarsh">Hindmarsh</option>
+                                                <option value="Horsham">Horsham</option>
+                                                <option value="Hume">Hume</option>
+                                                <option value="Indigo">Indigo</option>
+                                                <option value="Kingston">Kingston</option>
+                                                <option value="Latrobe">Latrobe</option>
+                                                <option value="Loddon">Loddon</option>
+                                                <option value="Macedon Ranges">Macedon Ranges</option>
+                                                <option value="Mansfield">Mansfield</option>
+                                                <option value="Melbourne">Melbourne</option>
+                                                <option value="Melton">Melton</option>
+                                                <option value="Mildura">Mildura</option>
+                                                <option value="Mitchell">Mitchell</option>
+                                                <option value="Moira">Moira</option>
+                                                <option value="Monash">Monash</option>
+                                                <option value="Moonee Valley">Moonee Valley</option>
+                                                <option value="Moorabool">Moorabool</option>
+                                                <option value="Mornington Peninsula">Mornington Peninsula</option>
+                                                <option value="Mount Alexander">Mount Alexander</option>
+                                                <option value="Moyne">Moyne</option>
+                                                <option value="Mt Buller">Mt Buller</option>
+                                                <option value="Mt Hotham">Mt Hotham</option>
+                                                <option value="Murrindindi">Murrindindi</option>
+                                                <option value="Nillumbik">Nillumbik</option>
+                                                <option value="Northern Grampians">Northern Grampians</option>
+                                                <option value="Port Phillip">Port Phillip</option>
+                                                <option value="Pyrenees">Pyrenees</option>
+                                                <option value="South Gippsland">South Gippsland</option>
+                                                <option value="Southern Grampians">Southern Grampians</option>
+                                                <option value="Stonnington">Stonnington</option>
+                                                <option value="Strathbogie">Strathbogie</option>
+                                                <option value="Surf Coast">Surf Coast</option>
+                                                <option value="Swan Hill">Swan Hill</option>
+                                                <option value="Towong">Towong</option>
+                                                <option value="Wangaratta">Wangaratta</option>
+                                                <option value="Warrnambool">Warrnambool</option>
+                                                <option value="Wellington">Wellington</option>
+                                                <option value="West Wimmera">West Wimmera</option>
+                                                <option value="Whitehorse">Whitehorse</option>
+                                                <option value="Whittlesea">Whittlesea</option>
+                                                <option value="Wodonga">Wodonga</option>
+                                                <option value="Wyndham">Wyndham</option>
+                                                <option value="Yarra">Yarra</option>
+                                                <option value="Yarra Ranges">Yarra Ranges</option>
+                                                <option value="Yarriambiack">Yarriambiack</option>
+                                            </select>
+
+                                        </form>
+                                        <table id="myTable" border="1">
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Address</th>
+                                                        <th>Suburb</th>
+                                                    </tr>
+                                                </table>
+                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgX16AyleX9Cjjnno5uYQKyliz-_NGKO4"></script>
+                                        <div id="map_canvas"
+                                             style="border: 2px solid #3872ac; min-height: 500px; width: 100%; margin: 5px; padding: 0px;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="service-details__benefits-img">
+                                        <img src="static/picture/service-details__benefits-img.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="service-details__sidebar">
+
+                        <div class="service-details__sidebar-service">
+                            <h4 class="service-details__sidebar-title">Consider if you really need a new item</h4>
+
+                                <p>If you purchase a new product you don’t really need, or only
+                                    require for a one-off job, there’s a good chance it’s going
+                                    to sit at the back of a drawer or packed away in the shed
+                                    once you’re finished. Instead, see if you can borrow or rent
+                                    one first. For instance, try searching online for ‘tool
+                                    library near me’ for your next odd job around the house.</p>
+                        </div>
+                        <div class="service-details__sidebar-service">
+                            <h4 class="service-details__sidebar-title">Consider buying secondhand </h4>
+                                <p>The idea of regularly upgrading devices has become all too
+                                                            common in our society. With new models being released
+                                                            regularly, we can feel compelled to purchase the latest
+                                                            version. But it’s worth checking the second-hand market or
+                                                            purchasing an item that’s pre-loved or refurbished before
+                                                            buying new.</p>
+                        </div>
+                        <div class="service-details__sidebar-service">
+                            <h4 class="service-details__sidebar-title">Extend the life of your electronics</h4>
+                            <p>Try to get the most of your products by:</p>
+                                                        <ul>
+                                                            <li>keeping them clean</li>
+                                                            <li>avoiding overcharging batteries</li>
+                                                            <li>using protective covers on tablets and phones.</li>
+                                                        </ul>
+                        </div>
+                        <div class="service-details__sidebar-service">
+                            <h4 class="service-details__sidebar-title">Donate or sell working electronics</h4>
+                            <p>If your electronics are still in good condition, consider
+                                                            donating or selling them to others who will find a use for
+                                                            them. This is one of the best ways to stop unwanted
+                                                            electrical items from entering the waste stream.Not only
+                                                            does this extend the product's life, it could earn you a bit
+                                                            of extra money in the process.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Service Details End-->
+     <script>
+    var locations = [];
+
+    $('.target').change(function () {
+        var table = document.getElementById("myTable");
+        var totalRowCount = table.rows.length;
+        if (totalRowCount < 2) {
+            console.log('skip');
+        } else {
+            for (let i = totalRowCount - 1; i > 0; i--) {
+                document.getElementById("myTable").deleteRow(i);
+            }
+        }
+        var location = $('select option:selected').val();
+        locations = [];
+        var i = 0;
+        {% for ewaste in ewastes %}
+        if (location == "{{ewaste.site}}") {
+            locations[i] = "{{ewaste.name}}" + "," + "{{ewaste.site}}" + ",Australia";
+            i += 1;
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            cell1.innerHTML = "{{ewaste.name}}";
+            cell2.innerHTML = "{{ewaste.ownership}}";
+            cell3.innerHTML = "{{ewaste.site}}";
+        }
+        {% endfor %}
+        initialize();
+    });
+
+
+    var geocoder;
+    var map;
+    var lat;
+    var lon;
+    var bounds = new google.maps.LatLngBounds();
+
+    function initialize() {
+        map = new google.maps.Map(
+            document.getElementById("map_canvas"), {
+                center: new google.maps.LatLng(-37.840935, 144.946457),
+                zoom: 13,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+        geocoder = new google.maps.Geocoder();
+
+        for (i = 0; i < locations.length; i++) {
+
+
+            geocodeAddress(locations, i);
+        }
+    }
+
+    google.maps.event.addDomListener(window, "load", initialize);
+
+    function geocodeAddress(locations, i) {
+
+        var address = locations[i];
+        geocoder.geocode({
+                'address': locations[i]
+            },
+
+            function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var marker = new google.maps.Marker({
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/blue.png',
+                        map: map,
+                        position: results[0].geometry.location,
+
+                        animation: google.maps.Animation.DROP,
+                        address: address
+
+                    })
+                    infoWindow(marker, map, address, results[0].geometry.location);
+                    bounds.extend(marker.getPosition());
+                    map.fitBounds(bounds);
+                }
+            });
+    }
+
+    function infoWindow(marker, map, address, position) {
+        getLocation();
+        google.maps.event.addListener(marker, 'click', function () {
+            var lat1 = position.lat();
+            var lon1 = position.lng();
+            var distance = calcCrow(lat, lon, lat1, lon1).toFixed(2);
+            console.log(lat, lon, lat1, lon1);
+            var html = "<div><h3>" + address + "</h3><p>" + distance.toString() + "Km from your location." + "<br></div></p></div>";
+            iw = new google.maps.InfoWindow({
+                content: html,
+                maxWidth: 350
+            });
+            iw.open(map, marker);
+        });
+    }
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        lat = Number(position.coords.latitude);
+        lon = Number(position.coords.longitude);
+    }
+
+    function calcCrow(lat1, lon1, lat2, lon2) {
+        var R = 6371; // km
+        var dLat = toRad(lat2 - lat1);
+        var dLon = toRad(lon2 - lon1);
+        var lat1 = toRad(lat1);
+        var lat2 = toRad(lat2);
+
+        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        var d = R * c;
+        return d;
+    }
+
+    // Converts numeric degrees to radians
+    function toRad(Value) {
+        return Value * Math.PI / 180;
+    }
+
+
+    function createMarker(results) {
+        var marker = new google.maps.Marker({
+            icon: 'http://maps.google.com/mapfiles/ms/icons/red.png',
+            map: map,
+            position: results[0].geometry.location,
+
+            animation: google.maps.Animation.DROP,
+            address: address
+        })
+        bounds.extend(marker.getPosition());
+        map.fitBounds(bounds);
+        return marker;
+    }
+</script>
+    <!--Site Footer One Start-->
+    <footer class="site-footer">
+	<div class="site-footer__top">
+		<div class="container">
+			<div class="site-footer__top-inner">
+				<div class="site-footer-map"
+					 style="background-image: url(/static/new_template/image/site-footer-mape.png)"></div>
+				<div class="row">
+					<div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+						<div class="footer-widget__column footer-widget__links clearfix">
+							<h3 class="footer-widget__title">Links</h3>
+							<li><a href="{% url 'index' %}">Home</a></li>
+							<li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+							<li><a href="{% url 'clothing' %}">Clothing</a></li>
+							<li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+							<li><a href="{% url 'edu' %}">Game </a></li>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="site-footer__bottom">
+		<div class="site-footer__bottom-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="site-footer__bottom-inner">
+							<div class="site-footer__bottom-left">
+								<p class="site-footer__bottom-text">Copyright &copy; 2021.GreenerLife All rights
+									reserved.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+    <!--Site Footer One End-->
+
+
+</div><!-- /.page-wrapper -->
+
+
+<div class="mobile-nav__wrapper">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <!-- /.mobile-nav__overlay -->
+    <div class="mobile-nav__content">
+        <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+        <div class="logo-box">
+            <a href="index.html" aria-label="logo image"><img src="static/picture/footer-logo.png" width="155"
+                                                              alt=""></a>
+        </div>
+        <!-- /.logo-box -->
+        <div class="mobile-nav__container"></div>
+        <!-- /.mobile-nav__container -->
+
+        <ul class="mobile-nav__contact list-unstyled">
+            <li>
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:needhelp@packageName__.com">needhelp@izeetak.com</a>
+            </li>
+            <li>
+                <i class="fa fa-phone-alt"></i>
+                <a href="tel:666-888-0000">666 888 0000</a>
+            </li>
+        </ul><!-- /.mobile-nav__contact -->
+        <div class="mobile-nav__top">
+            <div class="mobile-nav__social">
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-facebook-square"></a>
+                <a href="#" class="fab fa-pinterest-p"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div><!-- /.mobile-nav__social -->
+        </div><!-- /.mobile-nav__top -->
+
+
+    </div>
+    <!-- /.mobile-nav__content -->
+</div>
+<!-- /.mobile-nav__wrapper -->
+
+<div class="search-popup">
+    <div class="search-popup__overlay search-toggler"></div>
+    <!-- /.search-popup__overlay -->
+    <div class="search-popup__content">
+        <form action="#">
+            <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+            <input type="text" id="search" placeholder="Search Here...">
+            <button type="submit" aria-label="search submit" class="thm-btn">
+                <i class="icon-magnifying-glass"></i>
+            </button>
+        </form>
+    </div>
+    <!-- /.search-popup__content -->
+</div>
+<!-- /.search-popup -->
+
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+<script src="{% static 'new_template/js/jquery-3.6.0.min.js'%}"></script>
+<script src="{% static 'new_template/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'new_template/js/jarallax.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.ajaxchimp.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.appear.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.circle-progress.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.magnific-popup.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.validate.min.js'%}"></script>
+<script src="{% static 'new_template/js/nouislider.min.js'%}"></script>
+<script src="{% static 'new_template/js/odometer.min.js'%}"></script>
+<script src="{% static 'new_template/js/swiper.min.js'%}"></script>
+<script src="{% static 'new_template/js/tiny-slider.min.js'%}"></script>
+<script src="{% static 'new_template/js/wNumb.min.js'%}"></script>
+<script src="{% static 'new_template/js/wow.js'%}"></script>
+<script src="{% static 'new_template/js/isotope.js'%}"></script>
+<script src="{% static 'new_template/js/countdown.min.js'%}"></script>
+<script src="{% static 'new_template/js/owl.carousel.min.js'%}"></script>
+<script src="{% static 'new_template/js/twentytwenty.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.event.move.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.bxslider.min.js'%}"></script>
+<script src="{% static 'new_template/js/bootstrap-select.min.js'%}"></script>
+<script src="{% static 'new_template/js/vegas.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery-ui.js'%}"></script>
+<script src="{% static 'new_template/js/timePicker.js'%}"></script>
+<script src="{% static 'new_template/js/particles.min.js'%}"></script>
+<script src="{% static 'new_template/js/particles-config.js'%}"></script>
+
+
+
+
+
+<!-- template js -->
+<script src="{% static 'new_template/js/izeetak.js'%}"></script>
+
+
+</body>
+
+</html>

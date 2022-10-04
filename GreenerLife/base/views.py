@@ -20,18 +20,18 @@ import pathlib
 
 
 path = pathlib.Path.cwd()
-# path = path / 'base' / 'model'
-print(path)
+path = path / 'base' / 'model'
 tensorflow.keras.backend.clear_session()
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-model = GarbageModel("./GreenerLife/base/model/")
-
+# model = GarbageModel("./GreenerLife/base/model/")
+model = GarbageModel(path)
 # model = ModelThread("./base/model/")
-# model.__int__("./base/model/")
-img = cv2.imread("./GreenerLife/static / images / coffee.png")
+# img = cv2.imread("./GreenerLife/static / images / coffee.png")
+img = cv2.imread("./static / images / coffee.png")
 # model.predict(img)
-edu_game = EudcationGame("./GreenerLife/base/model/")
+# edu_game = EudcationGame("./GreenerLife/base/model/")
+edu_game = EudcationGame(path)
 
 
 def index(request):
@@ -47,7 +47,7 @@ def e_waste_classification(request):
     print(site)
     ewastes = EWasteSite.objects.all()
     context = {'ewastes': ewastes}
-    return render(request, 'base/e-waste-classification.html', context)
+    return render(request, 'base/e-waste.html', context)
 
 
 def e_waste(request):

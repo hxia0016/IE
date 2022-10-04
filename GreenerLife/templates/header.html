@@ -2,69 +2,112 @@
 <!-- Start of Header -->
 <head>
     {% load static %}
-
+    <link rel="shortcut icon" href="{% static 'new_template/images/favicon.ico' %}"/>
     <!-- Start Main Header -->
     <!-- Main Nav Bar -->
-    <nav id="nav">
-        <section class="container-fluid container">
-            <section class="row-fluid">
-                <div class="navbar navbar-inverse">
-                    <div class="navbar-inner">
-                        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-                        </button>
-                        <div class="nav-collapse collapse">
-                            <ul class="nav">
-
-                                <li class="active"><a href="{% url 'index' %}"> Home </a></li>
-
-
-                                <li class="dropdown"><a class="dropdown-toggle"
-                                                        href="{% url 'e_waste_classification' %}"> E-waste </a>
-                                    <!--						<ul class="dropdown-menu">-->
-                                    <!--							<li><a href="{% url 'e_waste_classification' %}">E-waste classification</a></li>-->
-                                    <!--							<li><a href="{% url 'e_waste' %}">E-Waste Site</a></li>-->
-
-
-                                </li>
-
-                                <li><a class="dropdown-toggle" href="{% url 'clothing' %}"> Clothing </a></li>
-
-                                <li class="dropdown"><a class="dropdown-toggle" href="{% url 'garbage_video' %}"> Waste Classification <b
-                                        class=""></b> </a></li>
-                                <li class="dropdown"><a class="dropdown-toggle" href="{% url 'edu' %}"> Game <b
-                                        class=""></b> </a></li>
-                            </ul>
-                        </div>
-                        <!--/.nav-collapse -->
-                    </div>
-                    <!-- /.navbar-inner -->
-                </div>
-                <!-- /.navbar -->
-            </section>
-        </section>
-    </nav>
-    <!-- End Main Nav Bar -->
-    <section class="logo_container">
-        <section class="container-fluid container">
-            <section class="row-fluid">
-                <section class="span4">
-                    <h1 id="logo">
-                        <a href="{% url 'index' %}"> <img src="{% static 'images/logo_1.png'%}" style=""></a>
-                    </h1>
-                </section>
-                <section class="span4 pull-right">
-                    <figure class="charity_counter_wrapper">
-                        <section class="span12">
-                            <div class="charity_title">
-                                <h4>Help International Student reduce and recycle waste</h4>
+    <header class="main-header clearfix">
+            <nav class="main-menu clearfix">
+                <div class="main-menu-wrapper clearfix">
+                    <div class="main-menu-wrapper-inner clearfix">
+                        <div class="main-menu-wrapper__left clearfix">
+                            <div class="main-menu-wrapper__logo">
+                                <a href="{% url 'index' %}"><img src="{% static 'images/logo_1.png'%}" alt=""></a>
                             </div>
-                        </section>
-                    </figure>
-                </section>
-            </section>
-        </section>
-    </section>
+                            <div class="main-menu-wrapper__main-menu">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                    <li><a href="{% url 'index' %}">Home</a></li>
+                                    <li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                    <li><a href="{% url 'clothing' %}">Clothing</a></li>
+                                    <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+                                    <li><a href="{% url 'edu' %}">Game </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="" aria-label="logo image"><img src="{% static 'images/logo_1.png'%}" width="155" alt=""></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+<!--    <nav id="nav">-->
+<!--        <section class="container-fluid container">-->
+<!--            <section class="row-fluid">-->
+<!--                <div class="navbar navbar-inverse">-->
+<!--                    <div class="navbar-inner">-->
+<!--                        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">-->
+<!--                            <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>-->
+<!--                        </button>-->
+<!--                        <div class="nav-collapse collapse">-->
+<!--                            <ul class="nav">-->
+
+<!--                                <li class="active"><a href="{% url 'index' %}"> Home </a></li>-->
+
+
+<!--                                <li class="dropdown"><a class="dropdown-toggle"-->
+<!--                                                        href="{% url 'e_waste_classification' %}"> E-waste </a>-->
+<!--                                    &lt;!&ndash;						<ul class="dropdown-menu">&ndash;&gt;-->
+<!--                                    &lt;!&ndash;							<li><a href="{% url 'e_waste_classification' %}">E-waste classification</a></li>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;							<li><a href="{% url 'e_waste' %}">E-Waste Site</a></li>&ndash;&gt;-->
+
+
+<!--                                </li>-->
+
+<!--                                <li><a class="dropdown-toggle" href="{% url 'clothing' %}"> Clothing </a></li>-->
+
+<!--                                <li class="dropdown"><a class="dropdown-toggle" href="{% url 'garbage_video' %}"> Waste Classification <b-->
+<!--                                        class=""></b> </a></li>-->
+<!--                                <li class="dropdown"><a class="dropdown-toggle" href="{% url 'edu' %}"> Game <b-->
+<!--                                        class=""></b> </a></li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash;/.nav-collapse &ndash;&gt;-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; /.navbar-inner &ndash;&gt;-->
+<!--                </div>-->
+<!--                &lt;!&ndash; /.navbar &ndash;&gt;-->
+<!--            </section>-->
+<!--        </section>-->
+<!--    </nav>-->
+<!--    &lt;!&ndash; End Main Nav Bar &ndash;&gt;-->
+<!--    <section class="logo_container">-->
+<!--        <section class="container-fluid container">-->
+<!--            <section class="row-fluid">-->
+<!--                <section class="span4">-->
+<!--                    <h1 id="logo">-->
+<!--                        <a href="{% url 'index' %}"> <img src="{% static 'images/logo_1.png'%}" style=""></a>-->
+<!--                    </h1>-->
+<!--                </section>-->
+<!--                <section class="span4 pull-right">-->
+<!--                    <figure class="charity_counter_wrapper">-->
+<!--                        <section class="span12">-->
+<!--                            <div class="charity_title">-->
+<!--                                <h4>Help International Student reduce and recycle waste</h4>-->
+<!--                            </div>-->
+<!--                        </section>-->
+<!--                    </figure>-->
+<!--                </section>-->
+<!--            </section>-->
+<!--        </section>-->
+<!--    </section>-->
 
 </head>
 </html>

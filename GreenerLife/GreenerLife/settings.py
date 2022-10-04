@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wpprspg&o7h$oh@pt1ig))ogkiberxg@=!mafo!lmo7r+ha_i1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["Greenerlife-env.eba-xj4z4jvc.ap-southeast-2.elasticbeanstalk.com ",'127.0.0.1','34.136.250.85','greenerlife.site','www.greenerlife.site','*']
 

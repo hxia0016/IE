@@ -5,31 +5,70 @@
     <title>Title</title>
 </head>
 <body>
-<footer id="footer" class="mtp">
-	<!-- Start of Footer3 -->
-		<section class="footer_3">
-			<section class="container-fluid container">
-				<section class="row-fluid">
-					<figure class="span6" id="footer_left2">
-						<ul class="footer_nav">
-						<li> <a href="{% url 'index' %}">Home</a> </li>
-						<li> <a href="{% url 'e_waste_classification' %}">E-Waste</a> </li>
-						<li> <a href="{% url 'clothing' %}">Clothing</a> </li>
-<!--						<li> <a href="#">Placeholder</a> </li>-->
-<!--						<li> <a href="#">Placeholde</a> </li>-->
-						</ul>
-					</figure>
-					<figure class="span6" id="footer_right2">
-						<div id="tweets" class="latest_tweets">
-							<ul id="latest_tweets">
-								<li> Update Information - E-waster and Clothing  </li>
-							</ul>
+<footer class="site-footer">
+	<div class="site-footer__top">
+		<div class="container">
+			<div class="site-footer__top-inner">
+				<div class="site-footer-map"
+					 style="background-image: url(static/new_template/image/site-footer-mape.png)"></div>
+				<div class="row">
+					<div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+						<div class="footer-widget__column footer-widget__links clearfix">
+							<h3 class="footer-widget__title">Links</h3>
+							<li><a href="{% url 'index' %}">Home</a></li>
+							<li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+							<li><a href="{% url 'clothing' %}">Clothing</a></li>
+							<li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+							<li><a href="{% url 'edu' %}">Game </a></li>
+
 						</div>
-					</figure>
-				</section>
-			</section>
-		</section>
-	</footer>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="site-footer__bottom">
+		<div class="site-footer__bottom-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="site-footer__bottom-inner">
+							<div class="site-footer__bottom-left">
+								<p class="site-footer__bottom-text">Copyright &copy; 2021.GreenerLife All rights
+									reserved.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!--<footer id="footer" class="mtp">-->
+<!--	&lt;!&ndash; Start of Footer3 &ndash;&gt;-->
+<!--		<section class="footer_3">-->
+<!--			<section class="container-fluid container">-->
+<!--				<section class="row-fluid">-->
+<!--					<figure class="span6" id="footer_left2">-->
+<!--						<ul class="footer_nav">-->
+<!--						<li> <a href="{% url 'index' %}">Home</a> </li>-->
+<!--						<li> <a href="{% url 'e_waste_classification' %}">E-Waste</a> </li>-->
+<!--						<li> <a href="{% url 'clothing' %}">Clothing</a> </li>-->
+<!--&lt;!&ndash;						<li> <a href="#">Placeholder</a> </li>&ndash;&gt;-->
+<!--&lt;!&ndash;						<li> <a href="#">Placeholde</a> </li>&ndash;&gt;-->
+<!--						</ul>-->
+<!--					</figure>-->
+<!--					<figure class="span6" id="footer_right2">-->
+<!--						<div id="tweets" class="latest_tweets">-->
+<!--							<ul id="latest_tweets">-->
+<!--								<li> Update Information - E-waster and Clothing  </li>-->
+<!--							</ul>-->
+<!--						</div>-->
+<!--					</figure>-->
+<!--				</section>-->
+<!--			</section>-->
+<!--		</section>-->
+<!--	</footer>-->
 <!-- End of Footer3 -->
 </body>
 </html>
