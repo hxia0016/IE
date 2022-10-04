@@ -1,57 +1,120 @@
-{% extends 'main.html' %}
-
-{% block content %}
-<title>Clothing Collection Site - GreenerLife </title>
+<!DOCTYPE html>
+<html lang="en">
 {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Collection Site - GreenerLife </title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"/>
 
-<section class="mtop">
-    <section class="container-fluid container">
-        <section class="row-fluid">
-            <section id="donation_box">
-                <section class="container container-fluid">
-                    <section class="row-fluid">
-                        <div class="span8 first"><h2> Clothing Collection Site </h2></div>
-                    </section>
-                </section>
-            </section>
-        </section>
-        <section class="row-fluid">
-            <!-- BreadCrumbs -->
-            <figure id="breadcrumbs" class="span12">
-                <ul class="breadcrumb">
-                    <li><a href="{% url 'index' %}">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Clothing Collection Site</li>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="{% static 'new_template/css/css2.css'%}" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'new_template/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/animate.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/custom-animate.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/all.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jarallax.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jquery.magnific-popup.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/nouislider.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/nouislider.pips.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/odometer.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/swiper.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/tiny-slider.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/stylesheet.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/twentytwenty.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jquery.bxslider.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/bootstrap-select.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/vegas.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jquery-ui.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/timePicker.css'%}">
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="{% static 'new_template/css/izeetak.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/izeetak-responsive.css'%}">
+</head>
+
+<body>
+{% block content %}
+<div class="preloader">
+    <img class="preloader__image" width="60" src="static/picture/loader.png" alt="">
+</div>
+<!-- /.preloader -->
+<div class="page-wrapper">
+    <header class="main-header clearfix">
+        <nav class="main-menu clearfix">
+            <div class="main-menu-wrapper clearfix">
+                <div class="main-menu-wrapper-inner clearfix">
+                    <div class="main-menu-wrapper__left clearfix">
+                        <div class="main-menu-wrapper__logo">
+                            <a href="{% url 'index' %}"><img src="{% static 'images/logo_1.png'%}" alt=""></a>
+                        </div>
+                        <div class="main-menu-wrapper__main-menu">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li ><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li><a href="{% url 'clothing' %}">Clothing</a></li>
+                                <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+                                <li><a href="{% url 'edu' %}">Game </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="stricky-header stricked-menu main-menu">
+        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+    </div><!-- /.stricky-header -->
+
+    <!--Page Header Start-->
+    <section class="page-header">
+        <div class="page-header-bg" style="background-image: url(/static/images/slide1.png)">
+        </div>
+        <div class="page-header-bg-overly"></div>
+        <div class="page-header-shape wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms"
+             style="background-image: url(/static/new_template/image/page-header-shape.png)"></div>
+        <div class="container">
+            <div class="page-header__inner">
+                <ul class="thm-breadcrumb list-unstyled">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><span>/</span></li>
+                    <li>Clothing</li>
                 </ul>
-            </figure>
-            <!-- End of breadcrumbs -->
-        </section>
+            </div>
+        </div>
     </section>
-</section>
+    <!--Page Header End-->
 
-<section id="content" class="mbtm blog">
-    <section class="container-fluid container">
-        <section class="row-fluid">
-            <section class="span12" id="blog_listing">
-                <figure class="blog_item">
-                    <div class="outer_lyr span12 first">
-                        <div class="inner_lyr">
-                            <h3>Clothing Recycling</h3>
-                            <p style="font-size: 17px">Did you know the average American throws away 70lbs of textiles
+    <!--Service Details Start-->
+    <section class="service-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-7">
+                    <div class="service-details__right">
+                        <div class="service-details__content">
+
+                            <h3 class="service-details__title"> Clothing Recycling</h3>
+                            <p class="service-details__text">Did you know the average American throws away 70lbs of textiles
                                 per year? The fact that only 15% of unwanted clothing is actually recycled is a huge
                                 part of the problem. There are a few different options when it comes to unwanted or
                                 worn-out clothing depending on the condition. We will break them each down and help you
                                 decide how to responsibly get rid of your unwanted clothing and accessories.</p>
                         </div>
-                    </div>
-                </figure>
-                <figure class="blog_item">
-                    <div class="outer_lyr span12 first">
-                        <div class="inner_lyr">
-                            <!-- <input type="text" name="search" value="Perhaps you can find it using the search option"/>
-                            <button><i class="icon-search"></i></button> -->
-
-                            <form action="{% url 'clothing' %}" method="GET">
-                                <label for="site">Clothing Disposal Site</label>
+                        <div class="service-details__benefits">
+                            <div class="row">
+                                <div>
+                                    <div class="service-details__text">
+                                        <form action="{% url 'clothing' %}" method="GET">
+                                            <label for="site"><h3 class="service-details__benefits-title">Choose a suburb to find cloting collection sites </h3></label>
                                 <select class="target" name="CSite" id="site">
                                     <option value="Melbourne" selected>Melbourne</option>
                                     <option value="Abbotsford">Abbotsford</option>
@@ -187,132 +250,69 @@
                                     <option value="Williamstown">Williamstown</option>
                                     <option value="Windsor">Windsor</option>
                                 </select>
-
                             </form>
-                            <div>
-                                <div class="accordion faq_accordion" id="accordion3">
-                                    <div class="accordion-group">
-                                        <div class="accordion-heading">
-                                            <a class="accordion-toggle active" data-toggle="collapse"
-                                               data-parent="#accordion3" href="#collapse1">
-                                                <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
-                                                <h3><strong> Clothing Collection Point </strong></h3> <br>
-                                            </a>
-                                        </div>
-
-                                        <div id="collapse1" class="accordion-body collapse in">
-                                            <div class="accordion-inner">
-                                                <table id="myTable" border="1">
+                                        <table id="myTable" border="1">
                                                     <tr>
                                                         <th>Name</th>
                                                         <th>Address</th>
                                                         <th>Suburb</th>
                                                     </tr>
                                                 </table>
-                                            </div>
-                                        </div>
+
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgX16AyleX9Cjjnno5uYQKyliz-_NGKO4"></script>
+                                        <div id="map_canvas"
+                                 style="border: 2px solid #3872ac; min-height: 500px;  width: 100%;  margin: 0px;  padding: 0px"></div>
                                     </div>
                                 </div>
                             </div>
-                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgX16AyleX9Cjjnno5uYQKyliz-_NGKO4"></script>
-                            <div id="map_canvas"
-                                 style="border: 2px solid #3872ac; min-height: 500px;  width: 100%;  margin: 0px;  padding: 0px"></div>
                         </div>
                     </div>
-                </figure>
-                <figure class="blog_item">
-                    <div class="outer_lyr span12 first">
-                        <div class="inner_lyr">
-                            <div class="accordion faq_accordion" id="accordion1">
-                                <div class="accordion-group">
-                                    <div class="accordion-heading">
-                                        <a class="accordion-toggle active" data-toggle="collapse"
-                                           data-parent="#accordion1" href="#collapseOne">
-                                            <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
-                                            <h3><strong> Used Clothing </strong></h3>
-                                        </a>
+                </div>
+                 <div class="col-xl-4 col-lg-5">
+                    <div class="service-details__sidebar">
+
+                        <div class="service-details__sidebar-service">
+                            <h4 class="service-details__sidebar-title">Recyclable clothes</h4>
+
+                                <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion">
+                                <div class="accrodion active">
+                                    <div class="accrodion-title">
+                                        <h4>Used Clothing</h4>
                                     </div>
-                                    <div id="collapseOne" class="accordion-body collapse in">
-                                        <div class="accordion-inner">
+                                    <div class="accrodion-content">
+                                        <div class="inner">
                                             <p>Retailers like H&M, Uniqlo, Zara accepts clothing and textiles for
                                                 recycle and resue. MacPac have trade-in programs for worn clothing in
                                                 exchange for in-store credit. </p>
-                                            <ul class="gallery-page">
-                                                <li class="gal_img Charity span3 view_new view-tenth first">
-                                                    <figure class="gal_img_container">
-                                                        <img src="{% static 'images/Used Clothing.png'%}"/>
-                                                    </figure>
-                                                </li>
-                                                 <li class="gal_img Charity span3 view_new view-tenth first">
-                                                    <figure class="gal_img_container">
-                                                        <img src="{% static 'images/used2.png'%}"/>
-                                                    </figure>
-                                                </li>
-                                                <li class="gal_img Charity span3 view_new view-tenth first">
-                                                    <figure class="gal_img_container">
-                                                        <img src="{% static 'images/used3.jpg'%}"/>
-                                                    </figure>
-                                                </li>
-                                                <li class="gal_img Charity span3 view_new view-tenth first">
-                                                    <figure class="gal_img_container">
-                                                        <img src="{% static 'images/used4.jpg'%}"/>
-                                                    </figure>
-                                                </li>
-                                            </ul>
-
-                                        </div>
+                                            <div>
+                                                <IMG class="col-xl-11" SRC="{% static 'images/Used Clothing.png'%}"/>
+                                            </div>
+                                        </div><!-- /.inner -->
                                     </div>
                                 </div>
-                                <div class="accordion-group">
-                                    <div class="accordion-heading">
-                                        <a class="accordion-toggle inactive" data-toggle="collapse"
-                                           data-parent="#accordion1" href="#collapseTwo">
-                                            <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
-                                            <h3><strong> Quilt Covers and Towel</strong></h3>
-                                        </a>
+                                <div class="accrodion">
+                                    <div class="accrodion-title">
+                                        <h4>Quilt Covers and Towel</h4>
                                     </div>
-                                    <div id="collapseTwo" class="accordion-body collapse">
-                                        <div class="accordion-inner">
+                                    <div class="accrodion-content" style="display: none;">
+                                        <div class="inner">
                                             <p>Sheridan accepts used quilt and towel for recycling into new product in
                                                 exchange for 5% off your next purchase.</p>
-                                             <ul class="gallery-page">
-                                                <li class="gal_img Charity span3 view_new view-tenth first">
-                                                    <figure class="gal_img_container">
-                                                        <img src="{% static 'images/cover1.png'%}"/>
-                                                    </figure>
-                                                </li>
-                                                 <li class="gal_img Charity span3 view_new view-tenth first">
-                                                    <figure class="gal_img_container">
-                                                        <img src="{% static 'images/Quilt Covers and Towel.png'%}"/>
-                                                    </figure>
-                                                </li>
-                                                 <li class="gal_img Charity span3 view_new view-tenth first">
-                                                    <figure class="gal_img_container">
-                                                        <img src="{% static 'images/cover3.jpg'%}"/>
-                                                    </figure>
-                                                </li>
-                                                 <li class="gal_img Charity span3 view_new view-tenth first">
-                                                    <figure class="gal_img_container">
-                                                        <img src="{% static 'images/cover4.png'%}"/>
-                                                    </figure>
-                                                </li>
+                                            <div>
+                                                <IMG class="col-xl-11"
+                                                     SRC="{% static 'images/cover1.png'%}"/>
 
-                                            </ul>
-
-
-                                        </div>
+                                            </div>
+                                        </div><!-- /.inner -->
                                     </div>
                                 </div>
-                                <div class="accordion-group">
-                                    <div class="accordion-heading">
-                                        <a class="accordion-toggle inactive" data-toggle="collapse"
-                                           data-parent="#accordion1" href="#collapse3">
-                                            <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
-                                            <h3><strong> Uniforms</strong></h3>
-                                        </a>
+                                <div class="accrodion">
+                                    <div class="accrodion-title">
+                                        <h4>Uniforms</h4>
                                     </div>
-                                    <div id="collapse3" class="accordion-body collapse">
-                                        <div class="accordion-inner">
+                                    <div class="accrodion-content" style="display: none;">
+                                        <div class="inner">
                                             <h4>School Uniforms</h4>
                                             <p>Visit The Uniform Exchange to sell, buy or donate unused school uniforms
                                                 in Australia </p>
@@ -320,56 +320,38 @@
                                             <p>Loop Upcycling provides recycling services for corporate workwear and
                                                 assiting companies to adopt sustainable waste management practices </p>
 
-                                            <ul class="gallery-page">
-                                                <li class="gal_img Charity span3 view_new view-tenth first">
-                                                    <figure class="gal_img_container">
-                                                        <img src="{% static 'images/Uniforms.png'%}"/>
-                                                    </figure>
-                                                </li>
-                                            </ul>
+                                            <div>
+                                                <IMG class="col-xl-11" SRC="{% static 'images/Uniforms.png'%}"/>
+                                            </div>
+                                        </div><!-- /.inner -->
 
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="accordion-group">
-                                    <div class="accordion-heading">
-                                        <a class="accordion-toggle inactive" data-toggle="collapse"
-                                           data-parent="#accordion1" href="#collapse4">
-                                            <span class="toggle_faq"><i class="icon-chevron-right"></i> </span>
-                                            <h3><strong>Donation Programs </strong></h3>
-                                        </a>
+                                <div class="accrodion">
+                                    <div class="accrodion-title">
+                                        <h4>Donation Programs</h4>
                                     </div>
-                                    <div id="collapse4" class="accordion-body collapse">
-                                        <div class="accordion-inner">
+                                    <div class="accrodion-content" style="display: none;">
+                                        <div class="inner">
                                             <p>Visit Australian Red Cross, Red Nose and Fitted for Work to check on how
                                                 you can donate pre-owned clothes. </p>
-                                            <ul class="gallery-page">
-                                                <li class="gal_img Charity span3 view_new view-tenth first">
-                                                    <figure class="gal_img_container">
-                                                        <img src="{% static 'images/download.png'%}"/>
-                                                    </figure>
-                                                </li>
-                                            </ul>
+                                            <div>
+                                                <IMG class="col-xl-11" SRC="{% static 'images/download.png'%}"/>
+                                            </div>
+                                        </div><!-- /.inner -->
 
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                </figure>
-
-            </section>
-
-        </section>
-
-
+                </div>
+            </div>
+        </div>
     </section>
-</section>
-<head>
-
-</head>
-<script>
+    <!--Service Details End-->
+     <script>
     var locations = [];
 
     $('.target').change(function () {
@@ -512,5 +494,144 @@ google.maps.event.addDomListener(window, "load", initialize);
 }
 
 </script>
+    <!--Site Footer One Start-->
+    <footer class="site-footer">
+	<div class="site-footer__top">
+		<div class="container">
+			<div class="site-footer__top-inner">
+				<div class="site-footer-map"
+					 style="background-image: url(/static/new_template/image/site-footer-mape.png)"></div>
+				<div class="row">
+					<div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+						<div class="footer-widget__column footer-widget__links clearfix">
+							<h3 class="footer-widget__title">Links</h3>
+							<li><a href="{% url 'index' %}">Home</a></li>
+							<li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+							<li><a href="{% url 'clothing' %}">Clothing</a></li>
+							<li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+							<li><a href="{% url 'edu' %}">Game </a></li>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="site-footer__bottom">
+		<div class="site-footer__bottom-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="site-footer__bottom-inner">
+							<div class="site-footer__bottom-left">
+								<p class="site-footer__bottom-text">Copyright &copy; 2021.GreenerLife All rights
+									reserved.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+    <!--Site Footer One End-->
+
+
+</div><!-- /.page-wrapper -->
+
+
+<div class="mobile-nav__wrapper">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <!-- /.mobile-nav__overlay -->
+    <div class="mobile-nav__content">
+        <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+        <div class="logo-box">
+            <a href="index.html" aria-label="logo image"><img src="static/picture/footer-logo.png" width="155"
+                                                              alt=""></a>
+        </div>
+        <!-- /.logo-box -->
+        <div class="mobile-nav__container"></div>
+        <!-- /.mobile-nav__container -->
+
+        <ul class="mobile-nav__contact list-unstyled">
+            <li>
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:needhelp@packageName__.com">needhelp@izeetak.com</a>
+            </li>
+            <li>
+                <i class="fa fa-phone-alt"></i>
+                <a href="tel:666-888-0000">666 888 0000</a>
+            </li>
+        </ul><!-- /.mobile-nav__contact -->
+        <div class="mobile-nav__top">
+            <div class="mobile-nav__social">
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-facebook-square"></a>
+                <a href="#" class="fab fa-pinterest-p"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div><!-- /.mobile-nav__social -->
+        </div><!-- /.mobile-nav__top -->
+
+
+    </div>
+    <!-- /.mobile-nav__content -->
+</div>
+<!-- /.mobile-nav__wrapper -->
+
+<div class="search-popup">
+    <div class="search-popup__overlay search-toggler"></div>
+    <!-- /.search-popup__overlay -->
+    <div class="search-popup__content">
+        <form action="#">
+            <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+            <input type="text" id="search" placeholder="Search Here...">
+            <button type="submit" aria-label="search submit" class="thm-btn">
+                <i class="icon-magnifying-glass"></i>
+            </button>
+        </form>
+    </div>
+    <!-- /.search-popup__content -->
+</div>
+<!-- /.search-popup -->
+
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+<script src="{% static 'new_template/js/jquery-3.6.0.min.js'%}"></script>
+<script src="{% static 'new_template/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'new_template/js/jarallax.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.ajaxchimp.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.appear.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.circle-progress.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.magnific-popup.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.validate.min.js'%}"></script>
+<script src="{% static 'new_template/js/nouislider.min.js'%}"></script>
+<script src="{% static 'new_template/js/odometer.min.js'%}"></script>
+<script src="{% static 'new_template/js/swiper.min.js'%}"></script>
+<script src="{% static 'new_template/js/tiny-slider.min.js'%}"></script>
+<script src="{% static 'new_template/js/wNumb.min.js'%}"></script>
+<script src="{% static 'new_template/js/wow.js'%}"></script>
+<script src="{% static 'new_template/js/isotope.js'%}"></script>
+<script src="{% static 'new_template/js/countdown.min.js'%}"></script>
+<script src="{% static 'new_template/js/owl.carousel.min.js'%}"></script>
+<script src="{% static 'new_template/js/twentytwenty.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.event.move.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.bxslider.min.js'%}"></script>
+<script src="{% static 'new_template/js/bootstrap-select.min.js'%}"></script>
+<script src="{% static 'new_template/js/vegas.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery-ui.js'%}"></script>
+<script src="{% static 'new_template/js/timePicker.js'%}"></script>
+<script src="{% static 'new_template/js/particles.min.js'%}"></script>
+<script src="{% static 'new_template/js/particles-config.js'%}"></script>
+
+
+<script src="https://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+
+
+<!-- template js -->
+<script src="{% static 'new_template/js/izeetak.js'%}"></script>
+
+
 </body>
 {% endblock content %}
+</html>

@@ -1,287 +1,509 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
 <head>
-    <title> Home Page - GreenerLife </title>
-    {% load static %}
-    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"/>
-    <!--[if lt IE 9]>
-    <script src="{% static 'js/html5shiv.js'%}"></script>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="{% static 'js/mq.js'%}"></script>
-    <![endif]-->
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <meta name="viewport" content="width=device-width">
-    <!-- Css Files Start -->
-    <link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css"/><!-- All css -->
-    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" type="text/css"/><!-- Bootstrap Css -->
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/customIE.css'%}" </><![endif]-->
-    <link href="{% static 'css/font-awesome.css'%}" rel="stylesheet" type="text/css"/><!-- Font Awesome Css -->
-    <link href="{% static 'css/font-awesome-ie7.css'%}" rel="stylesheet" type="text/css"/><!-- Font Awesome iE7 Css -->
-    <!-- Css Files End -->
-    <!-- Social Icons no JS -->
-    <noscript>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/nj.css' %}"/>
-    </noscript>
-    <!-- Social Icons no JS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home Page - GreenerLife </title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"/>
 
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="{% static 'new_template/css/css2.css'%}" rel="stylesheet">
+
+
+<link rel="stylesheet" href="{% static 'new_template/css/bootstrap.min.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/animate.min.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/custom-animate.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/all.min.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/jarallax.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/jquery.magnific-popup.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/nouislider.min.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/nouislider.pips.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/odometer.min.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/swiper.min.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/style.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/tiny-slider.min.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/stylesheet.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/owl.carousel.min.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/owl.theme.default.min.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/twentytwenty.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/jquery.bxslider.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/bootstrap-select.min.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/vegas.min.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/jquery-ui.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/timePicker.css'%}">
+
+<!-- template styles -->
+<link rel="stylesheet" href="{% static 'new_template/css/izeetak.css'%}">
+<link rel="stylesheet" href="{% static 'new_template/css/izeetak-responsive.css'%}">
 </head>
+
 <body>
-<!-- Start Main Wrapper -->
-<div class="wrapper">
-    {% include 'header.html' %}
-    <!-- End of Header -->
-    <!-- Start of Header Banner -->
-    <section class="banner_slider mbtm">
-        <ul id="banner_slider">
-            <li>
-               <a href="{% url 'e_waste_classification' %}"><img src="{% static 'images/slide1.png'%}" alt="Banner Slider"/></a>
-                <div class="slider_content">
-                    <p class="b_dark"> E-Waste Disposal</p>
-                    <span class="clear"></span>
-                    <p class="b_green"> Location search for E-Waste disposal. </p>
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="{% static 'images/logo_1.png'%}" alt="">
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+        <header class="main-header clearfix">
+         <nav class="main-menu clearfix">
+                <div class="main-menu-wrapper clearfix">
+                    <div class="main-menu-wrapper-inner clearfix">
+                        <div class="main-menu-wrapper__left clearfix">
+                            <div class="main-menu-wrapper__logo">
+                                <a href="{% url 'index' %}"><img src="{% static 'images/logo_1.png'%}" alt=""></a>
+                            </div>
+                            <div class="main-menu-wrapper__main-menu">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="main-menu__list">
+                                    <li ><a href="{% url 'index' %}">Home</a></li>
+                                    <li ><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                    <li><a href="{% url 'clothing' %}">Clothing</a></li>
+                                    <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+                                    <li><a href="{% url 'edu' %}">Game </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </nav>
+        </header>
 
-            </li>
-            <li>
-                 <a href="{% url 'clothing' %}"><img src="{% static 'images/slide1.png'%}" alt="Banner Slider"/></a>
-                <div class="slider_content">
-                    <p class="b_dark"> Clothing Disposal</p>
-                    <span class="clear"></span>
-                    <p class="b_green"> Location search for clothing disposal. </p>
-                </div>
-            </li>
-            <li>
-                 <a href="{% url 'garbage_video' %}"><img src="{% static 'images/recycle.png'%}" alt="Banner Slider"/></a>
-                <div class="slider_content">
-                    <p class="b_dark"> Waste Classification </p>
-                    <span class="clear"></span>
-                    <p class="b_green"> Waste classification through image classification </p>
-                </div>
-            </li>
-            <li>
-                 <a href="{% url 'edu' %}"><img src="{% static 'images/game_pic.jpg'%}" alt="Banner Slider"/></a>
-                <div class="slider_content">
-                    <p class="b_dark"> Educational Game </p>
-                    <span class="clear"></span>
-                    <p class="b_green"> A Game to help your kids learn garbage sorting. </p>
-                </div>
-            </li>
-        </ul>
-    </section>
-    <!-- End of Header Banner -->
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
 
-    <!-- Start of Features Boxes -->
-    <section id="ngo_features" class="mbtm">
-        <section class="container-fluid container">
-            <section class="row-fluid">
-
-
-                <!-- Start of Features Box 1 -->
-
-
-                <figure class="span3 feature">
-                    <div class="ftr_img f-img-1">
-                        <!--				<div style="BACKGROUND: url('../../../static/images/feature_img_1_hover.png')  no-repeat center;">-->
-                        <a href="{% url 'e_waste_classification' %}"><img src="{% static 'images/e-waste-logo.png'%}"
-                                                                          style="height: 80px;width:80px;margin-left: 35% "/></a>
-                    </div>
-                    <div class="ftr_txt">
-                        <strong> E-waste</strong>
-                        <p> The Victorian Government has banned disposing E-Waste to landfill. Do not throw it to
-                            general waste bin. Kindly dispose it to nearby recycling center.<br/><br/><br/> <br/></p>
-                    </div>
-                </figure>
-
-                <!-- End of Features Boxes 1 -->
-
-                <!-- Start of Features Box 2 -->
-                <figure class="span3 feature">
-                    <div class="ftr_img">
-                        <a href="{% url 'clothing' %}"><img src="{% static 'images/clothing-waste-logo.png'%}"
-                                                            style="height: 80px;width:80px;margin-left: 35% "/> </a>
-                    </div>
-                    <div class="ftr_txt">
-                        <strong> Clothing </strong>
-                        <p> Avoid placing clothing and textiles into your household recycling bin. Instead, you can
-                            donate it to family, charity shops, organization and more.<br/><br/><br/> <br/></p>
-                    </div>
-                </figure>
-                <!-- End of Features Boxes 2 -->
-
-                <!-- Start of Features Box 3 -->
-                <figure class="span3 feature">
-                    <div class="ftr_img f-img-3">
-                        <a href="{% url 'garbage_video' %}"> <img src="{% static 'images/detection.png'%}"
-                                                                  style="height: 80px;width:80px;margin-left: 35% "/>
-                        </a>
-                    </div>
-                    <div class="ftr_txt">
-                        <strong> Waste Classification </strong>
-                        <p> With our waste classification, you can easily sort the garbage and put them into the correct
-                            bins.<br/><br/><br/><br/><br/></p>
-                    </div>
-                </figure>
-                <!-- End of Features Boxes 3 -->
-
-                <!-- Start of Features Box 4 -->
-                <figure class="span3 feature">
-                    <div class="ftr_img f-img-3">
-                        <a href="{% url 'edu' %}"><img src="{% static 'images/game-console.png'%}"
-                                                       style="height: 80px;width:80px;margin-left: 35% "/> </a>
-                    </div>
-                    <div class="ftr_txt">
-                        <strong> Video Game </strong>
-                        <p> Interesting Game help you educate your kids <br/><br/><br/><br/><br/><br/><br/></p>
-                    </div>
-                </figure>
-                <!--			<figure class="span3 feature">-->
-                <!--			<div class="ftr_img f-img-4"> -->
-                <!--				<span class="img"> Tsunami </span>-->
-                <!--			</div>-->
-                <!--			<div class="ftr_txt">-->
-                <!--			<strong> placeholder   </strong>-->
-                <!--			<p>  placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholderplaceholder placeholder </p>-->
-                <!--			</div>-->
-                <!--		</figure>-->
-                <!-- End of Features Boxes 4 -->
-            </section>
-        </section>
-    </section>
-    <!-- End of Features Boxes -->
-
-
-    <!-- Start of Charity News & Progress Section -->
-    <section id="progress_news" class="mbtm">
-        <section class="container-fluid container">
-            <section class="row-fluid">
-                <figure class="span11" id="news">
-                    <ul id="news_slider">
-                        <li>
-                            <div class="span5 first" id="img_holder1">
-                                <div class="img">
-                                    <img src="{% static 'images/news.png'%}" alt=""/>
-                                </div>
-                                <div class="img_title">
-                                    <a href="#"> ABC NEWS </a>
-                                    <p> The Melbourne recycling program helping translate confusing rules to reduce
-                                        waste </p>
+        <!--Main Slider Start-->
+        <section class="main-slider">
+            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
+    "effect": "fade",
+     "pagination": {
+        "el": "#main-slider-pagination",
+        "type": "bullets",
+        "clickable": true
+      },
+    "navigation": {
+        "nextEl": "#main-slider__swiper-button-next",
+        "prevEl": "#main-slider__swiper-button-prev"
+    },
+    "autoplay": {
+        "delay": 5000
+    }}'>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url({% static 'new_template/image/main-slider-1-1.jpg'%});">
+                        </div>
+                        <div class="image-layer-overlay"></div>
+                        <!-- /.image-layer -->
+                        <div class="main-slider-shape-1"><img src="{% static 'new_template/picture/main-slider-shape-1.png'%}" alt="">
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="main-slider__content">
+                                        <h2>Help International Student reduce and recycle waste</h2>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="span5 ns_desc">
-                                <a href="#" class="title"> The Melbourne recycling program helping translate confusing
-                                    rules to reduce waste <span class="h-line"></span> </a>
-                                <p> When Chamila Hettiargchchige moved to Melbourne from rural Sri Lanka 17 years ago,
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url(/static/images/slide1.png);">
+                        </div>
+                        <div class="image-layer-overlay"></div>
+                        <!-- /.image-layer -->
+                        <div class="main-slider-shape-1"><img src="{% static 'static/new_template/picture/main-slider-shape-1.png'%}" alt="">
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="main-slider__content">
+                                        <h2>E-Waste Disposal</h2>
+                                        <p>Location search for E-Waste disposal.</p>
+                                        <a href="{% url 'e_waste_classification' %}" class="thm-btn">Discover More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url(/static/images/slide1.png);">
+                        </div>
+                        <div class="image-layer-overlay"></div>
+                        <!-- /.image-layer -->
+                        <div class="main-slider-shape-1"><img src="{% static 'new_template/picture/main-slider-shape-1.png'%}" alt="">
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="main-slider__content">
+                                        <h2>Clothing Disposal</h2>
+                                        <p> Location search for clothing disposal. </p>
+                                        <a href="{% url 'clothing' %}" class="thm-btn">Discover More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url(/static/images/recycle.png);">
+                        </div>
+                        <div class="image-layer-overlay"></div>
+                        <!-- /.image-layer -->
+                        <div class="main-slider-shape-1"><img src="{% static 'new_template/picture/main-slider-shape-1.png'%}" alt="">
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="main-slider__content">
+                                        <h2>Waste Classification</h2>
+                                        <p> Waste classification through image classification</p>
+                                        <a href="{% url 'garbage_video' %}" class="thm-btn">Discover More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url(/static/images/game_pic.jpg);">
+                        </div>
+                        <div class="image-layer-overlay"></div>
+                        <!-- /.image-layer -->
+                        <div class="main-slider-shape-1"><img src="{% static 'new_template/picture/main-slider-shape-1.png'%}" alt="">
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="main-slider__content">
+                                        <h2>Educational Game</h2>
+                                        <p> A Game to help your kids learn garbage sorting.</p>
+                                        <a href="{% url 'edu' %}" class="thm-btn">Discover More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-pagination" id="main-slider-pagination"></div>
+                <div class="main-slider__nav">
+                    <div class="swiper-button-prev" id="main-slider__swiper-button-next"><i class="icon-right-arrow icon-left-arrow"></i>
+                    </div>
+                    <div class="swiper-button-next" id="main-slider__swiper-button-prev"><i class="icon-right-arrow"></i>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!--Main Slider End-->
+
+        <!--Services One Start-->
+         <section class="services-one">
+            <div class="container">
+                <div class="section-title text-center">
+                    <span class="section-title__tagline">Wide Range of Services</span>
+                    <h2 class="section-title__title">What We’re Offering</h2>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 wow fadeInLeft" data-wow-delay="100ms">
+                        <!--Services One Single-->
+                        <div class="services-one__single">
+                            <div class="services-one__icon">
+                                <span><img src="{%static 'images/e-waste-logo.png'%}"/>  </span>
+                            </div>
+                            <h4 class="services-one__title">
+                                <a href="{% url 'e_waste_classification' %}">E-waste</a>
+                            </h4>
+                            <p class="services-one__text">The Victorian Government has banned disposing E-Waste to landfill. Do not throw it to
+                            general waste bin. Kindly dispose it to nearby recycling center.</p>
+                            <div class="services-one__arrow">
+                                <a href="{% url 'e_waste_classification' %}"><span class="icon-right-arrow"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay="200ms">
+                        <!--Services One Single-->
+                        <div class="services-one__single">
+                            <div class="services-one__icon">
+                                <span ><img src="{%static 'images/clothing-waste-logo.png'%}"/></span>
+                            </div>
+                            <h4 class="services-one__title">
+                                <a href="{% url 'clothing' %}">Clothing</a>
+                            </h4>
+                            <p class="services-one__text">Avoid placing clothing and textiles into your household recycling bin. Instead, you can
+                            donate it to family, charity shops, organization and more.</p>
+                            <div class="services-one__arrow">
+                                <a href="{% url 'clothing' %}"><span class="icon-right-arrow"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
+                        <!--Services One Single-->
+                        <div class="services-one__single">
+                            <div class="services-one__icon">
+                                <span ><img src="{%static 'images/detection.png'%}"/></span>
+                            </div>
+                            <h4 class="services-one__title">
+                                <a href="{% url 'garbage_video' %}">Waste Classification</a>
+                            </h4>
+                            <p class="services-one__text">With our waste classification, you can easily sort the garbage and put them into the correct
+                            bins.<br><br></p>
+                            <div class="services-one__arrow">
+                                <a href="{% url 'garbage_video' %}"><span class="icon-right-arrow"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 wow fadeInRight" data-wow-delay="200ms">
+                        <!--Services One Single-->
+                        <div class="services-one__single">
+                            <div class="services-one__icon">
+                                <span><img src="{%static 'images/game-console.png'%}"/> </span>
+                            </div>
+                            <h3 class="services-one__title">
+                                <a href="{% url 'edu' %}">Video Game</a>
+                            </h3>
+                            <p class="services-one__text">Interesting Game help you educate your kids.<br><br><br></p>
+                            <div class="services-one__arrow">
+                                <a href="{% url 'edu' %}"><span class="icon-right-arrow"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Services One End-->
+
+        <!--News One Start-->
+        <section class="news-one">
+            <div class="container">
+                <div class="section-title text-center">
+                    <span class="section-title__tagline">Direct from the Internet</span>
+                    <h2 class="section-title__title">News & Articles</h2>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="100ms">
+                        <!--News One Single-->
+                        <div class="news-one__single">
+                            <div class="news-one__img">
+                                <img src="{% static 'images/news.png'%}" alt="">
+                                <a href="https://www.abc.net.au/news/2019-11-24/learning-to-recycle-when-you-dont-have-a-word-for-it/11729690">
+                                    <span class="news-one__plus"></span>
+                                </a>
+                                <div class="news-one__date-box">
+                                    <p>ABC NEWS</p>
+                                </div>
+                            </div>
+                            <div class="news-one__content">
+                                <h3 class="news-one__title">
+                                    <a href="https://www.abc.net.au/news/2019-11-24/learning-to-recycle-when-you-dont-have-a-word-for-it/11729690">The Melbourne recycling program helping translate confusing rules to reduce
+                                        waste</a>
+                                </h3>
+                                <p class="news-one__text">When Chamila Hettiargchchige moved to Melbourne from rural Sri Lanka 17 years ago,
                                     recycling was one of the many things that was new to her. "The plastic and all the
                                     other recycling items like the paper, cardboard and all the other things, we used to
-                                    burn them," she said.
-
-                                    Now, she is a model of waste reduction — separating soft plastics, composting food
-                                    scraps and putting things in the right bins. </p>
-                                <a href="https://www.abc.net.au/news/2019-11-24/learning-to-recycle-when-you-dont-have-a-word-for-it/11729690"
-                                   class="rm"> View All News &nbsp; <i class="icon-plus"></i></a>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="span5 first" id="img_holder2">
-                                <div class="img">
-                                    <img src="{% static 'images/news2.png'%}" alt=""/>
-                                </div>
-                                <div class="img_title">
-                                    <a href="#"> ABC NEWS </a>
-                                    <p> Contaminating recyclables sees perfectly good recycling materials end up in
-                                        landfill </p>
+                                    burn them," she said.  Now, she is a model of waste reduction — separating soft plastics, composting food
+                                    scraps and putting things in the right bins.</p>
+                                <div class="news-one__read-more">
+                                    <a href="https://www.abc.net.au/news/2019-11-24/learning-to-recycle-when-you-dont-have-a-word-for-it/11729690"
+                                    class="news-one__read-more-btn">Read More</a>
                                 </div>
                             </div>
-                            <div class="span5 ns_desc">
-                                <a href="#" class="title"> Contaminating recyclables sees perfectly good recycling
-                                    materials end up in landfill <span class="h-line"></span> </a>
-                                <p> In a Senate Environment Committee report handed down last June, one of Australia's
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+                        <!--News One Single-->
+                        <div class="news-one__single">
+                            <div class="news-one__img">
+                                <img src="{% static 'images/news2.png'%}" alt="">
+                                <a href="https://www.abc.net.au/news/2019-03-02/forget-recycling-we-need-to-fix-wish-cycling/10829542">
+                                    <span class="news-one__plus"></span>
+                                </a>
+                                <div class="news-one__date-box">
+                                    <p>ABC NEWS</p>
+                                </div>
+                            </div>
+                            <div class="news-one__content">
+                                <h3 class="news-one__title">
+                                    <a href="https://www.abc.net.au/news/2019-03-02/forget-recycling-we-need-to-fix-wish-cycling/10829542">Contaminating recyclables sees perfectly good recycling materials end up in
+                                        landfill</a>
+                                </h3>
+                                <p class="news-one__text">In a Senate Environment Committee report handed down last June, one of Australia's
                                     largest recycling companies, Visy, lamented a household habit that it said "may doom
                                     tonnes of other recyclable items to waste". They called it 'wish-cycling'.
-
                                     "Wish-cycling is the phenomenon of tossing anything and everything that could
                                     possibly, maybe, sort of be recycled into the recycling bin," Visy's submission
                                     read.</p>
-                                <a href="https://www.abc.net.au/news/2019-03-02/forget-recycling-we-need-to-fix-wish-cycling/10829542"
-                                   class="rm"> View All News &nbsp; <i class="icon-plus"></i></a>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="span5 first" id="img_holder3">
-                                <div class="img">
-                                    <img src="{% static 'images/news3.png'%}" alt=""/>
-                                </div>
-                                <div class="img_title">
-                                    <a href="#"> ABC NEWS </a>
-                                    <p> Victoria's recycling crisis goes from bad to worse as another plant shuts
-                                        down </p>
+                                <div class="news-one__read-more">
+                                    <a href="https://www.abc.net.au/news/2019-03-02/forget-recycling-we-need-to-fix-wish-cycling/10829542" class="news-one__read-more-btn">Read More</a>
                                 </div>
                             </div>
-                            <div class="span5 ns_desc">
-                                <a href="#" class="title"> Victoria's recycling crisis goes from bad to worse as another
-                                    plant shuts down <span class="h-line"></span> </a>
-                                <p> Another Victorian recycling plant has shut its doors to recyclable waste, putting
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 wow fadeInRight" data-wow-delay="300ms">
+                        <!--News One Single-->
+                        <div class="news-one__single">
+                            <div class="news-one__img">
+                                <img src="{% static 'images/news4.png'%}" alt="">
+                                <a href="https://www.abc.net.au/news/2019-02-21/victorian-recycling-crisis-deepens-as-another-plant-shuts/10833620">
+                                    <span class="news-one__plus"></span>
+                                </a>
+                                <div class="news-one__date-box">
+                                    <p>ABC NEWS</p>
+                                </div>
+                            </div>
+                            <div class="news-one__content">
+                                <h3 class="news-one__title">
+                                    <a href="https://www.abc.net.au/news/2019-02-21/victorian-recycling-crisis-deepens-as-another-plant-shuts/10833620">Victoria's recycling crisis goes from bad to worse as another
+                                    plant shuts down </a>
+                                </h3>
+                                <p class="news-one__text">Another Victorian recycling plant has shut its doors to recyclable waste, putting
                                     increased pressure on the state's struggling system and forcing more councils to
                                     turn to landfill. The South Geelong plant is the third of SKM Recycling's facilities
                                     to close, after the Environment Protection Authority (EPA) shut the company's plants
                                     at Laverton and Coolaroo amid fears about the fire risk posed by growing
-                                    stockpiles. </p>
-                                <a href="https://www.abc.net.au/news/2019-02-21/victorian-recycling-crisis-deepens-as-another-plant-shuts/10833620"
-                                   class="rm"> View All News &nbsp; <i class="icon-plus"></i></a>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="span5 first" id="img_holder4">
-                                <div class="img">
-                                    <img src="{% static 'images/news4.png'%}" alt=""/>
-                                </div>
-                                <div class="img_title">
-                                    <a href="#"> NEWS.COM.AU </a>
-                                    <p> Aussies’ love of takeaway during Covid pandemic sparks recycling bin crisis </p>
+                                    stockpiles.<br><br>
+                                </p>
+                                <div class="news-one__read-more">
+                                    <a href="https://www.abc.net.au/news/2019-02-21/victorian-recycling-crisis-deepens-as-another-plant-shuts/10833620" class="news-one__read-more-btn">Read More</a>
                                 </div>
                             </div>
-                            <div class="span5 ns_desc">
-                                <a href="#" class="title"> Aussies’ love of takeaway during Covid pandemic sparks
-                                    recycling bin crisis <span class="h-line"></span> </a>
-                                <p> Australians’ love for UberEats and other home delivered takeaway food during the
-                                    coronavirus pandemic appears to have wrecked havoc on the nation’s bins. Lockdowns
-                                    have fuelled a significant increase in household waste, with people’s changed eating
-                                    habits in particular causing headaches for council recycling services. </p>
-                                <a href="https://www.news.com.au/technology/environment/sustainability/aussies-love-of-takeaway-during-covid-pandemic-sparks-recycling-bin-crisis/news-story/412bc1e1073e29179ce6f387aa922e24"
-                                   class="rm"> View All News &nbsp; <i class="icon-plus"></i></a>
-                            </div>
-                        </li>
-                    </ul>
-                </figure>
-            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-    </section>
-    <!-- End of Charity News & Progress Section -->
-    {% include 'footer.html' %}
-</div>
-<!-- End Main Wrapper -->
-<!-- JS Files Start -->
-<script type="text/javascript" src="{% static 'js/lib-1-9-1.js' %}"></script><!-- lib Js -->
-<script type="text/javascript" src="{% static 'js/lib-1-7-1.js' %}"></script><!-- lib Js -->
-<script type="text/javascript" src="{% static 'js/modernizr.js' %}"></script><!-- Modernizr -->
-<script type="text/javascript" src="{% static 'js/easing.js' %}"></script><!-- Easing js -->
-<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script><!-- Bootstrap -->
-<script type="text/javascript" src="{% static 'js/bxslider.js' %}"></script><!-- BX Slider -->
-<script type="text/javascript" src="{% static 'js/clearInput.js' %}"></script><!-- Input Clear -->
-<script type="text/javascript" src="{% static 'js/smooth-scroll.js' %}"></script><!-- smooth Scroll -->
-<script type="text/javascript" src="{% static 'js/prettyPhoto.js' %}"></script><!-- Pretty Photo -->
-<script type="text/javascript" src="{% static 'js/social.js' %}"></script><!-- Social Media Hover Effect -->
-<script type="text/javascript" src="{% static 'js/countdown.js' %}"></script><!-- Event Counter -->
-<script type="text/javascript" src="{% static 'js/custom.js' %}"></script><!-- Custom / Functions -->
-<!--[if IE 8]>
-<script src="{% static 'js/ie8_fix_maxwidth.js'%}" type="text/javascript"></script>
-<![endif]-->
+        <!--News One End-->
+
+        <!--CTA One Start-->
+        <section class="cta-one">
+            <div class="cta-one__container">
+                <div class="cta-one-bg" style="background-image: url(/static/new_template/image/cta-one-bg.jpg)"></div>
+                <div class="cta-one-overly"></div>
+                <div class="container">
+                    <div class="col-lg-12">
+                        <div class="cta-one__inner">
+                            <p class="cta-one__sub-title">Let’s Get Started Now</p>
+                            <h2 class="cta-one__title">We’ll help you classify and reduce your waste.</h2>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--CTA One End-->
+
+        <!--Site Footer One Start-->
+        <footer class="site-footer">
+	<div class="site-footer__top">
+		<div class="container">
+			<div class="site-footer__top-inner">
+				<div class="site-footer-map"
+					 style="background-image: url(/static/new_template/image/site-footer-mape.png)"></div>
+				<div class="row">
+					<div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+						<div class="footer-widget__column footer-widget__links clearfix">
+							<h3 class="footer-widget__title">Links</h3>
+							<li><a href="{% url 'index' %}">Home</a></li>
+							<li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+							<li><a href="{% url 'clothing' %}">Clothing</a></li>
+							<li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+							<li><a href="{% url 'edu' %}">Game </a></li>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="site-footer__bottom">
+		<div class="site-footer__bottom-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="site-footer__bottom-inner">
+							<div class="site-footer__bottom-left">
+								<p class="site-footer__bottom-text">Copyright &copy; 2021.GreenerLife All rights
+									reserved.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+        <!--Site Footer One End-->
+
+
+    </div><!-- /.page-wrapper -->
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="" aria-label="logo image"><img src="{% static 'images/logo_1.png'%}" width="155" alt=""></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                <input type="text" id="search" placeholder="Search Here...">
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="icon-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <script src="{% static 'new_template/js/jquery-3.6.0.min.js'%}"></script>
+<script src="{% static 'new_template/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'new_template/js/jarallax.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.ajaxchimp.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.appear.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.circle-progress.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.magnific-popup.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.validate.min.js'%}"></script>
+<script src="{% static 'new_template/js/nouislider.min.js'%}"></script>
+<script src="{% static 'new_template/js/odometer.min.js'%}"></script>
+<script src="{% static 'new_template/js/swiper.min.js'%}"></script>
+<script src="{% static 'new_template/js/tiny-slider.min.js'%}"></script>
+<script src="{% static 'new_template/js/wNumb.min.js'%}"></script>
+<script src="{% static 'new_template/js/wow.js'%}"></script>
+<script src="{% static 'new_template/js/isotope.js'%}"></script>
+<script src="{% static 'new_template/js/countdown.min.js'%}"></script>
+<script src="{% static 'new_template/js/owl.carousel.min.js'%}"></script>
+<script src="{% static 'new_template/js/twentytwenty.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.event.move.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.bxslider.min.js'%}"></script>
+<script src="{% static 'new_template/js/bootstrap-select.min.js'%}"></script>
+<script src="{% static 'new_template/js/vegas.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery-ui.js'%}"></script>
+<script src="{% static 'new_template/js/timePicker.js'%}"></script>
+<script src="{% static 'new_template/js/particles.min.js'%}"></script>
+<script src="{% static 'new_template/js/particles-config.js'%}"></script>
+
+
+<!-- template js -->
+<script src="{% static 'new_template/js/izeetak.js'%}"></script>
+
 </body>
+
 </html>

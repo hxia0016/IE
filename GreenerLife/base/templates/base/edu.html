@@ -1,112 +1,168 @@
-{% extends 'main.html' %}
-
-{% block content %}
-<title>Game - GreenerLife </title>
+<!DOCTYPE html>
+<html lang="en">
 {% load static %}
-<section class="mtop">
-    <section class="container-fluid container">
-        <section class="row-fluid">
-            <section id="donation_box">
-                <section class="container container-fluid">
-                    <section class="row-fluid">
-                        <div class="span8 first"><h2> Game </h2></div>
-                    </section>
-                </section>
-            </section>
-        </section>
-        <section class="row-fluid">
-            <!-- BreadCrumbs -->
-            <figure id="breadcrumbs" class="span12">
-                <ul class="breadcrumb">
-                    <li><a href="{% url 'index' %}">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Game</li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game - GreenerLife</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"/>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="{% static 'new_template/css/css2.css'%}" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'new_template/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/animate.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/custom-animate.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/all.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jarallax.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jquery.magnific-popup.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/nouislider.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/nouislider.pips.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/odometer.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/swiper.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/tiny-slider.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/stylesheet.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/twentytwenty.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jquery.bxslider.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/bootstrap-select.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/vegas.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jquery-ui.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/timePicker.css'%}">
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="{% static 'new_template/css/izeetak.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/izeetak-responsive.css'%}">
+</head>
+
+<body>
+{% block content %}
+<div class="preloader">
+    <img class="preloader__image" width="60" src="static/picture/loader.png" alt="">
+</div>
+<!-- /.preloader -->
+<div class="page-wrapper">
+    <header class="main-header clearfix">
+        <nav class="main-menu clearfix">
+            <div class="main-menu-wrapper clearfix">
+                <div class="main-menu-wrapper-inner clearfix">
+                    <div class="main-menu-wrapper__left clearfix">
+                        <div class="main-menu-wrapper__logo">
+                            <a href="{% url 'index' %}"><img src="{% static 'images/logo_1.png'%}" alt=""></a>
+                        </div>
+                        <div class="main-menu-wrapper__main-menu">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li ><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li><a href="{% url 'clothing' %}">Clothing</a></li>
+                                <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+                                <li><a href="{% url 'edu' %}">Game </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="stricky-header stricked-menu main-menu">
+        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+    </div><!-- /.stricky-header -->
+
+    <!--Page Header Start-->
+    <section class="page-header">
+        <div class="page-header-bg" style="background-image: url(/static/images/slide1.png)">
+        </div>
+        <div class="page-header-bg-overly"></div>
+        <div class="page-header-shape wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms"
+             style="background-image: url(/static/new_template/image/page-header-shape.png)"></div>
+        <div class="container">
+            <div class="page-header__inner">
+                <ul class="thm-breadcrumb list-unstyled">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><span>/</span></li>
+                    <li>Game</li>
                 </ul>
-            </figure>
-            <!-- End of breadcrumbs -->
-        </section>
+            </div>
+        </div>
     </section>
-</section>
-<section id="content" class="mbtm blog">
-	<section class="container-fluid container">
-		<section class="row-fluid">
-				<section class="span9" id="blog_listing">
-					<figure class="blog_item">
-                        <div class="outer_lyr span12 first">
-                            <div class="inner_lyr">
-                                <h2>What can this game do?</h2>
-                                <p style="font-size: 17px">This game helps you to learn about recycling in an
+    <!--Page Header End-->
+
+    <!--Service Details Start-->
+    <section class="service-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-7">
+                    <div class="service-details__right">
+                        <div class="service-details__content">
+                            <h3 class="service-details__title"> What can this game do?</h3>
+                            <p class="service-details__text">This game helps you to learn about recycling in an
                                     interactive way by placing the item to the right bin. Recommended for teaching
                                     children about recycling in a fun way.</p>
-<!--                                <h2>How to play the game?</h2>-->
-<!--                                <p style="font-size: 17px">-->
-<!--                                <ol>-->
-<!--                                    <li>Enable/Allow camera access</li>-->
-<!--                                    <li> Use your hand to pick the displayed item</li>-->
-<!--                                    <li>Move the item to the right recycling bin color</li>-->
-<!--                                </ol>-->
-<!--                                </p>-->
-                            </div>
-				        </div>
-					</figure>
-
-                    <figure class="blog_item">
-                        <div class="outer_lyr span12 first">
-                            <div class="outer_lyr span12 first">
-                                <div class="messgae" id="message" hidden="hidden" >
-                                    <video name="video" autoplay="true" id="videoElement"></video>
-                                    <canvas id="canvas" width="640" height="480"></canvas>
-                                    <canvas id="canvas1" width="640" height="480"></canvas>
-                                </div>
-                                <div class="inner_lyr">
-                                    <div align="center"><img src="" id="video"></div>
-                                </div>
-                            </div>
-
                         </div>
-                    </figure>
-                </section>
-            <section id="sidebar" class="span3">
-                    <figure class="widget events">
-                        <h3> <i class="icon-bullhorn"></i> How to play the game? </h3>
-                        <ul id="posts1">
-                            <li>
-                                <div class="post_content span12">
-                                    <p style="font-size: 17px">
-                                        <ol>
+                        <div class="service-details__benefits">
+                            <div class="row">
+                                <div>
+                                    <div class="service-details__benefits-text">
+                                      <div class="messgae" id="message" hidden="hidden" >
+                            <video name="video" autoplay="true" id="videoElement"></video>
+                            <canvas id="canvas" width="640" height="480"></canvas>
+                            <canvas id="canvas1" width="640" height="480"></canvas>
+                        </div>
+                                        <div align="center"><img src="" id="video"></div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="service-details__sidebar">
+
+                        <div class="service-details__sidebar-service">
+                            <h4 class="service-details__sidebar-title">How to play the game? </h4>
+
+                                <p><ol>
                                             <li>Enable/Allow camera access</li>
                                             <li> Use your hand to pick the displayed item</li>
                                             <li>Move the item to the right recycling bin color</li>
-                                        </ol>
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </figure>
+                                        </ol></p>
+                        </div>
+                    </div>
+                    <div class="service-details__sidebar">
 
-                    <figure class="widget events">
-                        <h3> <i class="icon-bullhorn"></i> Game Rules </h3>
-                        <ul id="posts2">
-                            <li>
-                                <div class="post_content span12">
-                                    <p style="font-size: 17px">
-                                        <ol>
+                        <div class="service-details__sidebar-service">
+                            <h4 class="service-details__sidebar-title">Game Rules </h4>
+
+                                <p><ol>
                                             <li>Put garbage into correct the garbage bin.</li>
                                             <li>Red lid bins is for landfill.</li>
                                             <li>Yellow lid bins is for recycleing.</li>
                                             <li>Green lid bins is for organic garbage. </li>
                                             <li>Wrong classification will make fail in this game. </li>
-                                        </ol>
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </figure>
-                </section>
-            </section>
-        </section>
+                                        </ol></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-</section>
-<script>
+    <!--Service Details End-->
+    <style>
+        #video {
+            width: 720px;
+            height: 576px;
+        }
+    </style>
+     <script>
 
     let canvas = document.querySelector("#canvas");
      var video = document.querySelector("#videoElement");
@@ -127,15 +183,151 @@
         canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
         let image_data_url = canvas.toDataURL('image/jpeg');
         // data url of the image
-        var CSRFtoken = $('input[name=csrfmiddlewaretoken]').val();
-        $.post("/edu_video/",{data:image_data_url,csrfmiddlewaretoken: '{{ csrf_token }}'}, function (data, status) {
+        $.post("/garbageClassification/",{data:image_data_url,csrfmiddlewaretoken: '{{ csrf_token }}'}, function (data, status) {
             $('#video').attr("src", data)
             $("#video").show();
         });
     }
 
-    setInterval("takephoto()",150)
+    setInterval("takephoto()",200)
 
 
 </script>
+    <!--Site Footer One Start-->
+    <footer class="site-footer">
+	<div class="site-footer__top">
+		<div class="container">
+			<div class="site-footer__top-inner">
+				<div class="site-footer-map"
+					 style="background-image: url(/static/new_template/image/site-footer-mape.png)"></div>
+				<div class="row">
+					<div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+						<div class="footer-widget__column footer-widget__links clearfix">
+							<h3 class="footer-widget__title">Links</h3>
+							<li><a href="{% url 'index' %}">Home</a></li>
+							<li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+							<li><a href="{% url 'clothing' %}">Clothing</a></li>
+							<li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+							<li><a href="{% url 'edu' %}">Game </a></li>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="site-footer__bottom">
+		<div class="site-footer__bottom-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="site-footer__bottom-inner">
+							<div class="site-footer__bottom-left">
+								<p class="site-footer__bottom-text">Copyright &copy; 2021.GreenerLife All rights
+									reserved.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+    <!--Site Footer One End-->
+
+
+</div><!-- /.page-wrapper -->
+
+
+<div class="mobile-nav__wrapper">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <!-- /.mobile-nav__overlay -->
+    <div class="mobile-nav__content">
+        <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+        <div class="logo-box">
+            <a href="index.html" aria-label="logo image"><img src="static/picture/footer-logo.png" width="155"
+                                                              alt=""></a>
+        </div>
+        <!-- /.logo-box -->
+        <div class="mobile-nav__container"></div>
+        <!-- /.mobile-nav__container -->
+
+        <ul class="mobile-nav__contact list-unstyled">
+            <li>
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:needhelp@packageName__.com">needhelp@izeetak.com</a>
+            </li>
+            <li>
+                <i class="fa fa-phone-alt"></i>
+                <a href="tel:666-888-0000">666 888 0000</a>
+            </li>
+        </ul><!-- /.mobile-nav__contact -->
+        <div class="mobile-nav__top">
+            <div class="mobile-nav__social">
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-facebook-square"></a>
+                <a href="#" class="fab fa-pinterest-p"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div><!-- /.mobile-nav__social -->
+        </div><!-- /.mobile-nav__top -->
+
+
+    </div>
+    <!-- /.mobile-nav__content -->
+</div>
+<!-- /.mobile-nav__wrapper -->
+
+<div class="search-popup">
+    <div class="search-popup__overlay search-toggler"></div>
+    <!-- /.search-popup__overlay -->
+    <div class="search-popup__content">
+        <form action="#">
+            <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+            <input type="text" id="search" placeholder="Search Here...">
+            <button type="submit" aria-label="search submit" class="thm-btn">
+                <i class="icon-magnifying-glass"></i>
+            </button>
+        </form>
+    </div>
+    <!-- /.search-popup__content -->
+</div>
+<!-- /.search-popup -->
+
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+<script src="{% static 'new_template/js/jquery-3.6.0.min.js'%}"></script>
+<script src="{% static 'new_template/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'new_template/js/jarallax.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.ajaxchimp.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.appear.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.circle-progress.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.magnific-popup.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.validate.min.js'%}"></script>
+<script src="{% static 'new_template/js/nouislider.min.js'%}"></script>
+<script src="{% static 'new_template/js/odometer.min.js'%}"></script>
+<script src="{% static 'new_template/js/swiper.min.js'%}"></script>
+<script src="{% static 'new_template/js/tiny-slider.min.js'%}"></script>
+<script src="{% static 'new_template/js/wNumb.min.js'%}"></script>
+<script src="{% static 'new_template/js/wow.js'%}"></script>
+<script src="{% static 'new_template/js/isotope.js'%}"></script>
+<script src="{% static 'new_template/js/countdown.min.js'%}"></script>
+<script src="{% static 'new_template/js/owl.carousel.min.js'%}"></script>
+<script src="{% static 'new_template/js/twentytwenty.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.event.move.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.bxslider.min.js'%}"></script>
+<script src="{% static 'new_template/js/bootstrap-select.min.js'%}"></script>
+<script src="{% static 'new_template/js/vegas.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery-ui.js'%}"></script>
+<script src="{% static 'new_template/js/timePicker.js'%}"></script>
+<script src="{% static 'new_template/js/particles.min.js'%}"></script>
+<script src="{% static 'new_template/js/particles-config.js'%}"></script>
+
+
+<!-- template js -->
+<script src="{% static 'new_template/js/izeetak.js'%}"></script>
+
+
+</body>
 {% endblock content %}
+</html>
