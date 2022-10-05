@@ -32,7 +32,8 @@ class EudcationGame:
         self.flag = False
 
 
-    def updateLocation(self):
+    def reset_game(self):
+        self.score = 0
         self.ix, self.iy, self.cla = self.randomLocationAndIndex()
 
     def read_directory(self, directory_name):

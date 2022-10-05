@@ -59,7 +59,7 @@
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
                                 <li><a href="{% url 'index' %}">Home</a></li>
-                                <li ><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
                                 <li><a href="{% url 'clothing' %}">Clothing</a></li>
                                 <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
                                 <li><a href="{% url 'edu' %}">Game </a></li>
@@ -103,19 +103,18 @@
                         <div class="service-details__content">
                             <h3 class="service-details__title"> What can this game do?</h3>
                             <p class="service-details__text">This game helps you to learn about recycling in an
-                                    interactive way by placing the item to the right bin. Recommended for teaching
-                                    children about recycling in a fun way.</p>
+                                interactive way by placing the item to the right bin. Recommended for teaching
+                                children about recycling in a fun way.</p>
                         </div>
                         <div class="service-details__benefits">
                             <div class="row">
                                 <div>
                                     <div class="service-details__benefits-text">
-                                      <div class="messgae" id="message" hidden="hidden" >
-                            <video name="video" autoplay="true" id="videoElement"></video>
-                            <canvas id="canvas" width="640" height="480"></canvas>
-                            <canvas id="canvas1" width="640" height="480"></canvas>
-                        </div>
-                                        <div align="center"><img src="" id="video"></div>
+                                        <div class="messgae" id="message" hidden="hidden">
+                                            <video name="video" autoplay="true" id="videoElement"></video>
+                                            <canvas id="canvas" width="640" height="480"></canvas>
+                                        </div>
+                                        <div align="center"><img src="" id="image1"></div>
 
 
                                     </div>
@@ -130,11 +129,13 @@
                         <div class="service-details__sidebar-service">
                             <h4 class="service-details__sidebar-title">How to play the game? </h4>
 
-                                <p><ol>
-                                            <li>Enable/Allow camera access</li>
-                                            <li> Use your hand to pick the displayed item</li>
-                                            <li>Move the item to the right recycling bin color</li>
-                                        </ol></p>
+                            <p>
+                            <ol>
+                                <li>Enable/Allow camera access</li>
+                                <li> Use your hand to pick the displayed item</li>
+                                <li>Move the item to the right recycling bin color</li>
+                            </ol>
+                            </p>
                         </div>
                     </div>
                     <div class="service-details__sidebar">
@@ -142,13 +143,15 @@
                         <div class="service-details__sidebar-service">
                             <h4 class="service-details__sidebar-title">Game Rules </h4>
 
-                                <p><ol>
-                                            <li>Put garbage into correct the garbage bin.</li>
-                                            <li>Red lid bins is for landfill.</li>
-                                            <li>Yellow lid bins is for recycleing.</li>
-                                            <li>Green lid bins is for organic garbage. </li>
-                                            <li>Wrong classification will make fail in this game. </li>
-                                        </ol></p>
+                            <p>
+                            <ol>
+                                <li>Put garbage into correct the garbage bin.</li>
+                                <li>Red lid bins is for landfill.</li>
+                                <li>Yellow lid bins is for recycleing.</li>
+                                <li>Green lid bins is for organic garbage.</li>
+                                <li>Wrong classification will make fail in this game.</li>
+                            </ol>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -162,77 +165,104 @@
             height: 576px;
         }
     </style>
-     <script>
+    <script>
 
-    let canvas = document.querySelector("#canvas");
-     var video = document.querySelector("#videoElement");
-    // chunks = [];
-    if (navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices.getUserMedia({
-        video: true
-      })
-        .then(function (stream) {
-            video.srcObject = stream;
-        })
-        .catch(function (err0r) {
-          console.log("Something went wrong!");
-        });
-    }
+        let canvas = document.querySelector("#canvas");
+        var video = document.querySelector("#videoElement");
+        var image = document.querySelector("#image1");
+        // chunks = [];
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({
+                video: true
+            })
+                .then(function (stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function (err0r) {
+                    console.log("Something went wrong!");
+                });
+        }
 
-    function takephoto() {
-        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-        let image_data_url = canvas.toDataURL('image/jpeg');
-        // data url of the image
-        $.post("/garbageClassification/",{data:image_data_url,csrfmiddlewaretoken: '{{ csrf_token }}'}, function (data, status) {
-            $('#video').attr("src", data)
-            $("#video").show();
-        });
-    }
+        // 获取房间名
+        const roomName = "game";
+        // 根据roomName拼接websocket请求地址，建立长连接
+        //  请求url地址为/ws/chat/<room_name>/
+        const wss_protocol = (window.location.protocol == 'https:') ? 'wss://' : 'ws://';
+        console.log(wss_protocol)
+        const chatSocket = new WebSocket(
+            wss_protocol + window.location.host + '/ws/chat/' + roomName + '/'
+        );
 
-    setInterval("takephoto()",200)
+        // 建立websocket连接时触发此方法，展示欢迎提示
+        chatSocket.onopen = function (e) {
+            console.log("success");
+        }
+
+        // 从后台接收到数据时触发此方法
+        // 接收到后台数据后对其解析，并加入到聊天记录chat-log
+        chatSocket.onmessage = function (e) {
+            const data = JSON.parse(e.data);
+            image.src = data.message;
+        };
+
+        // websocket连接断开时触发此方法
+        chatSocket.onclose = function (e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        function takephoto() {
+            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            let image_data_url = canvas.toDataURL('image/jpeg');
+            // data url of the image
+            chatSocket.send(JSON.stringify({
+                'message': image_data_url
+            }));
+        }
+
+        setInterval("takephoto()", 100);
 
 
-</script>
+    </script>
     <!--Site Footer One Start-->
     <footer class="site-footer">
-	<div class="site-footer__top">
-		<div class="container">
-			<div class="site-footer__top-inner">
-				<div class="site-footer-map"
-					 style="background-image: url(/static/new_template/image/site-footer-mape.png)"></div>
-				<div class="row">
-					<div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-						<div class="footer-widget__column footer-widget__links clearfix">
-							<h3 class="footer-widget__title">Links</h3>
-							<li><a href="{% url 'index' %}">Home</a></li>
-							<li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
-							<li><a href="{% url 'clothing' %}">Clothing</a></li>
-							<li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
-							<li><a href="{% url 'edu' %}">Game </a></li>
+        <div class="site-footer__top">
+            <div class="container">
+                <div class="site-footer__top-inner">
+                    <div class="site-footer-map"
+                         style="background-image: url(/static/new_template/image/site-footer-mape.png)"></div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                            <div class="footer-widget__column footer-widget__links clearfix">
+                                <h3 class="footer-widget__title">Links</h3>
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li><a href="{% url 'clothing' %}">Clothing</a></li>
+                                <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+                                <li><a href="{% url 'edu' %}">Game </a></li>
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="site-footer__bottom">
-		<div class="site-footer__bottom-container">
-			<div class="container">
-				<div class="row">
-					<div class="col-xl-12">
-						<div class="site-footer__bottom-inner">
-							<div class="site-footer__bottom-left">
-								<p class="site-footer__bottom-text">Copyright &copy; 2021.GreenerLife All rights
-									reserved.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-footer__bottom">
+            <div class="site-footer__bottom-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="site-footer__bottom-inner">
+                                <div class="site-footer__bottom-left">
+                                    <p class="site-footer__bottom-text">Copyright &copy; 2021.GreenerLife All rights
+                                        reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!--Site Footer One End-->
 
 
@@ -254,21 +284,10 @@
         <!-- /.mobile-nav__container -->
 
         <ul class="mobile-nav__contact list-unstyled">
-            <li>
-                <i class="fa fa-envelope"></i>
-                <a href="mailto:needhelp@packageName__.com">needhelp@izeetak.com</a>
-            </li>
-            <li>
-                <i class="fa fa-phone-alt"></i>
-                <a href="tel:666-888-0000">666 888 0000</a>
-            </li>
+
         </ul><!-- /.mobile-nav__contact -->
         <div class="mobile-nav__top">
             <div class="mobile-nav__social">
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-facebook-square"></a>
-                <a href="#" class="fab fa-pinterest-p"></a>
-                <a href="#" class="fab fa-instagram"></a>
             </div><!-- /.mobile-nav__social -->
         </div><!-- /.mobile-nav__top -->
 

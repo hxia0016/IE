@@ -109,7 +109,7 @@ def video(request):
 
 def edu(request):
     edu_game.flag = False
-    edu_game.updateLocation()
+    edu_game.reset_game()
     return render(request, 'base/edu.html')
 
 
