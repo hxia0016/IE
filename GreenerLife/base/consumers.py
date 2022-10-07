@@ -88,10 +88,19 @@ class VideoConsumer(WebsocketConsumer):
                 back_data = head + ',' + str(base64.b64encode(jpeg))[2:-1]
             else:
                 frame = cv2.flip(img, 1)
-                img = cv2.putText(frame, "You Lost!", (250, 240), cv2.FONT_HERSHEY_PLAIN, 3,
-                                  (0, 0, 255), 3)
-                img = cv2.putText(img, "score : " + str(edu_game.score), (250, 340), cv2.FONT_HERSHEY_PLAIN, 3,
-                                  (0, 0, 255), 3)
+                img = cv2.putText(frame, "You Lost!", (225, 140), cv2.FONT_HERSHEY_PLAIN, 3,
+                                  (0, 0, 255), 2)
+                img = cv2.putText(img, "score : " + str(edu_game.score), (225, 240), cv2.FONT_HERSHEY_PLAIN, 3,
+                                  (0, 0, 255), 2)
+                if edu_game.cla ==0:
+                    img = cv2.putText(img, "It belongs to the red lid bin.", (100, 340), cv2.FONT_HERSHEY_PLAIN, 2,
+                                      (0, 0, 255), 2)
+                elif edu_game.cla ==1:
+                    img = cv2.putText(img, "It belongs to the yellow lid bin.", (100, 340), cv2.FONT_HERSHEY_PLAIN, 2,
+                                      (0, 0, 255), 2)
+                else:
+                    img = cv2.putText(img, "It belongs to the green lid bin.", (100, 340), cv2.FONT_HERSHEY_PLAIN, 2,
+                                      (0, 0, 255), 2)
                 ret, jpeg = cv2.imencode(".jpg", img)
                 back_data = head + ',' + str(base64.b64encode(jpeg))[2:-1]
         elif self.room_name == "pic":

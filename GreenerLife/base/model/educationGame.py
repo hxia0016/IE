@@ -1,5 +1,4 @@
 import os
-import pathlib
 import random
 
 import cv2
@@ -35,6 +34,7 @@ class EudcationGame:
         self.score = 0
         self.flag = False
         self.ix, self.iy, self.cla, self.index = self.randomLocationAndIndex()
+        self.image = self.image_list[str(self.cla)][self.index]
 
     def read_directory(self, directory_name):
         img_list = {}
@@ -53,6 +53,10 @@ class EudcationGame:
 
     def randomLocationAndIndex(self):
         return random.randint(100, 500), random.randint(100, 150), random.randint(0, 2), random.randint(0, 3)
+
+    # def new_image(self):
+    #     self.ix, self.iy, self.cla, self.index = self.randomLocationAndIndex()
+    #     self.image = self.image_list[str(self.cla)][self.index]
 
     def overlayPNG(self, imgBack, imgFront, pos=[0, 0]):
         hf, wf, cf = imgFront.shape
@@ -89,8 +93,8 @@ class EudcationGame:
                     self.ix, self.iy = cx - 50, cy - 50
 
         if 100 < self.ix + 100 < img.shape[1] and 100 < self.iy + 100 < img.shape[0]:
-            if self.image.any() is not None:
-                img = self.overlayPNG(img, self.image, [self.ix, self.iy])
+
+            img = self.overlayPNG(img, self.image, [self.ix, self.iy])
         # get reward
         if self.rewardArea[str(self.cla)][2] < self.iy + 50 < self.rewardArea[str(self.cla)][3]:
             if self.rewardArea[str(self.cla)][0] < self.ix + 50 < self.rewardArea[str(self.cla)][1]:
@@ -105,6 +109,8 @@ class EudcationGame:
 
         img = self.overlayPNG(img, self.background, [0, 0])
         img = self.overlayPNG(img, self.bin_image, [50, 400])
+        img = cv2.putText(img, "score : " + str(self.score), (50, 50), cv2.FONT_HERSHEY_PLAIN, 2,
+                                  (0, 0, 255), 2)
         return img
 
 # if __name__ == '__main__':
