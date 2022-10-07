@@ -14,16 +14,32 @@ from channels.generic.websocket import  WebsocketConsumer
 from IE.GreenerLife.base.model.educationGame import EudcationGame
 from IE.GreenerLife.base.model.garbageDetection import GarbageModel
 
-path = pathlib.Path.cwd()
+# path = pathlib.Path.cwd()
+#
+# print(path)
+# tensorflow.keras.backend.clear_session()
+# # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+# model = GarbageModel(path / 'base' / 'model')
+# img = cv2.imread(str(path / 'base' / 'model' / 'bin.png'))
+# model.predict(img)
+# edu_game = EudcationGame(path/ 'base' / 'model')
 
+path = pathlib.Path.cwd()
 print(path)
+path = path / 'base' / 'model'
 tensorflow.keras.backend.clear_session()
-# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-model = GarbageModel(path / 'base' / 'model')
-img = cv2.imread(str(path / 'base' / 'model' / 'bin.png'))
-model.predict(img)
-edu_game = EudcationGame(path/ 'base' / 'model')
+# model = GarbageModel("./GreenerLife/base/model/")
+model = GarbageModel(path)
+# model = ModelThread("./base/model/")
+# img = cv2.imread("./GreenerLife/static / images / coffee.png")
+img = cv2.imread("./static / images / coffee.png")
+if img != None:
+    model.predict(img)
+# edu_game = EudcationGame("./GreenerLife/base/model/")
+edu_game = EudcationGame(path)
 
 
 class VideoConsumer(WebsocketConsumer):
@@ -32,7 +48,6 @@ class VideoConsumer(WebsocketConsumer):
         # 从url里获取聊天室名字，为每个房间建立一个频道组
         self.room_name = self.scope['url_route']['kwargs']['room_name']
         self.room_group_name = 'chat_%s' % self.room_name
-        edu_game.flag = False
         edu_game.reset_game()
 
         # 将当前频道加入频道组
@@ -79,6 +94,11 @@ class VideoConsumer(WebsocketConsumer):
                                   (0, 0, 255), 3)
                 ret, jpeg = cv2.imencode(".jpg", img)
                 back_data = head + ',' + str(base64.b64encode(jpeg))[2:-1]
+        elif self.room_name == "pic":
+            img, b = model.predict(img)
+            ret, jpeg = cv2.imencode(".jpg", img)
+            back_data = head + ',' + str(base64.b64encode(jpeg))[2:-1]
+
         self.send(text_data=json.dumps({
             'message': back_data
         }))

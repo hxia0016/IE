@@ -3,10 +3,8 @@ import pathlib
 import random
 
 import cv2
-import time
 import numpy as np
 from .HandTrackingModule import handDector
-# import HandTrackingModule as htm
 import math
 
 
@@ -18,26 +16,27 @@ class EudcationGame:
         # self.path = pathlib.Path(str(path))
         self.path = path
         # self.bin_image = cv2.imread(self.path + "bin.png", cv2.IMREAD_UNCHANGED)
-        self.bin_image = cv2.imread(str(self.path)+"/"+"bin.png", cv2.IMREAD_UNCHANGED)
+        self.background = cv2.imread(str(self.path) + "/" + "background.png", cv2.IMREAD_UNCHANGED)
+        self.background = cv2.resize(self.background, (640, 480), interpolation=cv2.INTER_AREA)
+        self.bin_image = cv2.imread(str(self.path) + "/" + "bin.png", cv2.IMREAD_UNCHANGED)
         self.bin_image = cv2.resize(self.bin_image, (540, 80), interpolation=cv2.INTER_AREA)
         # self.path = self.path + "images"
         # self.image_list = self.read_directory(self.path + "images")
         self.image_list = self.read_directory(self.path / "images")
-        self.ix, self.iy, self.cla = self.randomLocationAndIndex()
-        self.image = self.image_list[str(self.cla)][0]
+        self.ix, self.iy, self.cla, self.index = self.randomLocationAndIndex()
+        self.image = self.image_list[str(self.cla)][self.index]
         self.rewardArea = {"0": (50, 180 + 50, 400, 480), "1": (180 + 50, 180 + 50 + 180, 400, 480),
                            "2": (180 + 50 + 180, 180 + 50 + 180 + 180, 400, 480)}
         self.cx_before, self.cy_before = 0, 0
         self.score = 0
         self.flag = False
 
-
     def reset_game(self):
         self.score = 0
-        self.ix, self.iy, self.cla = self.randomLocationAndIndex()
+        self.flag = False
+        self.ix, self.iy, self.cla, self.index = self.randomLocationAndIndex()
 
     def read_directory(self, directory_name):
-
         img_list = {}
         for filename in os.listdir(directory_name):
             temp = filename.split("_")
@@ -53,7 +52,7 @@ class EudcationGame:
         return img_list
 
     def randomLocationAndIndex(self):
-        return random.randint(100, 500), random.randint(100, 150), random.randint(0, 2)
+        return random.randint(100, 500), random.randint(100, 150), random.randint(0, 2), random.randint(0, 3)
 
     def overlayPNG(self, imgBack, imgFront, pos=[0, 0]):
         hf, wf, cf = imgFront.shape
@@ -96,14 +95,15 @@ class EudcationGame:
         if self.rewardArea[str(self.cla)][2] < self.iy + 50 < self.rewardArea[str(self.cla)][3]:
             if self.rewardArea[str(self.cla)][0] < self.ix + 50 < self.rewardArea[str(self.cla)][1]:
                 self.score += 1
-                self.ix, self.iy, self.cla = self.randomLocationAndIndex()
-                self.image = self.image_list[str(self.cla)][0]
+                self.ix, self.iy, self.cla, self.index = self.randomLocationAndIndex()
+                self.image = self.image_list[str(self.cla)][self.index]
             else:
                 self.flag = True
         if len(lmList) != 0:
             if length < 20:
                 cv2.circle(img, (cx, cy), 10, (0, 255, 0), cv2.FILLED)
-        img = cv2.rectangle(img, (50, 50), (590, 400), (0, 255, 0), 2)
+
+        img = self.overlayPNG(img, self.background, [0, 0])
         img = self.overlayPNG(img, self.bin_image, [50, 400])
         return img
 

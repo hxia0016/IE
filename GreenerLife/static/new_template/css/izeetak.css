@@ -3173,7 +3173,7 @@ canvas {
     position: relative;
     display: block;
     background-color: #1b1825;
-    margin-top: -120px;
+    margin-top: 0px;
 }
 
 .site-footer__top {
@@ -3185,7 +3185,7 @@ canvas {
 .site-footer__top-inner {
     position: relative;
     display: block;
-    padding: 236px 0 120px;
+    padding: 120px 0 0px;
     z-index: 1;
 }
 
@@ -3194,7 +3194,7 @@ canvas {
     left: 0;
     right: 0;
     bottom: -42px;
-    height: 566px;
+    height: 400px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

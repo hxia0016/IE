@@ -41,9 +41,9 @@
 </head>
 
 <body>
-{% block content %}
+
 <div class="preloader">
-    <img class="preloader__image" width="60" src="static/picture/loader.png" alt="">
+    <img class="preloader__image" width="60" src="{% static 'images/logo_1.png'%}" alt="">
 </div>
 <!-- /.preloader -->
 <div class="page-wrapper">
@@ -58,11 +58,11 @@
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
-                                <li><a href="{% url 'index' %}">Home</a></li>
-                                <li ><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
-                                <li><a href="{% url 'clothing' %}">Clothing</a></li>
-                                <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
-                                <li><a href="{% url 'edu' %}">Game </a></li>
+                                <li class="current"><a href="{% url 'index' %}">Home</a></li>
+                                <li class="current"><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
+                                <li class="current"><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+                                <li class="current"><a href="{% url 'edu' %}">Game </a></li>
                             </ul>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
 
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(/static/images/slide1.png)">
+        <div class="page-header-bg" style="background-image: url(/static/images/recycle.png)">
         </div>
         <div class="page-header-bg-overly"></div>
         <div class="page-header-shape wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms"
@@ -109,20 +109,28 @@
                         </div>
                         <div class="service-details__benefits">
                             <div class="row">
-                                <div>
-                                    <div class="service-details__benefits-text">
-                                      <div class="messgae" id="message" hidden="hidden" >
-                            <video name="video" autoplay="true" id="videoElement"></video>
-                            <canvas id="canvas" width="640" height="480"></canvas>
-                            <canvas id="canvas1" width="640" height="480"></canvas>
-                        </div>
-                                        <div align="center"><img src="" id="image1"></div>
-
+                                <div class="service-details__benefits-text">
+                                          <div class="messgae" id="message" hidden="hidden" >
+                                              <video name="video" autoplay="true" id="videoElement"></video>
+                                              <canvas id="canvas" width="640" height="480"></canvas>
+                                              <canvas id="canvas1" width="640" height="480"></canvas>
+                                          </div>
+                                          <div align="center"><img src="" id="image1"></div>
 
                                     </div>
-                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="service-details__text">
+                            <h3 class="service-details__benefits-title">Upload a picture to get classification</h3>
+                            <p class="service-details__text">If the came is not working, please try to use upload image function.
+                            Just upload the garbage image and the result will show in that picture.</p>
+                            <div class="service-details__benefits">
+                            <input type="file" class="custom-file-input" id="file" accept="image/*">
+                            <div align="center">
+                                <img src="" id="pic" style="width: 50%">
+                            </div>
+                                </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-5">
@@ -146,8 +154,8 @@
     <!--Service Details End-->
     <style>
         #video {
-            width: 720px;
-            height: 576px;
+            width: 640px;
+            height: 480px;
         }
     </style>
      <script>
@@ -194,18 +202,35 @@
         console.error('Chat socket closed unexpectedly');
     };
 
+
     function takephoto() {
         canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
         let image_data_url = canvas.toDataURL('image/jpeg');
         // data url of the image
-        chatSocket.send(JSON.stringify({
-            'message': image_data_url
-        }));
+        if(chatSocket["readyState"]==1) {
+            chatSocket.send(JSON.stringify({
+                'message': image_data_url
+            }));
+        }
+
     }
     setInterval("takephoto()",150);
 
+     // 图片预览
+        document.querySelector('#file').addEventListener('change', (ev) => {
+            let reader = new FileReader();
+            reader.addEventListener('load', (e) => {
+                console.log("aaa")
+                $.post("/garbageClassification/",{data:e.target.result,csrfmiddlewaretoken: '{{ csrf_token }}'}, function (data, status) {
+                    $('#pic').attr("src", data)
+                    $("#pic").show();
+                });
+            });
+            reader.readAsDataURL(ev.target.files[0]);
+        });
 
 </script>
+
     <!--Site Footer One Start-->
     <footer class="site-footer">
 	<div class="site-footer__top">
@@ -259,7 +284,7 @@
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
         <div class="logo-box">
-            <a href="index.html" aria-label="logo image"><img src="static/picture/footer-logo.png" width="155"
+            <a href="" aria-label="logo image"><img src="{% static 'images/logo_1.png'%}" width="155"
                                                               alt=""></a>
         </div>
         <!-- /.logo-box -->
@@ -329,5 +354,5 @@
 
 
 </body>
-{% endblock content %}
+
 </html>

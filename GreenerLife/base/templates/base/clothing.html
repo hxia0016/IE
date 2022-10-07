@@ -43,8 +43,8 @@
 <body>
 {% block content %}
 <div class="preloader">
-    <img class="preloader__image" width="60" src="static/picture/loader.png" alt="">
-</div>
+        <img class="preloader__image" width="60" src="{% static 'images/logo_1.png'%}" alt="">
+    </div>
 <!-- /.preloader -->
 <div class="page-wrapper">
     <header class="main-header clearfix">
@@ -58,11 +58,11 @@
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
-                                <li><a href="{% url 'index' %}">Home</a></li>
-                                <li ><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
-                                <li><a href="{% url 'clothing' %}">Clothing</a></li>
-                                <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
-                                <li><a href="{% url 'edu' %}">Game </a></li>
+                                <li class="current"><a href="{% url 'index' %}">Home</a></li>
+                                <li class="current" ><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
+                                <li class="current"><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+                                <li class="current"><a href="{% url 'edu' %}">Game </a></li>
                             </ul>
                         </div>
                     </div>
@@ -547,7 +547,7 @@ google.maps.event.addDomListener(window, "load", initialize);
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
         <div class="logo-box">
-            <a href="index.html" aria-label="logo image"><img src="static/picture/footer-logo.png" width="155"
+            <a href="" aria-label="logo image"><img src="{% static 'images/logo_1.png'%}" width="155"
                                                               alt=""></a>
         </div>
         <!-- /.logo-box -->

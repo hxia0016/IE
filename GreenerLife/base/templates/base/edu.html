@@ -41,9 +41,9 @@
 </head>
 
 <body>
-{% block content %}
+
 <div class="preloader">
-    <img class="preloader__image" width="60" src="static/picture/loader.png" alt="">
+    <img class="preloader__image" width="60" src="{% static 'images/logo_1.png'%}" alt="">
 </div>
 <!-- /.preloader -->
 <div class="page-wrapper">
@@ -58,11 +58,11 @@
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
-                                <li><a href="{% url 'index' %}">Home</a></li>
-                                <li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
-                                <li><a href="{% url 'clothing' %}">Clothing</a></li>
-                                <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
-                                <li><a href="{% url 'edu' %}">Game </a></li>
+                                <li class="current"><a href="{% url 'index' %}">Home</a></li>
+                                <li class="current"><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
+                                <li class="current"><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+                                <li class="current"><a href="{% url 'edu' %}">Game </a></li>
                             </ul>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
 
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(/static/images/slide1.png)">
+        <div class="page-header-bg" style="background-image: url(/static/images/game_pic.jpg)">
         </div>
         <div class="page-header-bg-overly"></div>
         <div class="page-header-shape wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms"
@@ -108,21 +108,22 @@
                         </div>
                         <div class="service-details__benefits">
                             <div class="row">
-                                <div>
-                                    <div class="service-details__benefits-text">
+                                <h3 class="service-details__title"> Game Target</h3>
+                                <div class="service-details__benefits-text">
+                                    <p class="service-details__text">Try to sort more garbage to win higher scores.<br><br></p>
                                         <div class="messgae" id="message" hidden="hidden">
                                             <video name="video" autoplay="true" id="videoElement"></video>
                                             <canvas id="canvas" width="640" height="480"></canvas>
                                         </div>
-                                        <div align="center"><img src="" id="image1"></div>
-
-
-                                    </div>
+                                        <div align="center"><img src="" id="image1"><br><br><br><a href="javascript:location.reload();" class="thm-btn">Restart Game</a></div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
+
+
                 <div class="col-xl-4 col-lg-5">
                     <div class="service-details__sidebar">
 
@@ -220,7 +221,7 @@
         }
 
         setInterval("takephoto()", 100);
-
+        // button.onclick( refresh());
 
     </script>
     <!--Site Footer One Start-->
@@ -276,7 +277,7 @@
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
         <div class="logo-box">
-            <a href="index.html" aria-label="logo image"><img src="static/picture/footer-logo.png" width="155"
+            <a href="" aria-label="logo image"><img src="{% static 'images/logo_1.png'%}" width="155"
                                                               alt=""></a>
         </div>
         <!-- /.logo-box -->
@@ -348,5 +349,5 @@
 
 
 </body>
-{% endblock content %}
+
 </html>

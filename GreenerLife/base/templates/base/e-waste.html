@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-waste - GreenerLife </title>
+    <title>Garbage Detection - GreenerLife </title>
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"/>
 
     <!-- fonts -->
@@ -41,8 +41,9 @@
 </head>
 
 <body>
+{% block content %}
 <div class="preloader">
-    <img class="preloader__image" width="60" src="static/picture/loader.png" alt="">
+    <img class="preloader__image" width="60" src="{% static 'images/logo_1.png'%}" alt="">
 </div>
 <!-- /.preloader -->
 <div class="page-wrapper">
@@ -57,11 +58,11 @@
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
-                                <li><a href="{% url 'index' %}">Home</a></li>
-                                <li ><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
-                                <li><a href="{% url 'clothing' %}">Clothing</a></li>
-                                <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
-                                <li><a href="{% url 'edu' %}">Game </a></li>
+                                <li class="current"><a href="{% url 'index' %}">Home</a></li>
+                                <li class="current"><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
+                                <li class="current"><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+                                <li class="current"><a href="{% url 'edu' %}">Game </a></li>
                             </ul>
                         </div>
                     </div>
@@ -104,149 +105,6 @@
                             <p class="service-details__text">E-waste is any item with a plug, battery or power cord
                                 that’s no longer working or wanted. It covers a whole range of items from phones and
                                 refrigerators to fluorescent light tubes.</p>
-                            <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion">
-                                <div class="accrodion active">
-                                    <div class="accrodion-title">
-                                        <h4>Electrical and electronic tools</h4>
-                                    </div>
-                                    <div class="accrodion-content">
-                                        <div class="inner">
-                                            <ol>
-                                                <li> Batteries</li>
-                                                <li> Drills</li>
-                                                <li> Lawn mowers</li>
-                                                <li> Saws</li>
-                                                <li> Sewing machines</li>
-                                            </ol>
-                                            <div class="col-xl-2">
-                                                <IMG SRC="{% static 'images/Photo-Waste-Batteries.jpg'%}"/>
-                                            </div>
-                                        </div><!-- /.inner -->
-                                    </div>
-                                </div>
-                                <div class="accrodion">
-                                    <div class="accrodion-title">
-                                        <h4>IT, telecommunications and TV equipment</h4>
-                                    </div>
-                                    <div class="accrodion-content" style="display: none;">
-                                        <div class="inner">
-                                            <ol>
-                                                <li> Computers</li>
-                                                <li> Laptops</li>
-                                                <li> Mobile phones</li>
-                                                <li> Printers</li>
-                                                <li> Remote controls</li>
-                                                <li> Televisions</li>
-                                            </ol>
-                                            <div>
-                                                <IMG class="col-xl-6"
-                                                     SRC="{% static 'images/Photo-dispose-of-mobile-phones-880x250.jpg'%}"/>
-                                                <IMG class="col-xl-6"
-                                                     SRC="{% static 'images/Photo-Waste-Laptop.jpg'%}"/>
-                                            </div>
-                                        </div><!-- /.inner -->
-                                    </div>
-                                </div>
-                                <div class="accrodion">
-                                    <div class="accrodion-title">
-                                        <h4>Home appliances (large)</h4>
-                                    </div>
-                                    <div class="accrodion-content" style="display: none;">
-                                        <div class="inner">
-                                            <ol>
-                                                <li> Air conditioners</li>
-                                                <li> Cookers</li>
-                                                <li> Electric fans</li>
-                                                <li> Microwaves</li>
-                                                <li> Refrigerators</li>
-                                                <li> Washing machines</li>
-                                            </ol>
-                                            <div>
-                                                <IMG class="col-xl-6" SRC="{% static 'images/shopping.png'%}"/>
-                                            </div>
-                                        </div><!-- /.inner -->
-
-                                    </div>
-                                </div>
-                                <div class="accrodion">
-                                    <div class="accrodion-title">
-                                        <h4>Home appliances (small)</h4>
-                                    </div>
-                                    <div class="accrodion-content" style="display: none;">
-                                        <div class="inner">
-                                            <ol>
-                                                <li> Coffee machines</li>
-                                                <li> Hair dryers</li>
-                                                <li> Irons</li>
-                                                <li> Toasters</li>
-                                                <li> Watches</li>
-                                            </ol>
-                                            <div>
-                                                <IMG class="col-xl-6" SRC="{% static 'images/coffee.png'%}"/>
-                                            </div>
-                                        </div><!-- /.inner -->
-
-                                    </div>
-                                </div>
-                                <div class="accrodion">
-                                    <div class="accrodion-title">
-                                        <h4>Lighting equipment</h4>
-                                    </div>
-                                    <div class="accrodion-content" style="display: none;">
-                                        <div class="inner">
-                                            <ol>
-                                                <li> Compact fluorescent lamps</li>
-                                                <li> Discharge lamps</li>
-                                                <li> Fluorescent lamps</li>
-                                                <li> High-intensity LEDs</li>
-                                            </ol>
-                                            <div>
-                                                <IMG class="col-xl-6" SRC="{% static 'images/light.png'%}"/>
-                                            </div>
-                                        </div><!-- /.inner -->
-
-                                    </div>
-                                </div>
-                                <div class="accrodion">
-                                    <div class="accrodion-title">
-                                        <h4>Other items</h4>
-                                    </div>
-                                    <div class="accrodion-content" style="display: none;">
-                                        <div class="inner">
-                                            <ol>
-                                                <li> Automatic dispensers</li>
-                                                <li> Medical devices</li>
-                                                <li> Printer cartridges</li>
-                                                <li> Thermostats</li>
-                                            </ol>
-                                            <div>
-                                                <IMG class="col-xl-6" SRC="{% static 'images/cartridges.png'%}"/>
-                                            </div>
-                                        </div><!-- /.inner -->
-
-                                    </div>
-                                </div>
-                                <div class="accrodion">
-                                    <div class="accrodion-title">
-                                        <h4> Toys, leisure and sports equipment</h4>
-                                    </div>
-                                    <div class="accrodion-content" style="display: none;">
-                                        <div class="inner">
-                                            <ol>
-                                                <li> Amplifiers</li>
-                                                <li> Consoles</li>
-                                                <li> Hand-held video games</li>
-                                                <li> Musical instruments</li>
-                                                <li> Radios</li>
-                                                <li> Toys like electric trains and racing cars</li>
-                                            </ol>
-                                            <div>
-                                                <IMG class="col-xl-6" SRC="{% static 'images/switch.png'%}"/>
-                                            </div>
-                                        </div><!-- /.inner -->
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="service-details__benefits">
                             <div class="row">
@@ -297,7 +155,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="service-details__benefits">
                             <div class="row">
                                 <div>
@@ -406,6 +263,8 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div class="col-xl-4 col-lg-5">
                     <div class="service-details__sidebar">
 
@@ -445,15 +304,15 @@
                                                             electrical items from entering the waste stream.Not only
                                                             does this extend the product's life, it could earn you a bit
                                                             of extra money in the process.</p>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!--Service Details End-->
-     <script>
+    <script>
     var locations = [];
 
     $('.target').change(function () {
@@ -652,7 +511,7 @@
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
         <div class="logo-box">
-            <a href="index.html" aria-label="logo image"><img src="static/picture/footer-logo.png" width="155"
+            <a href="" aria-label="logo image"><img src="{% static 'images/logo_1.png'%}" width="155"
                                                               alt=""></a>
         </div>
         <!-- /.logo-box -->
@@ -660,22 +519,9 @@
         <!-- /.mobile-nav__container -->
 
         <ul class="mobile-nav__contact list-unstyled">
-            <li>
-                <i class="fa fa-envelope"></i>
-                <a href="mailto:needhelp@packageName__.com">needhelp@izeetak.com</a>
-            </li>
-            <li>
-                <i class="fa fa-phone-alt"></i>
-                <a href="tel:666-888-0000">666 888 0000</a>
-            </li>
+
         </ul><!-- /.mobile-nav__contact -->
         <div class="mobile-nav__top">
-            <div class="mobile-nav__social">
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-facebook-square"></a>
-                <a href="#" class="fab fa-pinterest-p"></a>
-                <a href="#" class="fab fa-instagram"></a>
-            </div><!-- /.mobile-nav__social -->
         </div><!-- /.mobile-nav__top -->
 
 
@@ -730,13 +576,10 @@
 <script src="{% static 'new_template/js/particles-config.js'%}"></script>
 
 
-
-
-
 <!-- template js -->
 <script src="{% static 'new_template/js/izeetak.js'%}"></script>
 
 
 </body>
-
+{% endblock content %}
 </html>
