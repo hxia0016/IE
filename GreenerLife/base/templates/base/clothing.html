@@ -59,10 +59,12 @@
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
                                 <li class="current"><a href="{% url 'index' %}">Home</a></li>
-                                <li class="current" ><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
-                                <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
                                 <li class="current"><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
                                 <li class="current"><a href="{% url 'edu' %}">Game </a></li>
+                                <li class="current" ><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
+                                <li class="current"><a href="{% url 'food' %}">Food Waste</a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -77,7 +79,7 @@
 
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(/static/images/slide1.png)">
+        <div class="page-header-bg" style="background-image: url(/static/images/map.jpg)">
         </div>
         <div class="page-header-bg-overly"></div>
         <div class="page-header-shape wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms"
@@ -103,7 +105,7 @@
                         <div class="service-details__content">
 
                             <h3 class="service-details__title"> Clothing Recycling</h3>
-                            <p class="service-details__text">Did you know the average American throws away 70lbs of textiles
+                            <p class="service-details__text">Did you know the average Australian throws away 70lbs of textiles
                                 per year? The fact that only 15% of unwanted clothing is actually recycled is a huge
                                 part of the problem. There are a few different options when it comes to unwanted or
                                 worn-out clothing depending on the condition. We will break them each down and help you
@@ -115,7 +117,7 @@
                                     <div class="service-details__text">
                                         <form action="{% url 'clothing' %}" method="GET">
                                             <label for="site"><h3 class="service-details__benefits-title">Choose a suburb to find cloting collection sites </h3></label>
-                                <select class="target" name="CSite" id="site">
+                                <select class="selectpicker" data-live-search="true" name="CSite" id="site">
                                     <option value="Melbourne" selected>Melbourne</option>
                                     <option value="Abbotsford">Abbotsford</option>
                                     <option value="Alphington">Alphington</option>
@@ -354,7 +356,7 @@
      <script>
     var locations = [];
 
-    $('.target').change(function () {
+    $('#site').change(function () {
         var table = document.getElementById("myTable");
         var totalRowCount = table.rows.length;
         if(totalRowCount<2){
@@ -498,7 +500,7 @@ google.maps.event.addDomListener(window, "load", initialize);
     <footer class="site-footer">
 	<div class="site-footer__top">
 		<div class="container">
-			<div class="site-footer__top-inner">
+			<div class="site-footer__top-inner" style="padding: 20px">
 				<div class="site-footer-map"
 					 style="background-image: url(/static/new_template/image/site-footer-mape.png)"></div>
 				<div class="row">
@@ -506,10 +508,12 @@ google.maps.event.addDomListener(window, "load", initialize);
 						<div class="footer-widget__column footer-widget__links clearfix">
 							<h3 class="footer-widget__title">Links</h3>
 							<li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+							<li><a href="{% url 'edu' %}">Game </a></li>
 							<li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
 							<li><a href="{% url 'clothing' %}">Clothing</a></li>
-							<li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
-							<li><a href="{% url 'edu' %}">Game </a></li>
+                            <li><a href="{% url 'food' %}">Food Waste</a></li>
+
 
 						</div>
 					</div>

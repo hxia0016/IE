@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Waste - GreenerLife </title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"/>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="{% static 'new_template/css/css2.css'%}" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'new_template/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/animate.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/custom-animate.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/all.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jarallax.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jquery.magnific-popup.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/nouislider.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/nouislider.pips.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/odometer.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/swiper.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/tiny-slider.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/stylesheet.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/twentytwenty.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jquery.bxslider.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/bootstrap-select.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/vegas.min.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/jquery-ui.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/timePicker.css'%}">
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="{% static 'new_template/css/izeetak.css'%}">
+    <link rel="stylesheet" href="{% static 'new_template/css/izeetak-responsive.css'%}">
+</head>
+
+<body>
+{% block content %}
+<div class="preloader">
+    <img class="preloader__image" width="60" src="{% static 'images/logo_1.png'%}" alt="">
+</div>
+<!-- /.preloader -->
+<div class="page-wrapper">
+    <header class="main-header clearfix">
+        <nav class="main-menu clearfix">
+            <div class="main-menu-wrapper clearfix">
+                <div class="main-menu-wrapper-inner clearfix">
+                    <div class="main-menu-wrapper__left clearfix">
+                        <div class="main-menu-wrapper__logo">
+                            <a href="{% url 'index' %}"><img src="{% static 'images/logo_1.png'%}" alt=""></a>
+                        </div>
+                        <div class="main-menu-wrapper__main-menu">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li class="current"><a href="{% url 'index' %}">Home</a></li>
+                                <li class="current"><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+                                <li class="current"><a href="{% url 'edu' %}">Game </a></li>
+                                <li class="current"><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
+                                <li class="current"><a href="{% url 'food' %}">Food Waste</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="stricky-header stricked-menu main-menu">
+        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+    </div><!-- /.stricky-header -->
+
+    <!--Page Header Start-->
+    <section class="page-header">
+        <div class="page-header-bg" style="background-image: url(/static/images/slide1.png)">
+        </div>
+        <div class="page-header-bg-overly"></div>
+        <div class="page-header-shape wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms"
+             style="background-image: url(/static/new_template/image/page-header-shape.png)"></div>
+        <div class="container">
+            <div class="page-header__inner">
+                <ul class="thm-breadcrumb list-unstyled">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><span>/</span></li>
+                    <li>Food Waste</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--Page Header End-->
+
+    <!--Service Details Start-->
+    <section class="service-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-7">
+                    <div class="service-details__right">
+                        <div class="service-details__content">
+                            <h3 class="service-details__title">  Why is it important to reduce food waste ?</h3>
+                            <p class="service-details__text">Victorian households dispose an average of 250,000 tonnes
+                                worth of edible food to landfills. Food decomposition generates greenhouse gases that is
+                                harmful for public health and air quality.
+
+                            </p>
+                        </div>
+
+                        <div class="service-details__content">
+                            <h3 class="service-details__title">Avoid disposing food scraps into recycling bin</h3>
+                            <p class="service-details__text">
+                                Food scraps is also identified as one of
+                                the highest recycling bin contaminants and should not be place in recycling bin.
+                                 <br><br>
+                                Examples of food scraps includes:
+                            <section class="project-two project-page">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                                            <!--Project One Single-->
+                                            <div class="project-one__single">
+                                                <div class="project-one__img">
+                                                    <img src="{% static 'images/Vegetable.png'%}" alt="">
+                                                </div>
+                                                <div class="project-one__content">
+                                                    <h2 class="project-one__title">Vegetable</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                                            <!--Project One Single-->
+                                            <div class="project-one__single">
+                                                <div class="project-one__img">
+                                                    <img src="{% static 'images/bread.png'%}" alt="">
+                                                </div>
+                                                <div class="project-one__content">
+                                                    <h2 class="project-one__title">Bread</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                                            <!--Project One Single-->
+                                            <div class="project-one__single">
+                                                <div class="project-one__img">
+                                                    <img src="{% static 'images/Fruit.png'%}" alt="">
+                                                </div>
+                                                <div class="project-one__content">
+                                                    <h2 class="project-one__title">Fruit</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                                            <!--Project One Single-->
+                                            <div class="project-one__single">
+                                                <div class="project-one__img">
+                                                    <img src="{% static 'images/meet.png'%}" alt="">
+                                                </div>
+                                                <div class="project-one__content">
+                                                    <h2 class="project-one__title">Meat</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                                            <!--Project One Single-->
+                                            <div class="project-one__single">
+                                                <div class="project-one__img">
+                                                    <img src="{% static 'images/milk.png'%}" alt="">
+                                                </div>
+                                                <div class="project-one__content">
+                                                    <h2 class="project-one__title">Dairy products</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+                            </p>
+                        </div>
+
+                        <div class="service-details__benefits">
+                            <div class="row">
+                                <div>
+                                    <div class="service-details__content">
+                                        <h3 class="service-details__benefits-title">Reduce food waste</h3>
+                                        <section class="news-one news-page" style="padding: 0px">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl-6 col-lg-6 wow fadeInLeft"
+                                                         data-wow-delay="100ms">
+                                                        <!--News One Single-->
+                                                        <div class="news-one__single">
+                                                            <div class="news-one__img">
+                                                                <img src="{% static 'images/Planning.png'%}" alt="">
+                                                            </div>
+                                                            <div class="news-one__content">
+                                                                <h3 class="news-one__title">
+                                                                    Planning
+                                                                </h3>
+                                                                <p class="news-one__text">Check what you have and list
+                                                                    down the
+                                                                    things you need only. You can try to plan your meals
+                                                                    two days ahead or
+                                                                    weekly. Don’t forget to include the probability of
+                                                                    leftovers as well.
+                                                                </p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 wow fadeInRight"
+                                                         data-wow-delay="200ms">
+                                                        <!--News One Single-->
+                                                        <div class="news-one__single">
+                                                            <div class="news-one__img">
+                                                                <img src="{% static 'images/donate.jpg'%}" alt="">
+
+                                                            </div>
+                                                            <div class="news-one__content">
+                                                                <h3 class="news-one__title">
+                                                                    Donate
+                                                                </h3>
+                                                                <p class="news-one__text">Donate edible food to food
+                                                                    distribution charity such as Foodbank, Secondbite,
+                                                                    or OzHarvest.<br><br><br>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 wow fadeInLeft"
+                                                         data-wow-delay="300ms">
+                                                        <!--News One Single-->
+                                                        <div class="news-one__single">
+                                                            <div class="news-one__img">
+                                                                <img src="{% static 'images/cooking.jpg'%}" alt="">
+                                                            </div>
+                                                            <div class="news-one__content">
+                                                                <h3 class="news-one__title">
+                                                                    Cooking
+                                                                </h3>
+                                                                <p class="news-one__text">
+                                                                <ul class="list-unstyled service-details__benefits-list"
+                                                                    style="margin-top:0px">
+                                                                    <li>
+                                                                        <div class="icon">
+                                                                            <span class="fa fa-check"></span>
+                                                                        </div>
+                                                                        <div class="text">
+                                                                            <p>Cook according to your meal plan </p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="icon">
+                                                                            <span class="fa fa-check"></span>
+                                                                        </div>
+                                                                        <div class="text">
+                                                                            <p>Cook according to your meal plan </p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="icon">
+                                                                            <span class="fa fa-check"></span>
+                                                                        </div>
+                                                                        <div class="text">
+                                                                            <p>Use ingredients creatively </p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="icon">
+                                                                            <span class="fa fa-check"></span>
+                                                                        </div>
+                                                                        <div class="text">
+                                                                            <p>Have it collected from your home through
+                                                                                eMeals</p>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                                <br><br><br><br>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay="400ms">
+                                                        <!--News One Single-->
+                                                        <div class="news-one__single">
+                                                            <div class="news-one__img">
+                                                                <img src="{% static 'images/Pantry.jpg'%}" alt="">
+                                                            </div>
+                                                            <div class="news-one__content">
+                                                                <h3 class="news-one__title">
+                                                                    Pantry
+                                                                </h3>
+                                                                <p class="news-one__text">
+                                                                <ul class="list-unstyled service-details__benefits-list"
+                                                                    style="margin-top:0px">
+                                                                    <li>
+                                                                        <div class="icon">
+                                                                            <span class="fa fa-check"></span>
+                                                                        </div>
+                                                                        <div class="text">
+                                                                            <p>Understand the dates: Best Before means
+                                                                                that the food will start to deteriorate
+                                                                                after the date but is still edible.</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="icon">
+                                                                            <span class="fa fa-check"></span>
+                                                                        </div>
+                                                                        <div class="text">
+                                                                            <p>Airtight storage: Half-used food packets
+                                                                                should be stored in sealed containers to
+                                                                                keep the freshness.</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="icon">
+                                                                            <span class="fa fa-check"></span>
+                                                                        </div>
+                                                                        <div class="text">
+                                                                            <p>First in, first out: Placed newer items
+                                                                                at the back and older item Infront.</p>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                                </p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 wow fadeInLeft"
+                                                         data-wow-delay="500ms">
+                                                        <!--News One Single-->
+                                                        <div class="news-one__single">
+                                                            <div class="news-one__img">
+                                                                <img src="{% static 'images/Fridge.jpg'%}" alt="">
+                                                            </div>
+                                                            <div class="news-one__content">
+                                                                <h3 class="news-one__title">
+                                                                    Fridge
+                                                                </h3>
+                                                                <p class="news-one__text">
+                                                                <ul class="list-unstyled service-details__benefits-list"
+                                                                    style="margin-top:0px">
+                                                                    <li>
+                                                                        <div class="icon">
+                                                                            <span class="fa fa-check"></span>
+                                                                        </div>
+                                                                        <div class="text">
+                                                                            <p>Keep the temperature cool: The suggested
+                                                                                temperature should be
+                                                                                around 3 to 4 degrees Celsius</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="icon">
+                                                                            <span class="fa fa-check"></span>
+                                                                        </div>
+                                                                        <div class="text">
+                                                                            <p>Avoid overloading: Air circulation is
+                                                                                important for temperature
+                                                                                stability </p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="icon">
+                                                                            <span class="fa fa-check"></span>
+                                                                        </div>
+                                                                        <div class="text">
+                                                                            <p>Separate cooked and raw foods: Sealed raw
+                                                                                meat and kept on bottom
+                                                                                shelf to avoid leakage.</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="icon">
+                                                                            <span class="fa fa-check"></span>
+                                                                        </div>
+                                                                        <div class="text">
+                                                                            <p>Have it collected from your home through
+                                                                                eMeals</p>
+                                                                        </div>
+                                                                    </li>
+
+                                                                </ul>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="service-details__sidebar">
+
+                        <div class="service-details__sidebar-service">
+                            <h4 class="service-details__sidebar-title">How many days and years of electricity CO2-e
+                                production is your business’ food waste equivalent to?</h4>
+                            <p>
+                            <ol>
+                                <li>
+                                    Weight of food waste (kg)
+                                    <input type="text" oninput="weight_change(this.value)" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " id="Weight" placeholder="Input a number">
+                                </li>
+                                <li>
+                                    Emissions of CO2-e (kg)
+                                    <input type="text" oninput="emissions_change(this.value)" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " id="Emissions" placeholder="Input a number">
+                                </li>
+                                <li>
+                                    Equivalent days of electricity consumption for one household
+                                    <input type="text" oninput="days_change(this.value)" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " id="days" placeholder="Input a number">
+                                </li>
+                                <li>
+                                    Equivalent years of electricity consumption for one household
+                                    <input type="text" oninput="years_change(this.value)" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " id="years" placeholder="Input a number">
+                                </li>
+                            </ol>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-details__sidebar">
+                        <div class="service-details__sidebar-service">
+                            <h4 class="service-details__sidebar-title"></h4>
+                            <p>
+                            The average electricity use for a 3 person household in Australia ranges from 11.2 kWh to 27.2 kWh per day.1 This produces an average of 11.45 kg of CO2-e per household per day.2
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Service Details End-->
+    <script>
+         let weight = document.querySelector("#Weight");
+         let Emissions = document.querySelector("#Emissions");
+         let days = document.querySelector("#days");
+         let years = document.querySelector("#years");
+
+         function weight_change(e){
+             Emissions.value = (e*1.90).toFixed(2) +" kg";
+             days.value = (e*1.90/11.45).toFixed(2) + " days" ;
+             years.value = (e*1.90/11.45/365).toFixed(2) + " years";
+         }
+         function emissions_change(e){
+             weight.value = (e/1.90).toFixed(2)+" kg";
+             days.value = (e/11.45).toFixed(2) + " days" ;
+             years.value = (e/11.45/365).toFixed(2) + " years";
+         }
+         function days_change(e){
+            Emissions.value = (e*11.45).toFixed(2)+" kg";
+             years.value = (e/365).toFixed(2) + " years";
+             weight.value =(e*11.45*1.90).toFixed(2)+" kg";
+         }
+         function years_change(e){
+            days.value = (e*365).toFixed(2) + " days" ;
+            Emissions.value = (e*11.45*365).toFixed(2)+" kg";
+            weight.value =(e*1.90*11.45*1.90).toFixed(2)+" kg";
+         }
+    </script>
+    <!--Site Footer One Start-->
+    <footer class="site-footer">
+        <div class="site-footer__top">
+            <div class="container">
+                <div class="site-footer__top-inner" style="padding: 20px">
+                    <div class="site-footer-map"
+                         style="background-image: url(/static/new_template/image/site-footer-mape.png)"></div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                            <div class="footer-widget__column footer-widget__links clearfix">
+                                <h3 class="footer-widget__title">Links</h3>
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+                                <li><a href="{% url 'edu' %}">Game </a></li>
+                                <li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li><a href="{% url 'clothing' %}">Clothing</a></li>
+                                <li><a href="{% url 'food' %}">Food Waste</a></li>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-footer__bottom">
+            <div class="site-footer__bottom-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="site-footer__bottom-inner">
+                                <div class="site-footer__bottom-left">
+                                    <p class="site-footer__bottom-text">Copyright &copy; 2021.GreenerLife All rights
+                                        reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Site Footer One End-->
+
+
+</div><!-- /.page-wrapper -->
+
+
+<div class="mobile-nav__wrapper">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <!-- /.mobile-nav__overlay -->
+    <div class="mobile-nav__content">
+        <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+        <div class="logo-box">
+            <a href="" aria-label="logo image"><img src="{% static 'images/logo_1.png'%}" width="155"
+                                                    alt=""></a>
+        </div>
+        <!-- /.logo-box -->
+        <div class="mobile-nav__container"></div>
+        <!-- /.mobile-nav__container -->
+
+        <ul class="mobile-nav__contact list-unstyled">
+
+        </ul><!-- /.mobile-nav__contact -->
+        <div class="mobile-nav__top">
+        </div><!-- /.mobile-nav__top -->
+
+
+    </div>
+    <!-- /.mobile-nav__content -->
+</div>
+<!-- /.mobile-nav__wrapper -->
+
+<div class="search-popup">
+    <div class="search-popup__overlay search-toggler"></div>
+    <!-- /.search-popup__overlay -->
+    <div class="search-popup__content">
+        <form action="#">
+            <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+            <input type="text" id="search" placeholder="Search Here...">
+            <button type="submit" aria-label="search submit" class="thm-btn">
+                <i class="icon-magnifying-glass"></i>
+            </button>
+        </form>
+    </div>
+    <!-- /.search-popup__content -->
+</div>
+<!-- /.search-popup -->
+
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+<script src="{% static 'new_template/js/jquery-3.6.0.min.js'%}"></script>
+<script src="{% static 'new_template/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'new_template/js/jarallax.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.ajaxchimp.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.appear.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.circle-progress.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.magnific-popup.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.validate.min.js'%}"></script>
+<script src="{% static 'new_template/js/nouislider.min.js'%}"></script>
+<script src="{% static 'new_template/js/odometer.min.js'%}"></script>
+<script src="{% static 'new_template/js/swiper.min.js'%}"></script>
+<script src="{% static 'new_template/js/tiny-slider.min.js'%}"></script>
+<script src="{% static 'new_template/js/wNumb.min.js'%}"></script>
+<script src="{% static 'new_template/js/wow.js'%}"></script>
+<script src="{% static 'new_template/js/isotope.js'%}"></script>
+<script src="{% static 'new_template/js/countdown.min.js'%}"></script>
+<script src="{% static 'new_template/js/owl.carousel.min.js'%}"></script>
+<script src="{% static 'new_template/js/twentytwenty.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.event.move.js'%}"></script>
+<script src="{% static 'new_template/js/jquery.bxslider.min.js'%}"></script>
+<script src="{% static 'new_template/js/bootstrap-select.min.js'%}"></script>
+<script src="{% static 'new_template/js/vegas.min.js'%}"></script>
+<script src="{% static 'new_template/js/jquery-ui.js'%}"></script>
+<script src="{% static 'new_template/js/timePicker.js'%}"></script>
+<script src="{% static 'new_template/js/particles.min.js'%}"></script>
+<script src="{% static 'new_template/js/particles-config.js'%}"></script>
+
+
+<!-- template js -->
+<script src="{% static 'new_template/js/izeetak.js'%}"></script>
+
+
+</body>
+{% endblock content %}
+</html>

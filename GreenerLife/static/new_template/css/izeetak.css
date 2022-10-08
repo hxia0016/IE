@@ -2475,7 +2475,7 @@ canvas {
     right: 0;
     bottom: 0;
     content: "";
-    background-color: rgba(var(--thm-black-rgb), .30);
+    /*background-color: rgba(var(--thm-black-rgb), .30);*/
     transform: scale(1, 0);
     transition: transform 500ms ease;
     transform-origin: top center;

@@ -60,10 +60,12 @@
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
                                 <li class="current"><a href="{% url 'index' %}">Home</a></li>
-                                <li class="current"><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
-                                <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
                                 <li class="current"><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
                                 <li class="current"><a href="{% url 'edu' %}">Game </a></li>
+                                <li class="current"><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
+                                <li class="current"><a href="{% url 'food' %}">Food Waste</a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -102,11 +104,7 @@
                 <div class="col-xl-8 col-lg-7">
                     <div class="service-details__right">
                         <div class="service-details__content">
-                            <h3 class="service-details__title"> Why we need garbage classification?</h3>
-                            <p class="service-details__text">Data shows 84 - 96% of kerbside recycling is recycled, and the
-                                remaining 4 -
-                                16% that goes to landfill is primarily a result of the wrong thing going in the wrong
-                                bin.</p>
+                            <h3 class="service-details__title"> Let's use a camera to quickly sort garbage</h3>
                         </div>
                         <div class="service-details__benefits">
                             <div class="row">
@@ -132,6 +130,15 @@
                                 <img src="" id="pic" style="width: 50%">
                             </div>
                                 </div>
+                    </div>
+                    <div class="service-details__text">
+                            <div class="service-details__content">
+                            <h3 class="service-details__title"> Why we need garbage classification?</h3>
+                            <p class="service-details__text">Data shows 84 - 96% of kerbside recycling is recycled, and the
+                                remaining 4 -
+                                16% that goes to landfill is primarily a result of the wrong thing going in the wrong
+                                bin.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-5">
@@ -236,7 +243,7 @@
     <footer class="site-footer">
 	<div class="site-footer__top">
 		<div class="container">
-			<div class="site-footer__top-inner">
+			<div class="site-footer__top-inner" style="padding: 20px">
 				<div class="site-footer-map"
 					 style="background-image: url(/static/new_template/image/site-footer-mape.png)"></div>
 				<div class="row">
@@ -244,10 +251,12 @@
 						<div class="footer-widget__column footer-widget__links clearfix">
 							<h3 class="footer-widget__title">Links</h3>
 							<li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+							<li><a href="{% url 'edu' %}">Game </a></li>
 							<li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
 							<li><a href="{% url 'clothing' %}">Clothing</a></li>
-							<li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
-							<li><a href="{% url 'edu' %}">Game </a></li>
+                            <li><a href="{% url 'food' %}">Food Waste</a></li>
+
 
 						</div>
 					</div>
