@@ -40,8 +40,8 @@ def index(request):
     return render(request, 'base/index.html')
 
 
-# def about_us(request):
-#     return render(request, 'base/team.html')
+def food_waste(request):
+    return render(request, 'base/food_waste.html')
 
 
 def e_waste_classification(request):

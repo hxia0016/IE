@@ -59,10 +59,12 @@
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
                                 <li class="current"><a href="{% url 'index' %}">Home</a></li>
-                                <li class="current"><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
-                                <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
                                 <li class="current"><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
                                 <li class="current"><a href="{% url 'edu' %}">Game </a></li>
+                                <li class="current"><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
+                                <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
+                                <li class="current"><a href="{% url 'food' %}">Food Waste</a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -77,7 +79,7 @@
 
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(/static/images/game_pic.jpg)">
+        <div class="page-header-bg" style="background-image: url(/static/images/game_pic.png)">
         </div>
         <div class="page-header-bg-overly"></div>
         <div class="page-header-shape wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms"
@@ -236,10 +238,12 @@
                             <div class="footer-widget__column footer-widget__links clearfix">
                                 <h3 class="footer-widget__title">Links</h3>
                                 <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
+							    <li><a href="{% url 'edu' %}">Game </a></li>
                                 <li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
                                 <li><a href="{% url 'clothing' %}">Clothing</a></li>
-                                <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
-                                <li><a href="{% url 'edu' %}">Game </a></li>
+                                <li><a href="{% url 'food' %}">Food Waste</a></li>
+
 
                             </div>
                         </div>
