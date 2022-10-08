@@ -11,8 +11,8 @@ import tensorflow
 from asgiref.sync import async_to_sync
 from channels.generic.websocket import  WebsocketConsumer
 
-from IE.GreenerLife.base.model.educationGame import EudcationGame
-from IE.GreenerLife.base.model.garbageDetection import GarbageModel
+from base.model.educationGame import EudcationGame
+from base.model.garbageDetection import GarbageModel
 
 # path = pathlib.Path.cwd()
 #
@@ -27,7 +27,7 @@ from IE.GreenerLife.base.model.garbageDetection import GarbageModel
 
 path = pathlib.Path.cwd()
 print(path)
-path = path / 'base' / 'model'
+path = path / 'GreenerLife' / 'base' / 'model'
 tensorflow.keras.backend.clear_session()
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"

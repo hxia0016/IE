@@ -21,7 +21,7 @@ import pathlib
 
 path = pathlib.Path.cwd()
 print(path)
-path = path / 'base' / 'model'
+path = path / 'GreenerLife' / 'base' / 'model'
 tensorflow.keras.backend.clear_session()
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
