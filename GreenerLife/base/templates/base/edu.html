@@ -192,7 +192,6 @@
         // 根据roomName拼接websocket请求地址，建立长连接
         //  请求url地址为/ws/chat/<room_name>/
         const wss_protocol = (window.location.protocol == 'https:') ? 'wss://' : 'ws://';
-        console.log(wss_protocol)
         const chatSocket = new WebSocket(
             wss_protocol + window.location.host + '/ws/chat/' + roomName + '/'
         );
