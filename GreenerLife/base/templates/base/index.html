@@ -59,7 +59,7 @@
                                 <ul class="main-menu__list">
                                     <li class="current"><a href="{% url 'index' %}">Home</a></li>
                                     <li class="current"><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
-                                    <li class="current"><a href="{% url 'edu' %}">Game </a></li>
+                                    <li class="current"><a href="{% url 'edu' %}">Video Game </a></li>
                                     <li class="current"><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
                                     <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
                                     <li class="current"><a href="{% url 'food' %}">Food Waste</a></li>
@@ -155,7 +155,7 @@
                         </div>
                         <div class="image-layer-overlay"></div>
                         <!-- /.image-layer -->
-                        <div class="main-slider-shape-1"><img src="{% static 'static/new_template/picture/main-slider-shape-1.png'%}" alt="">
+                        <div class="main-slider-shape-1"><img src="{% static 'new_template/picture/main-slider-shape-1.png'%}" alt="">
                         </div>
                         <div class="container">
                             <div class="row">
@@ -230,39 +230,7 @@
                     <h2 class="section-title__title">What We’re Offering</h2>
                 </div>
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6 wow fadeInLeft" data-wow-delay="100ms">
-                        <!--Services One Single-->
-                        <div class="services-one__single">
-                            <div class="services-one__icon">
-                                <span> <a href="{% url 'e_waste_classification' %}"><img src="{%static 'images/ewast.png'%}"/></a>  </span>
-                            </div>
-                            <h4 class="services-one__title">
-                                <a href="{% url 'e_waste_classification' %}">E-waste</a>
-                            </h4>
-                            <p class="services-one__text">The Victorian Government has banned disposing E-Waste to landfill. Do not throw it to
-                            general waste bin. Kindly dispose it to nearby recycling center.</p>
-                            <div class="services-one__arrow">
-                                <a href="{% url 'e_waste_classification' %}"><span class="icon-right-arrow"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay="200ms">
-                        <!--Services One Single-->
-                        <div class="services-one__single">
-                            <div class="services-one__icon">
-                                <span ><a href="{% url 'clothing' %}"><img src="{%static 'images/clothing.png'%}"/></a></span>
-                            </div>
-                            <h4 class="services-one__title">
-                                <a href="{% url 'clothing' %}">Clothing</a>
-                            </h4>
-                            <p class="services-one__text">Avoid placing clothing and textiles into your household recycling bin. Instead, you can
-                            donate it to family, charity shops, organization and more.</p>
-                            <div class="services-one__arrow">
-                                <a href="{% url 'clothing' %}"><span class="icon-right-arrow"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="100ms">
                         <!--Services One Single-->
                         <div class="services-one__single">
                             <div class="services-one__icon">
@@ -278,7 +246,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6 wow fadeInRight" data-wow-delay="200ms">
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
                         <!--Services One Single-->
                         <div class="services-one__single">
                             <div class="services-one__icon">
@@ -287,7 +255,54 @@
                             <h3 class="services-one__title">
                                 <a href="{% url 'edu' %}">Video Game</a>
                             </h3>
-                            <p class="services-one__text">Interesting Game help you educate your kids.<br><br><br></p>
+                            <p class="services-one__text">Interesting Game help you educate your kids.<br><br><br><br></p>
+                            <div class="services-one__arrow">
+                                <a href="{% url 'edu' %}"><span class="icon-right-arrow"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 wow fadeInRight" data-wow-delay="300ms">
+                        <!--Services One Single-->
+                        <div class="services-one__single">
+                            <div class="services-one__icon">
+                                <span> <a href="{% url 'e_waste_classification' %}"><img src="{%static 'images/ewast.png'%}"/></a>  </span>
+                            </div>
+                            <h4 class="services-one__title">
+                                <a href="{% url 'e_waste_classification' %}">E-waste</a>
+                            </h4>
+                            <p class="services-one__text">The Victorian Government has banned disposing E-Waste to landfill. Do not throw it to
+                            general waste bin. Kindly dispose it to nearby recycling center.</p>
+                            <div class="services-one__arrow">
+                                <a href="{% url 'e_waste_classification' %}"><span class="icon-right-arrow"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="400ms">
+                        <!--Services One Single-->
+                        <div class="services-one__single">
+                            <div class="services-one__icon">
+                                <span ><a href="{% url 'clothing' %}"><img src="{%static 'images/clothing.png'%}"/></a></span>
+                            </div>
+                            <h4 class="services-one__title">
+                                <a href="{% url 'clothing' %}">Clothing</a>
+                            </h4>
+                            <p class="services-one__text">Avoid placing clothing and textiles into your household recycling bin. Instead, you can
+                            donate it to family, charity shops, organization and more.<br><br><br></p>
+                            <div class="services-one__arrow">
+                                <a href="{% url 'clothing' %}"><span class="icon-right-arrow"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 wow fadeInDown" data-wow-delay="500ms">
+                        <!--Services One Single-->
+                        <div class="services-one__single">
+                            <div class="services-one__icon">
+                                <span> <a href="{% url 'edu' %}"><img src="{%static 'images/food.png'%}"/></a> </span>
+                            </div>
+                            <h3 class="services-one__title">
+                                <a href="{% url 'edu' %}">Food Waste</a>
+                            </h3>
+                            <p class="services-one__text">Victorian households dispose an average of 250,000 tonnes worth of edible food to landfills. Food decomposition generates greenhouse gases that is harmful for public health and air quality.</p>
                             <div class="services-one__arrow">
                                 <a href="{% url 'edu' %}"><span class="icon-right-arrow"></span></a>
                             </div>
@@ -429,7 +444,7 @@
 							<h3 class="footer-widget__title">Links</h3>
 							<li><a href="{% url 'index' %}">Home</a></li>
                             <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
-							<li><a href="{% url 'edu' %}">Game </a></li>
+							<li><a href="{% url 'edu' %}">Video Game </a></li>
 							<li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
 							<li><a href="{% url 'clothing' %}">Clothing</a></li>
                             <li><a href="{% url 'food' %}">Food Waste</a></li>
@@ -481,20 +496,6 @@
     </div>
     <!-- /.mobile-nav__wrapper -->
 
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <!-- /.search-popup__overlay -->
-        <div class="search-popup__content">
-            <form action="#">
-                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
-                <input type="text" id="search" placeholder="Search Here...">
-                <button type="submit" aria-label="search submit" class="thm-btn">
-                    <i class="icon-magnifying-glass"></i>
-                </button>
-            </form>
-        </div>
-        <!-- /.search-popup__content -->
-    </div>
     <!-- /.search-popup -->
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>

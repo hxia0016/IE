@@ -60,7 +60,7 @@
                             <ul class="main-menu__list">
                                 <li class="current"><a href="{% url 'index' %}">Home</a></li>
                                 <li class="current"><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
-                                <li class="current"><a href="{% url 'edu' %}">Game </a></li>
+                                <li class="current"><a href="{% url 'edu' %}">Video Game </a></li>
                                 <li class="current" ><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
                                 <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
                                 <li class="current"><a href="{% url 'food' %}">Food Waste</a></li>
@@ -510,7 +510,7 @@ google.maps.event.addDomListener(window, "load", initialize);
 							<h3 class="footer-widget__title">Links</h3>
 							<li><a href="{% url 'index' %}">Home</a></li>
                             <li><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
-							<li><a href="{% url 'edu' %}">Game </a></li>
+							<li><a href="{% url 'edu' %}">Video Game </a></li>
 							<li><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
 							<li><a href="{% url 'clothing' %}">Clothing</a></li>
                             <li><a href="{% url 'food' %}">Food Waste</a></li>
@@ -573,20 +573,7 @@ google.maps.event.addDomListener(window, "load", initialize);
 </div>
 <!-- /.mobile-nav__wrapper -->
 
-<div class="search-popup">
-    <div class="search-popup__overlay search-toggler"></div>
-    <!-- /.search-popup__overlay -->
-    <div class="search-popup__content">
-        <form action="#">
-            <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
-            <input type="text" id="search" placeholder="Search Here...">
-            <button type="submit" aria-label="search submit" class="thm-btn">
-                <i class="icon-magnifying-glass"></i>
-            </button>
-        </form>
-    </div>
-    <!-- /.search-popup__content -->
-</div>
+
 <!-- /.search-popup -->
 
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
