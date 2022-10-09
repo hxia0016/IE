@@ -27,7 +27,7 @@ from base.model.garbageDetection import GarbageModel
 
 path = pathlib.Path.cwd()
 print(path)
-path = path / 'GreenerLife' / 'base' / 'model'
+path = path/'GreenerLife'   / 'base' / 'model'
 tensorflow.keras.backend.clear_session()
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
@@ -76,8 +76,9 @@ class VideoConsumer(WebsocketConsumer):
         nparr = np.frombuffer(imagedata, np.uint8)
         img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         back_data = "#"
+        s = ''
         if self.room_name == "garbage":
-            img, b = model.predict(img)
+            img, b,s = model.predict(img)
             ret, jpeg = cv2.imencode(".jpg", img)
             back_data = head + ',' + str(base64.b64encode(jpeg))[2:-1]
         elif self.room_name == "game":
@@ -93,13 +94,13 @@ class VideoConsumer(WebsocketConsumer):
                 img = cv2.putText(img, "score : " + str(edu_game.score), (225, 240), cv2.FONT_HERSHEY_PLAIN, 3,
                                   (0, 0, 255), 2)
                 if edu_game.cla ==0:
-                    img = cv2.putText(img, "It belongs to the red lid bin.", (100, 340), cv2.FONT_HERSHEY_PLAIN, 2,
+                    img = cv2.putText(img, "It belongs to the red lid bin.", (80, 340), cv2.FONT_HERSHEY_PLAIN, 2,
                                       (0, 0, 255), 2)
                 elif edu_game.cla ==1:
-                    img = cv2.putText(img, "It belongs to the yellow lid bin.", (100, 340), cv2.FONT_HERSHEY_PLAIN, 2,
+                    img = cv2.putText(img, "It belongs to the yellow lid bin.", (80, 340), cv2.FONT_HERSHEY_PLAIN, 2,
                                       (0, 0, 255), 2)
                 else:
-                    img = cv2.putText(img, "It belongs to the green lid bin.", (100, 340), cv2.FONT_HERSHEY_PLAIN, 2,
+                    img = cv2.putText(img, "It belongs to the green lid bin.", (80, 340), cv2.FONT_HERSHEY_PLAIN, 2,
                                       (0, 0, 255), 2)
                 ret, jpeg = cv2.imencode(".jpg", img)
                 back_data = head + ',' + str(base64.b64encode(jpeg))[2:-1]
@@ -109,7 +110,8 @@ class VideoConsumer(WebsocketConsumer):
             back_data = head + ',' + str(base64.b64encode(jpeg))[2:-1]
 
         self.send(text_data=json.dumps({
-            'message': back_data
+            'message': back_data,
+            'text': s
         }))
 
     # 从频道组接收到消息后执行方法

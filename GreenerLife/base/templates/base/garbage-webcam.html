@@ -127,6 +127,7 @@
                             <div class="service-details__benefits">
                             <input type="file" class="inputfile-6" id="file" accept="image/*">
                             <div align="center">
+                                <p id="pic_recycle"></p>
                                 <img src="" id="pic" style="width: 50%">
                             </div>
                                 </div>
@@ -228,9 +229,11 @@
         document.querySelector('#file').addEventListener('change', (ev) => {
             let reader = new FileReader();
             reader.addEventListener('load', (e) => {
-                console.log("aaa")
                 $.post("/garbageClassification/",{data:e.target.result,csrfmiddlewaretoken: '{{ csrf_token }}'}, function (data, status) {
-                    $('#pic').attr("src", data)
+                    const return_message = JSON.parse(data);
+                    document.querySelector('#pic_recycle').innerHTML = return_message.text
+                    // console.log(return_message.text)
+                    $('#pic').attr("src", return_message.message)
                     $("#pic").show();
                 });
             });

@@ -1,3 +1,5 @@
+import json
+
 from django.conf import settings
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
@@ -5,8 +7,6 @@ from django.db.models import Q
 from django.shortcuts import render
 from django.http import StreamingHttpResponse
 from django.http import HttpResponse
-
-from .camera import camDetect
 from .models import EWasteSite, Clothing
 from django.core import serializers
 import base64
@@ -21,7 +21,7 @@ import pathlib
 
 path = pathlib.Path.cwd()
 print(path)
-path = path / 'GreenerLife' / 'base' / 'model'
+path = path/'GreenerLife' / 'base' / 'model'
 tensorflow.keras.backend.clear_session()
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
@@ -84,10 +84,14 @@ def garbageClassification(request):
     imagedata = base64.b64decode(image)
     nparr = np.frombuffer(imagedata, np.uint8)
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-    img, b = model.predict(img)
+    img, b,s = model.predict(img)
     ret, jpeg = cv2.imencode(".jpg", img)
     image = head + ',' + str(base64.b64encode(jpeg))[2:-1]
-    return HttpResponse(image, content_type='multipart/x-mixed-replace; boundary=frame')
+    back_message = json.dumps({
+            'message': image,
+            'text': s,
+        })
+    return HttpResponse(back_message, content_type='multipart/x-mixed-replace; boundary=frame')
 
 
 # def gen_garbage(camera):
