@@ -61,7 +61,7 @@
                             <ul class="main-menu__list">
                                 <li class="current"><a href="{% url 'index' %}">Home</a></li>
                                 <li class="current"><a href="{% url 'garbage_video' %}">Waste Classification </a></li>
-                                <li class="current"><a href="{% url 'edu' %}">Game </a></li>
+                                <li class="current"><a href="{% url 'edu' %}">Video Game </a></li>
                                 <li class="current"><a href="{% url 'e_waste_classification' %}">E-waste</a></li>
                                 <li class="current"><a href="{% url 'clothing' %}">Clothing</a></li>
                                 <li class="current"><a href="{% url 'food' %}">Food Waste</a></li>
@@ -169,7 +169,7 @@
     </style>
      <script>
 
-    let canvas = document.querySelector("#canvas");
+
      var video = document.querySelector("#videoElement");
      var image = document.querySelector("#image1");
     // chunks = [];
@@ -223,7 +223,7 @@
         }
 
     }
-    setInterval("takephoto()",150);
+    setInterval("takephoto()",300);
 
      // 图片预览
         document.querySelector('#file').addEventListener('change', (ev) => {

@@ -32,9 +32,6 @@ model = GarbageModel(path)
 img = cv2.imread("./static / images / coffee.png")
 if img != None:
     model.predict(img)
-# edu_game = EudcationGame("./GreenerLife/base/model/")
-edu_game = EudcationGame(path)
-
 
 def index(request):
     return render(request, 'base/index.html')

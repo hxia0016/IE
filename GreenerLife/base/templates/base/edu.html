@@ -149,11 +149,11 @@
 
                             <p>
                             <ol>
-                                <li>Put garbage into correct the garbage bin.</li>
+                                <li>Put garbage into the correct garbage bin.</li>
                                 <li>Red lid bins is for landfill.</li>
                                 <li>Yellow lid bins is for recycleing.</li>
                                 <li>Green lid bins is for organic garbage.</li>
-                                <li>Wrong classification will make fail in this game.</li>
+                                <li>Wrong classification will end the game.</li>
                             </ol>
                             </p>
                         </div>
@@ -165,13 +165,13 @@
     <!--Service Details End-->
     <style>
         #video {
-            width: 720px;
-            height: 576px;
+            width: 640px;
+            height: 480px;
         }
     </style>
     <script>
 
-        let canvas = document.querySelector("#canvas");
+
         var video = document.querySelector("#videoElement");
         var image = document.querySelector("#image1");
         // chunks = [];
@@ -222,7 +222,7 @@
             }));
         }
 
-        setInterval("takephoto()", 95);
+        setInterval("takephoto()", 200);
         // button.onclick( refresh());
 
     </script>
