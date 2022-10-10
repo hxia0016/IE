@@ -14,7 +14,7 @@ class EudcationGame:
         self.detector = handDector(detectionCon=detectionCon)
         # self.path = pathlib.Path(str(path))
         self.path = path
-        self.background = cv2.imread(str(self.path) + "background.png", cv2.IMREAD_UNCHANGED)
+        # self.background = cv2.imread(str(self.path) + "background.png", cv2.IMREAD_UNCHANGED)
         self.background = cv2.imread(str(self.path) + "/" + "background.png", cv2.IMREAD_UNCHANGED)
         self.background = cv2.resize(self.background, (640, 480), interpolation=cv2.INTER_AREA)
         # self.bin_image = cv2.imread(self.path + "bin.png", cv2.IMREAD_UNCHANGED)
