@@ -29,9 +29,9 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 model = GarbageModel(path)
 # model = ModelThread("./base/model/")
 # img = cv2.imread("./GreenerLife/static / images / coffee.png")
-img = cv2.imread("./static / images / coffee.png")
-if img != None:
-    model.predict(img)
+# img = cv2.imread("./static / images / coffee.png")
+# if img != None:
+#     model.predict(img)
 
 def index(request):
     return render(request, 'base/index.html')
