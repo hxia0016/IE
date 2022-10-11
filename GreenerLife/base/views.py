@@ -111,8 +111,7 @@ def garbageClassification(request):
 
 
 def edu(request):
-    # edu_game.flag = False
-    # edu_game.reset_game()
+    edu_game.reset_game()
     return render(request, 'base/edu.html')
 
 
