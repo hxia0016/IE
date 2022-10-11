@@ -184,46 +184,61 @@
           console.log("Something went wrong!");
         });
     }
+    //
+    // // 获取房间名
+    // const roomName = "garbage";
+    // // 根据roomName拼接websocket请求地址，建立长连接
+    // //  请求url地址为/ws/chat/<room_name>/
+    // const wss_protocol = (window.location.protocol == 'https:') ? 'wss://' : 'ws://';
+    // const chatSocket = new WebSocket(
+    //     wss_protocol + window.location.host + '/ws/chat/' + roomName + '/'
+    // );
+    //
+    // // 建立websocket连接时触发此方法，展示欢迎提示
+    // chatSocket.onopen = function (e) {
+    //     console.log("success");
+    // }
+    //
+    // // 从后台接收到数据时触发此方法
+    // // 接收到后台数据后对其解析，并加入到聊天记录chat-log
+    // chatSocket.onmessage = function (e) {
+    //     const data = JSON.parse(e.data);
+    //     image.src = data.message;
+    // };
+    //
+    // // websocket连接断开时触发此方法
+    // chatSocket.onclose = function (e) {
+    //     console.error('Chat socket closed unexpectedly');
+    // };
 
-    // 获取房间名
-    const roomName = "garbage";
-    // 根据roomName拼接websocket请求地址，建立长连接
-    //  请求url地址为/ws/chat/<room_name>/
-    const wss_protocol = (window.location.protocol == 'https:') ? 'wss://' : 'ws://';
-    const chatSocket = new WebSocket(
-        wss_protocol + window.location.host + '/ws/chat/' + roomName + '/'
-    );
-
-    // 建立websocket连接时触发此方法，展示欢迎提示
-    chatSocket.onopen = function (e) {
-        console.log("success");
-    }
-
-    // 从后台接收到数据时触发此方法
-    // 接收到后台数据后对其解析，并加入到聊天记录chat-log
-    chatSocket.onmessage = function (e) {
-        const data = JSON.parse(e.data);
-        image.src = data.message;
-    };
-
-    // websocket连接断开时触发此方法
-    chatSocket.onclose = function (e) {
-        console.error('Chat socket closed unexpectedly');
-    };
+    //
+    // function takephoto() {
+    //     canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+    //     let image_data_url = canvas.toDataURL('image/jpeg');
+    //     // data url of the image
+    //     if(chatSocket["readyState"]==1) {
+    //         chatSocket.send(JSON.stringify({
+    //             'message': image_data_url
+    //         }));
+    //     }
+    //
+    // }
+    // setInterval("takephoto()",150);
 
 
-    function takephoto() {
+         function takephoto() {
         canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
         let image_data_url = canvas.toDataURL('image/jpeg');
         // data url of the image
-        if(chatSocket["readyState"]==1) {
-            chatSocket.send(JSON.stringify({
-                'message': image_data_url
-            }));
-        }
-
+        // var CSRFtoken = $('input[name=csrfmiddlewaretoken]').val();
+        $.post("/garbageClassification/",{data:image_data_url,csrfmiddlewaretoken: '{{ csrf_token }}'}, function (data, status) {
+            const return_message = JSON.parse(data);
+            $('#image1').attr("src", return_message.message)
+            $("#image1").show();
+        });
     }
-    setInterval("takephoto()",300);
+
+    setInterval("takephoto()",200)
 
      // 图片预览
         document.querySelector('#file').addEventListener('change', (ev) => {
